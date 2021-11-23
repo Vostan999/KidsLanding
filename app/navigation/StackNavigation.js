@@ -7,7 +7,8 @@ import GameOne from "../screen/GameOne";
 import GameTwo from "../screen/GameTwo";
 import GameThree from "../screen/GameThree";
 import Signup from "../screen/Signup";
-
+import Zookeeper from "../screen/Zookeeper";
+import ZookeeperName from "../screen/ZookeeperName";
 export default function StackNavigation() {
     const Stack = createStackNavigator()
     return (
@@ -15,6 +16,8 @@ export default function StackNavigation() {
             screenOptions={{
                 headerShown: false
             }}>
+            <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
+            <Stack.Screen name={"zookeeperName"} component={ZookeeperName}/>
             <Stack.Screen name={"signUp"} component={Signup}/>
             <Stack.Screen name={"gameThree"} component={GameThree}/>
             <Stack.Screen name={"firstPage"} component={FirstPage}/>
