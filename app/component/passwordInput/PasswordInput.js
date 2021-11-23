@@ -9,7 +9,8 @@ export default function PasswordInput(props) {
         <View style={{
             borderWidth: 1,
             borderColor: "#F19100",
-            flexDirection: "row"
+            flexDirection: "row",
+            marginVertical:props.marginVertical
         }}>
             <TextInput
                 placeholder={props.placeholder}

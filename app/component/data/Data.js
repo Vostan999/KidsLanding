@@ -1,6 +1,7 @@
 import React from "react";
 import GameTwoMap from "../dataMap/GameTwoMap";
 import GameOneMap from "../dataMap/GameOneMap";
+import GameThreeMap from "../dataMap/GameThreeMap";
 
 const gameTwoData = [
     {
@@ -22,6 +23,20 @@ const gameOneData = [
     {},
     {},
     {},
+]
+const GameThreeData = [
+    {
+        text:"Share"
+    },
+    {
+        text:"To give with a happy heart"
+    },
+    {
+        text:"To keep everything for yourself"
+    },
+    {
+        text:"Help others"
+    },
 ]
 
 export const GameOneDataFunc = () => {
@@ -46,6 +61,20 @@ export const GameTwoDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                />
+            )
+        })
+    )
+}
+
+export const GameThreeDataFunc = () =>{
+    return(
+        GameThreeData.map((item,index)=>{
+            return(
+                <GameThreeMap
+                item={item}
+                index={index}
+                key={index}
                 />
             )
         })

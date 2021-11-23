@@ -6,6 +6,8 @@ import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
 
 export default function FirstPage(props) {
+
+
     return (
         <View style={styles.cont}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>

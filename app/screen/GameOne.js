@@ -21,6 +21,7 @@ export default function GameOne() {
             <View style={styles.oneInputStyles}>
             <GameOneDataFunc />
             </View>
+
             <Leaf
             leaf4={require("../assets/image/leaf.png")}
             />
