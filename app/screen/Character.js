@@ -10,7 +10,7 @@ export default function Character() {
     return (
         <View style={{flex: 1}}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-                <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+                <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
                 <View style={styles.welcomeTextView}>
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>

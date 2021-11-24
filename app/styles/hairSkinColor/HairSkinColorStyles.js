@@ -28,7 +28,9 @@ export const styles = StyleSheet.create({
         borderRadius: 6,
         backgroundColor:"white",
         marginTop:10,
-        marginBottom: 19
+        marginBottom: 19,
+        elevation: 5,
+        shadowOpacity: 0.2,
     },
     chooseText: {
         color: "#000000",

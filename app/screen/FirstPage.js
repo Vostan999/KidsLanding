@@ -12,7 +12,7 @@ export default function FirstPage(props) {
         <View style={styles.cont}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
                 <View style={styles.firstView}>
-                    <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+                    <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
                     <Text style={styles.helloText}>Hello</Text>
                     <Text style={styles.descreptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                         ornare ipsum sed est.</Text>

@@ -8,10 +8,11 @@ import {ColorHairDataFunc, ColorSkinDataFunc} from "../component/data/Data";
 import Footer from "../component/footer/Footer";
 
 
-export default function HairSkinColor() {
+export default function HairSkinColor(props) {
+
     return(
         <ScrollView contentContainerStyle={GContent.ScroolViewALl} >
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez />
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, Zuzie</Text>
@@ -29,7 +30,7 @@ export default function HairSkinColor() {
                     <ColorSkinDataFunc />
                 </ScrollView>
             </View>
-            <Footer />
+            <Footer NavigationProps={props}/>
             <Leaf />
         </ScrollView>
     )

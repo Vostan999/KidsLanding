@@ -5,11 +5,12 @@ import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/shoes/ShoesStyles";
 import {ShirtDataFunc,TrouserDataFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
+import Footer from "../component/footer/Footer";
 
-export default function () {
+export default function (props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez/>
             <View style={styles.container}>
                 <Text style={styles.textHello}>Hello, Zuzie</Text>
@@ -21,11 +22,12 @@ export default function () {
                     <ShirtDataFunc />
                 </ScrollView>
             </View>
-            <View style={[styles.colorView,{height:134 }]}>
+            <View style={[styles.colorView,styles.colorView2 ]}>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
                 <TrouserDataFunc />
                 </ScrollView>
             </View>
+            <Footer  NavigationProps={props} text={"zookeeperName"}/>
             <Leaf />
         </ScrollView>
     )

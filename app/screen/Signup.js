@@ -8,12 +8,12 @@ import {styles} from "../styles/SignUpStyles";
 import CheckBox from "@react-native-community/checkbox";
 import Button from "../component/button/Button";
 
-export default function Signup() {
+export default function Signup(props) {
     const [checked, setChecked] = useState(false)
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.zooziViewImg}>
                 <Image source={require("../assets/image/Zooziez.png")} styles={GContent.zoozieImage}/>
             </View>
@@ -60,6 +60,9 @@ export default function Signup() {
                         title={"Sign Up"}
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
+                        onPress={()=>{
+                            props.navigation.navigate("login")
+                        }}
                     />
                     <View style={styles.footerLogin}>
                         <Text style={styles.footerLoginText}>Already have an account? </Text>

@@ -8,18 +8,17 @@ import Footer from "../component/footer/Footer";
 
 
 export default function ZookeeperName(props) {
-    let name = props.route.params.name
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
 
             <HeaderZooziez/>
             <Text style={styles.header}>Create your zookeeper</Text>
 
             <View style={styles.footerView}>
                 <Image
-                    source={name === "boy" ? require("../assets/image/Union.png") : require("../assets/image/Frame.png")}
-                    style={name === "boy" ? styles.unionImage : styles.frameImage}
+                    source={require("../assets/image/Union.png")}
+                    style={styles.unionImage}
                 />
             </View>
             <TextInput
@@ -27,7 +26,9 @@ export default function ZookeeperName(props) {
                 placeholderTextColor={"#989898"}
                 style={styles.inputName}
             />
-            <Footer NavigationProps={props}/>
+            <Footer
+                NavigationProps={props}
+            />
             <Leaf
                 leaf3={require("../assets/image/leaf.png")}
                 Leaf={require("../assets/image/leaf.png")}

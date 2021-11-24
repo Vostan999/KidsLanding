@@ -16,20 +16,25 @@ export const styles = StyleSheet.create({
     container: {
         alignItems: "center"
     },
-    shoesView:{flexGrow: 1,marginHorizontal:8,alignItems: "center" },
-    text:{
-        textAlign:"center",
+    shoesView: {flexGrow: 1, marginHorizontal: 8, alignItems: "center"},
+    text: {
+        textAlign: "center",
         fontSize: 18,
-        color:"black",
+        color: "black",
         fontFamily: "PoppinsRegular"
     },
     colorView: {
         height: 159,
         marginLeft: 13,
-        marginRight:16,
+        marginRight: 16,
         borderRadius: 6,
-        backgroundColor:"white",
-        marginTop:10,
+        backgroundColor: "white",
+        marginTop: 10,
         marginBottom: 19,
+        elevation: 5,
     },
+    colorView2: {
+        height: 134,
+        marginBottom: 42
+    }
 })

@@ -4,7 +4,7 @@ import {StyleSheet} from "react-native";
 export const GContent = StyleSheet.create({
     ScroolViewALl: {
         flexGrow: 1,
-        backgroundColor: "rgb(250, 250, 250)",
+        backgroundColor: "white",
         position: "relative",
     },
     zoozieImage: {

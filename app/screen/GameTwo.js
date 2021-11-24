@@ -11,7 +11,7 @@ import {GameTwoDataFunc} from "../component/data/Data";
 export default function GameTwo() {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.allView}>
                 <HeaderZooziez/>
                 <Cloud

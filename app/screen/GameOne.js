@@ -12,7 +12,7 @@ export default function GameOne() {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"rgb(250, 250, 250)"} barStyle={"dark-content"}/>
+            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez/>
             <Cloud
                 textOne={"Spell"}
