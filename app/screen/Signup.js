@@ -57,17 +57,21 @@ export default function Signup() {
                 </View>
                 <View>
                     <Button
-                        title={"LOG IN"}
+                        title={"Sign Up"}
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
                     />
                     <View style={styles.footerLogin}>
                         <Text style={styles.footerLoginText}>Already have an account? </Text>
+
                         <Text style={[styles.footerLoginText, {fontWeight: "bold"}]}> Log In</Text>
                     </View>
                 </View>
             </View>
-            <Leaf leaf4={require("../assets/image/leaf.png")}/>
+            <Leaf
+                leaf4={require("../assets/image/leaf.png")}
+                leaf3={require("../assets/image/leaf.png")}
+            />
         </ScrollView>
     )
 

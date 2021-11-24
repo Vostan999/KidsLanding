@@ -19,7 +19,9 @@ export default function GameThree() {
                     textThree={"to your friends?"}
                 />
                 <GameThreeDataFunc />
-                <Leaf/>
+                <Leaf
+                    leaf3={require("../assets/image/leaf.png")}
+                />
             </View>
 
         </ScrollView>

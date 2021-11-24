@@ -21,9 +21,9 @@ export default function GameOne() {
             <View style={styles.oneInputStyles}>
             <GameOneDataFunc />
             </View>
-
             <Leaf
             leaf4={require("../assets/image/leaf.png")}
+            leaf3={require("../assets/image/leaf.png")}
             />
         </ScrollView>
     )

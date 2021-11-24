@@ -24,6 +24,7 @@ export default function Character() {
                 <Leaf
                     Leaf={require("../assets/image/leaf.png")}
                     leaf4={require("../assets/image/leaf.png")}
+                    leaf3={require("../assets/image/leaf.png")}
                 />
             </ScrollView>
         </View>

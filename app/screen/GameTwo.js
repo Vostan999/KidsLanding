@@ -22,6 +22,7 @@ export default function GameTwo() {
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}
+                leaf3={require("../assets/image/leaf.png")}
             />
         </ScrollView>
     )

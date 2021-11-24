@@ -18,7 +18,8 @@ export const styles = StyleSheet.create({
         fontFamily: "PoppinsRegular",
         fontSize: 12,
         marginHorizontal: 47,
-        marginTop:47
+        marginTop: 47,
+        marginBottom: 108,
     },
     unionImage: {
         width: 137,
@@ -30,6 +31,10 @@ export const styles = StyleSheet.create({
         marginHorizontal: 77,
         borderColor: "#FFE3BA",
         borderWidth: 1,
-        borderRadius:6
+        borderRadius: 6
+    },
+    frameImage: {
+        width: 137,
+        height: 260,
     }
 })

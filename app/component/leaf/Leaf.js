@@ -6,7 +6,7 @@ export default function Leaf(props) {
         <>
             <Image source={require("../../assets/image/leaf.png")} style={styles.leaf1}/>
             <Image source={require("../../assets/image/leaf.png")} style={styles.leaf2}/>
-            <Image source={require("../../assets/image/leaf.png")} style={styles.leaf3}/>
+            <Image source={props.leaf3} style={styles.leaf3}/>
             <Image source={props.leaf4} style={styles.leaf4}/>
             <Image source={props.Leaf} style={styles.leaf5}/>
         </>

@@ -63,7 +63,9 @@ export default function Login(props) {
                     />
                     <View style={styles.underView}>
                         <Text style={styles.loginTextSign}>New account? </Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{
+                            props.navigation.navigate("signUp")
+                        }}>
                             <Text style={[styles.loginTextSign, {fontWeight: "bold"}]}>Sign up</Text>
                         </TouchableOpacity>
                     </View>
@@ -71,6 +73,7 @@ export default function Login(props) {
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}
+                leaf3={require("../assets/image/leaf.png")}
             />
         </ScrollView>
     )
