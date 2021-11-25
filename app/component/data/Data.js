@@ -133,7 +133,7 @@ export const TrouserDataFunc = () => {
     )
 }
 
-export const ColorSkinDataFunc = () => {
+export const ColorSkinDataFunc = (props) => {
     return (
         ColorSkinData.map((item, index) => {
             return (
@@ -141,13 +141,14 @@ export const ColorSkinDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    skinColorFunc={props.skinColorFunc}
                 />
             )
         })
     )
 }
 
-export const ColorHairDataFunc = () => {
+export const ColorHairDataFunc = (props) => {
     return (
         ColorHairData.map((item, index) => {
             return (
@@ -155,6 +156,7 @@ export const ColorHairDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    setHairColorFunc={props.setHairColorFunc}
                 />
             )
         })

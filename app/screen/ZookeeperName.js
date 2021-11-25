@@ -1,11 +1,10 @@
 import React from "react";
-import {Image, ScrollView, StatusBar, Text, TextInput, TouchableOpacity, View} from "react-native";
+import { ScrollView, StatusBar, Text, TextInput, Image, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/zookeeperNameStyles/ZookeeperNameStyles";
 import Leaf from "../component/leaf/Leaf";
 import Footer from "../component/footer/Footer";
-
 
 export default function ZookeeperName(props) {
     return (
@@ -20,7 +19,8 @@ export default function ZookeeperName(props) {
                     source={require("../assets/image/Union.png")}
                     style={styles.unionImage}
                 />
-            </View>
+      </View>
+
             <TextInput
                 placeholder={"What is my name?"}
                 placeholderTextColor={"#989898"}

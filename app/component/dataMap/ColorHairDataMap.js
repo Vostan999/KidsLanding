@@ -21,9 +21,8 @@ export default function ColorHairDataMap(props) {
                      borderWidth:width
                 }}
                 onPress={() => {
-
-                }}
-            >
+                    props.setHairColorFunc(props.item.color)
+                }}>
 
             </TouchableOpacity>
 
