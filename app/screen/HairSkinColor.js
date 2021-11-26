@@ -31,9 +31,8 @@ import Svg, {
 import Girl from "../svg/Girl";
 import BabyNoShoes from "../svg/BabyNoShoes";
 import HeaderBaby from "../svg/HeaderBaby";
-import LeftFooter from "../svg/LeftFooter";
-import RightFooter from "../svg/RightFooter";
-import FooterBaby from "../svg/FooterBaby";
+import MiddleBaby from "../svg/MiddleBaby";
+import Foot from "../svg/Foot";
 
 export default function HairSkinColor(props) {
     const [skinColor,setSkinColor] = useState("")
@@ -52,16 +51,6 @@ export default function HairSkinColor(props) {
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, Zuzie</Text>
                 <Girl skinColor={skinColor} />
-                <View style={{marginLeft:10,marginBottom:-1}}>
-                    <HeaderBaby />
-                </View>
-                <FooterBaby />
-                <View style={{flexDirection:"row",marginTop:-2.8,}}>
-                    <LeftFooter />
-                    <View style={{marginHorizontal:0.8}}></View>
-                    <RightFooter />
-                </View>
-
             </View>
             <View style={styles.colorView}>
                 <Text style={styles.chooseText}>Choose Hair Color</Text>

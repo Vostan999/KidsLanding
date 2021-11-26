@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         fontFamily: "PoppinsRegular",
         color: "#9E724E",
+        textAlign: "center",
         marginBottom: 30
     },
     baby: {
@@ -14,7 +15,7 @@ export const styles = StyleSheet.create({
         height: 174.5
     },
     container: {
-        alignItems: "center"
+        alignItems: "center",
     },
     shoesView: {flexGrow: 1, marginHorizontal: 8, alignItems: "center"},
     text: {
