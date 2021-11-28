@@ -1,19 +1,18 @@
-import React, {useState} from "react"
-import {ScrollView, StatusBar, Text, View} from "react-native"
+import React from "react";
+import {ScrollView, StatusBar, Text, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
-import {styles} from "../styles/shoes/ShoesStyles";
-import {ShirtDataFunc, TrouserDataFunc} from "../component/data/Data";
-import Leaf from "../component/leaf/Leaf";
 import Footer from "../component/footer/Footer";
-import Foot from "../svg/boyPuzzle/Foot";
-import MiddleBaby from "../svg/boyPuzzle/MiddleBaby";
+import Leaf from "../component/leaf/Leaf";
 import HeaderBaby from "../svg/boyPuzzle/HeaderBaby";
+import MiddleBaby from "../svg/boyPuzzle/MiddleBaby";
+import Foot from "../svg/boyPuzzle/Foot";
+import {styles} from "../styles/accessoriesStyles/AccessoriesStyles";
+import {AccessoriesDataFunc, BotasDataFunc} from "../component/data/Data";
 
 
-export default function (props) {
 
-
+export default function Accessories(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
@@ -26,20 +25,22 @@ export default function (props) {
                     <Foot/>
                 </View>
             </View>
-            <View style={styles.colorView}>
-                <Text style={styles.text}>Choose Clothing</Text>
+            <View style={[styles.boatasView,{marginTop:25}]}>
+                <Text style={styles.scrolText}>Choose Clothing</Text>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
-                    <ShirtDataFunc/>
+                <BotasDataFunc />
                 </ScrollView>
             </View>
-            <View style={[styles.colorView, styles.colorView2]}>
+            <View style={styles.boatasView}>
+                <Text style={styles.scrolText}>Choose Accessories</Text>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
-                    <TrouserDataFunc/>
+                <AccessoriesDataFunc />
                 </ScrollView>
             </View>
+
             <Footer
                 NavigationProps={props}
-                text={"accessories"}
+                text={"finishPage"}
             />
             <Leaf/>
         </ScrollView>

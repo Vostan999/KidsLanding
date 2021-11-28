@@ -16,7 +16,7 @@ export default function Footer(props) {
             <TouchableOpacity
                 style={styles.childView}
                 onPress={() => {
-                    props.NavigationProps.navigation.navigate("hairSkinColor")
+                    props.NavigationProps.navigation.navigate(`${props.text}`)
                 }}
             >
                 <Text style={[styles.containerText, {color: "#000000"}]}>Next</Text>

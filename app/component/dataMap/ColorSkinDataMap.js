@@ -2,27 +2,28 @@ import React, {useState} from "react"
 import {View, Text, TouchableOpacity} from "react-native"
 
 export default function ColorSkinDataMap(props) {
-    const [width, setWidth] = useState(0)
+    const [activeIndex, setActiveIndex] = useState(-1)
 
 
     return (
         <View style={{
             flex: 1,
             alignItems: "center",
-
         }}>
             <TouchableOpacity
-                style={{
+                style={[{
                     width: 68,
                     height: 68,
                     backgroundColor: props.item.color,
                     borderRadius: 100,
                     borderColor: "#F19100",
-                    borderWidth: width
-                }}
+                },
+                    activeIndex === props.index ? { borderWidth: 2  } : null
+                ]}
                 onPress={() => {
-                    console.log(props.item.color)
-                   props.skinColorFunc(props.item.color)
+                    setActiveIndex(props.index)
+                    props.skinColorFunc(props.item.color)
+
                 }}>
             </TouchableOpacity>
         </View>

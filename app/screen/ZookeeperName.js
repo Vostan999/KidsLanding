@@ -28,6 +28,7 @@ export default function ZookeeperName(props) {
             />
             <Footer
                 NavigationProps={props}
+                text={"hairSkinColor"}
             />
             <Leaf
                 leaf3={require("../assets/image/leaf.png")}

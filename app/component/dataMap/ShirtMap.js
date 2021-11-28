@@ -2,9 +2,12 @@ import React from "react"
 import {TouchableOpacity, Image, StyleSheet} from "react-native"
 
 export default function ShirtMap(props) {
+
+
     return (
         <TouchableOpacity style={styles.container}>
             <Image source={props.item.img}/>
+
         </TouchableOpacity>
     )
 }

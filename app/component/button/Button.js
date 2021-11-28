@@ -14,6 +14,7 @@ export default function Button(props) {
                 justifyContent: "center",
                 alignItems: "center",
                 marginVertical:props.marginVertical,
+                marginHorizontal:props.marginHorizontal,
                 zIndex:2
             }}>
             <Text style={{

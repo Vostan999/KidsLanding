@@ -1,30 +1,30 @@
-import React from "react"
-import {TouchableOpacity, Image, StyleSheet, View} from "react-native"
+import React from "react";
+import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
-export default function TrouserMap(props) {
 
+export default function BotasDataMap(props) {
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={()=>{
+            onPress={() => {
 
             }}
         >
-            <Image source={props.item.img}/>
+            <Image source={props.item.img} />
 
         </TouchableOpacity>
     )
 }
-
 const styles = StyleSheet.create({
-    container: {
+    container:{
         borderWidth: 1,
         borderColor: "#DADADA",
         height: 92,
-        width: 67,
+        width: 125,
         alignItems: "center",
         justifyContent: "center",
-        marginLeft: 8,
+        marginLeft: 15,
+        marginVertical:15
+    }
 
-    },
 })
