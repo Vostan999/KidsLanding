@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, StatusBar, Text, TextInput, Image, View} from "react-native";
+import {ScrollView, StatusBar, Text, TextInput, Image, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/zookeeperNameStyles/ZookeeperNameStyles";
@@ -19,17 +19,17 @@ export default function ZookeeperName(props) {
                     source={require("../assets/image/Union.png")}
                     style={styles.unionImage}
                 />
-      </View>
+            </View>
 
             <TextInput
                 placeholder={"What is my name?"}
                 placeholderTextColor={"#989898"}
                 style={styles.inputName}
             />
-            <Footer
-                NavigationProps={props}
-                text={"hairSkinColor"}
-            />
+            {/*<Footer*/}
+            {/*    NavigationProps={props}*/}
+            {/*    text={"hairSkinColor"}*/}
+            {/*/>*/}
             <Leaf
                 leaf3={require("../assets/image/leaf.png")}
                 Leaf={require("../assets/image/leaf.png")}

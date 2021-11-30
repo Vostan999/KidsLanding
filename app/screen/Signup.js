@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {View, Text, StatusBar, ScrollView, Image} from "react-native"
+import {View, Text, StatusBar, ScrollView, Image, TouchableOpacity} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import Input from "../component/input/Input";
@@ -7,9 +7,68 @@ import PasswordInput from "../component/passwordInput/PasswordInput";
 import {styles} from "../styles/SignUpStyles";
 import CheckBox from "@react-native-community/checkbox";
 import Button from "../component/button/Button";
+import {passwordValidate, validateEmail, nameValidation} from "../component/validate/Validate";
+import axiosInstance from "../networking/axiosinstance";
+import Loading from "../component/loading/Loading";
 
 export default function Signup(props) {
     const [checked, setChecked] = useState(false)
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [repPassword, setRepPassword] = useState("")
+    const [firstNameText, setFirstNameText] = useState("")
+    const [lastNameText, setLastNameText] = useState("")
+    const [emailText, setEmailText] = useState("")
+    const [passwordText, setPasswordText] = useState("")
+    const [repPasswordText, setRepPasswordText] = useState("")
+    const [visibleLoading, setVisibleLoading] = useState(false)
+
+    const handle = async () => {
+        setVisibleLoading(true)
+        try {
+            const data = {
+                "first_name": firstName,
+                "last_name": lastName,
+                "email": email,
+                "password": password
+            }
+            const response = await axiosInstance.post(`/register`, data)
+            setVisibleLoading(false)
+            props.navigation.replace("login")
+        } catch (e) {
+            console.log(e.response.data.message)
+            setVisibleLoading(false)
+        }
+    }
+
+    const ValidateFunction = () => {
+        if (validateEmail(email) && nameValidation.test(lastName) && nameValidation.test(firstName) && password === repPassword && passwordValidate.test(password) && passwordValidate.test(repPassword)) {
+            handle()
+        } else {
+            setVisibleLoading(false)
+        }
+        if (!validateEmail(email)) {
+            setEmailText("The email you’ve entered is incorrect.")
+        }
+        if (!nameValidation.test(lastName)) {
+            setLastNameText("The last name you’ve entered is incorrect.")
+        }
+        if (!nameValidation.test(firstName)) {
+            setFirstNameText("The first name you’ve entered is incorrect.")
+        }
+        if (password !== repPassword) {
+            setPasswordText("The password you’ve entered is incorrect.")
+            setRepPasswordText("The repeat password you’ve entered is incorrect.")
+        }
+        if (!passwordValidate.test(password)) {
+            setPasswordText("The password you’ve entered is incorrect.")
+        }
+        if (!passwordValidate.test(repPassword)) {
+            setRepPasswordText("The repeat password you’ve entered is incorrect.")
+        }
+    }
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -23,24 +82,47 @@ export default function Signup(props) {
                 <Text style={styles.signUpText}>SIGN UP</Text>
                 <Input
                     placeholder={"First name"}
-                    marginVertical={5}
+                    marginTop={14}
+                    onChangeText={(evt) => {
+                        setFirstName(evt)
+                        setFirstNameText("")
+                    }}
                 />
+                <Text style={GContent.validateTextStyles}>{firstNameText}</Text>
                 <PasswordInput
                     placeholder={"Last name"}
-                    marginVertical={5}
+                    onChangeText={(evt) => {
+                        setLastName(evt)
+                        setLastNameText("")
+                    }}
                 />
+                <Text style={GContent.validateTextStyles}>{lastNameText}</Text>
                 <Input
                     placeholder={"Email"}
-                    marginVertical={5}
+
+                    onChangeText={(evt) => {
+                        setEmail(evt)
+                        setEmailText("")
+                    }}
                 />
+                <Text style={GContent.validateTextStyles}>{emailText}</Text>
                 <PasswordInput
                     placeholder={"Password"}
-                    marginVertical={5}
+
+                    onChangeText={(evt) => {
+                        setPassword(evt)
+                        setPasswordText("")
+                    }}
                 />
+                <Text style={GContent.validateTextStyles}>{passwordText}</Text>
                 <PasswordInput
                     placeholder={"Repeat password"}
-                    marginVertical={5}
+                    onChangeText={(evt) => {
+                        setRepPassword(evt)
+                        setRepPasswordText("")
+                    }}
                 />
+                <Text style={GContent.validateTextStyles}>{repPasswordText}</Text>
                 <View style={styles.chechkedView}>
                     <View style={styles.check}>
                         <CheckBox
@@ -60,14 +142,18 @@ export default function Signup(props) {
                         title={"Sign Up"}
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
-                        onPress={()=>{
-                            props.navigation.navigate("login")
+                        onPress={() => {
+
+                            ValidateFunction()
                         }}
                     />
                     <View style={styles.footerLogin}>
                         <Text style={styles.footerLoginText}>Already have an account? </Text>
-
-                        <Text style={[styles.footerLoginText, {fontWeight: "bold"}]}> Log In</Text>
+                        <TouchableOpacity onPress={() => {
+                            props.navigation.navigate("login")
+                        }}>
+                            <Text style={[styles.footerLoginText, {fontWeight: "bold"}]}> Log In</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </View>
@@ -75,6 +161,7 @@ export default function Signup(props) {
                 leaf4={require("../assets/image/leaf.png")}
                 leaf3={require("../assets/image/leaf.png")}
             />
+            <Loading loading={visibleLoading}/>
         </ScrollView>
     )
 

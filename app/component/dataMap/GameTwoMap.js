@@ -1,9 +1,21 @@
-import React from "react";
-import {Text, View, StyleSheet, TouchableOpacity} from "react-native";
+import React, {useEffect} from "react";
+import {Text, View, StyleSheet, TouchableOpacity,} from "react-native";
 
 export default function GameTwoMap(props) {
+
+
+
+    const handle = () => {
+            props.twoProps.navigation.navigate("gameThree")
+    }
+
     return (
-        <TouchableOpacity style={styles.footerButton}>
+        <TouchableOpacity
+            style={styles.footerButton}
+            onPress={() => {
+                handle()
+            }}
+        >
             <Text style={styles.footerText}>{props.item.text}</Text>
         </TouchableOpacity>
     )

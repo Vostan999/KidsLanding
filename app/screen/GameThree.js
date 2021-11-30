@@ -6,7 +6,7 @@ import Cloud from "../component/cloud/Cloud";
 import {GameThreeDataFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
-export default function GameThree() {
+export default function GameThree(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -18,7 +18,7 @@ export default function GameThree() {
                     textTwo={"Generous"}
                     textThree={"to your friends?"}
                 />
-                <GameThreeDataFunc />
+                <GameThreeDataFunc propsNavigation={props}/>
                 <Leaf
                     leaf3={require("../assets/image/leaf.png")}
                 />

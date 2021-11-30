@@ -10,5 +10,11 @@ export const GContent = StyleSheet.create({
     zoozieImage: {
         width: 110,
         height: 41
-    }
+    },
+    validateTextStyles: {
+        textAlign: "left",
+        color: "#FF2E00",
+        fontSize: 12,
+        marginVertical: 1,
+    },
 })

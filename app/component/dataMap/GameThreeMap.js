@@ -1,11 +1,22 @@
-import React, {useState} from "react"
-import {StyleSheet, View, Text} from "react-native"
+import React, {useState, useEffect} from "react"
+import {StyleSheet, TouchableOpacity, Text} from "react-native"
 import CheckBox from "@react-native-community/checkbox";
 
 export default function GameThreeMap(props) {
-    const [checked, setChecked] = useState("")
+    const [checked, setChecked] = useState(false)
+
+    useEffect(() => {
+        if (checked) {
+            props.propsNavigation.navigation.navigate("zookeeper")
+        }
+    }, [checked])
     return (
-        <View style={styles.checkView}>
+        <TouchableOpacity
+            style={styles.checkView}
+            onPress={() => {
+                setChecked(!checked)
+            }}
+        >
             <CheckBox
                 disabled={false}
                 value={checked}
@@ -14,7 +25,7 @@ export default function GameThreeMap(props) {
                 tintColors={{true: '#F19100', false: '#F19100'}}
             />
             <Text>{props.item.text}</Text>
-        </View>
+        </TouchableOpacity>
     )
 }
 

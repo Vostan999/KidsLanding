@@ -19,7 +19,7 @@ export default function PasswordInput(props) {
                 secureTextEntry={state}
                 style={{
                     borderRadius: 4,
-                    paddingLeft: 16,
+                    paddingLeft: 15,
                     fontWeight: props.fontWeight,
                     fontSize: 12,
                     width: windowWidth - 110,

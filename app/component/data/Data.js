@@ -23,16 +23,6 @@ const gameTwoData = [
         text: "To keep everything for yourself"
     }
 ]
-const gameOneData = [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-]
 const GameThreeData = [
     {
         text: "Share"
@@ -234,21 +224,9 @@ export const ColorHairDataFunc = (props) => {
     )
 }
 
-export const GameOneDataFunc = () => {
-    return (
-        gameOneData.map((item, index) => {
-            return (
-                <GameOneMap
-                    item={item}
-                    index={index}
-                    key={index}
-                />
-            )
-        })
-    )
-}
 
-export const GameTwoDataFunc = () => {
+
+export const GameTwoDataFunc = (props) => {
     return (
         gameTwoData.map((item, index) => {
             return (
@@ -256,13 +234,14 @@ export const GameTwoDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    twoProps={props.twoProps}
                 />
             )
         })
     )
 }
 
-export const GameThreeDataFunc = () => {
+export const GameThreeDataFunc = (props) => {
     return (
         GameThreeData.map((item, index) => {
             return (
@@ -270,6 +249,7 @@ export const GameThreeDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    propsNavigation={props.propsNavigation}
                 />
             )
         })

@@ -8,7 +8,7 @@ import {styles} from "../styles/gameTwoStyles/GameTwoStyles";
 import {GameTwoDataFunc} from "../component/data/Data";
 
 
-export default function GameTwo() {
+export default function GameTwo(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
@@ -18,7 +18,7 @@ export default function GameTwo() {
                     textOne={"What does it mean to be"}
                     textTwo={"Generous?"}
                 />
-                <GameTwoDataFunc />
+                <GameTwoDataFunc twoProps={props} />
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}

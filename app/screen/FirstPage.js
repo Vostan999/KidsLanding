@@ -22,7 +22,7 @@ export default function FirstPage(props) {
                         color={"#FDFDFD"}
                         marginVertical={10}
                         onPress={() => {
-                            props.navigation.navigate("login")
+                            props.navigation.replace("login")
                         }}
                     />
                     <Button
@@ -30,6 +30,9 @@ export default function FirstPage(props) {
                         borderWidth={1}
                         borderColor={"#F19100"}
                         color={"#F19100"}
+                        onPress={() => {
+                            props.navigation.replace("signUp")
+                        }}
                     />
                 </View>
                 <View style={{alignItems: "flex-end", marginTop: -49}}>

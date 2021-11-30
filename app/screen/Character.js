@@ -1,11 +1,11 @@
 import React from "react";
-import {Image, ScrollView, StatusBar, Text, TextInput, View} from "react-native";
+import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import {styles} from "../styles/charachter/CharacterStyles";
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
 
 
-export default function Character() {
+export default function Character(props) {
 
     return (
         <View style={{flex: 1}}>
@@ -16,10 +16,14 @@ export default function Character() {
                     <Text style={styles.to}>To</Text>
                     <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
                     <Text style={styles.characterText}>Pick Your Character</Text>
-                    <View style={styles.animalView}>
+                    <TouchableOpacity
+                        style={styles.animalView}
+                        onPress={() => {
+                            props.navigation.navigate("gameOne")
+                        }}>
                         <Image source={require("../assets/image/animal.png")} style={{width: 130, height: 214}}/>
                         <Text style={styles.animalName}>George</Text>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <Leaf
                     Leaf={require("../assets/image/leaf.png")}

@@ -7,13 +7,52 @@ import Button from "../component/button/Button";
 import CheckBox from '@react-native-community/checkbox';
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
-import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
-import Cloud from "../component/cloud/Cloud";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import {passwordValidate, validateEmail} from "../component/validate/Validate";
+import axiosInstance from "../networking/axiosinstance";
 
 export default function Login(props) {
     const [checked, setChecked] = useState(false)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [emailText, setEmailText] = useState("")
+    const [passwordText, setPasswordText] = useState("")
+
+    const storeData = async (value) => {
+        try {
+            await AsyncStorage.setItem('token', value)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+    const handle = async () => {
+        try {
+            const data = {
+                "email": email,
+                "password": password
+            }
+
+            const response = await axiosInstance.post("/login", data)
+            await storeData(response.data.token)
+            props.navigation.replace("character")
+        } catch (e) {
+            console.log(e.response)
+        }
+    }
+
+    const validateFunction = () => {
+        if (validateEmail(email) && passwordValidate.test(password)) {
+
+            handle()
+        }
+        if (!validateEmail(email)) {
+            setEmailText("The email you’ve entered is incorrect.")
+        }
+        if (!passwordValidate.test(password)) {
+            setPasswordText("The password you’ve entered is incorrect.")
+        }
+    }
+
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View>
@@ -25,17 +64,19 @@ export default function Login(props) {
                     <Text style={styles.loginText}>LOG IN</Text>
                     <Input
                         placeholder={"Email"}
-                        marginVertical={10}
                         onChangeText={(evt) => {
                             setEmail(evt)
+                            setEmailText("")
                         }}
                     />
+                    <Text style={GContent.validateTextStyles}>{emailText}</Text>
                     <PasswordInput
                         placeholder={"Password"}
                         onChangeText={(evt) => {
                             setPassword(evt)
-                        }}
-                    />
+                            setPasswordText("")
+                        }}/>
+                    <Text style={GContent.validateTextStyles}>{passwordText}</Text>
                     <View style={styles.signupView}>
                         <View style={styles.checkBoxView}>
                             <CheckBox
@@ -58,12 +99,13 @@ export default function Login(props) {
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
                         onPress={() => {
-                            props.navigation.navigate("character")
+
+                            validateFunction()
                         }}
                     />
                     <View style={styles.underView}>
                         <Text style={styles.loginTextSign}>New account? </Text>
-                        <TouchableOpacity onPress={()=>{
+                        <TouchableOpacity onPress={() => {
                             props.navigation.navigate("signUp")
                         }}>
                             <Text style={[styles.loginTextSign, {fontWeight: "bold"}]}>Sign up</Text>

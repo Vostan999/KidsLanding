@@ -6,4 +6,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         marginHorizontal: 20
     },
+    codeInputView:{
+        marginBottom:110
+    }
 })
