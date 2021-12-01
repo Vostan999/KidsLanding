@@ -11,6 +11,7 @@ import FooterShoes1 from "../../svg/FotterShoes/FooterShoes1";
 import FotterShoes2 from "../../svg/FotterShoes/FotterShoes2";
 import BotasDataMap from "../dataMap/BotasDataMap";
 import AccessoriesDataMap from "../dataMap/accessoriesDataMap";
+import AnimalMap from "../dataMap/AnimalMap";
 
 const gameTwoData = [
     {
@@ -36,6 +37,19 @@ const GameThreeData = [
     {
         text: "Help others"
     },
+]
+
+const animalData = [
+    {
+        img: require("../../assets/image/animal.png"),
+        name: "Tilly",
+        QrCodeImg:require("../../assets/image/qrIcon.png")
+    },
+    {
+        img: require("../../assets/image/Tilly.png"),
+        name: "George",
+        QrCodeImg:require("../../assets/image/qrIcon.png")
+    }
 ]
 
 const ColorHairData = [
@@ -136,6 +150,23 @@ const AccessoriesData = [
         img: require("../../assets/image/accessories5.png"),
     },
 ]
+
+export const AnimalDataFunc = () => {
+    return (
+
+        animalData.map((item, index) => {
+            return (
+                <AnimalMap
+                    item={item}
+                    index={index}
+                    key={index}
+                />
+            )
+        })
+    )
+}
+
+
 export const AccessoriesDataFunc = () => {
     return (
         AccessoriesData.map((item, index) => {
@@ -223,7 +254,6 @@ export const ColorHairDataFunc = (props) => {
         })
     )
 }
-
 
 
 export const GameTwoDataFunc = (props) => {
