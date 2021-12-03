@@ -7,13 +7,13 @@ import {styles} from "../styles/hairSkinColor/HairSkinColorStyles";
 import {ColorHairDataFunc, ColorSkinDataFunc} from "../component/data/Data";
 import Footer from "../component/footer/Footer";
 import Girl from "../svg/transparentGirl/Girl";
-import Login from "./Login";
+import Boy from "../svg/transparentGirl/Boy";
 
 
 export default function HairSkinColor(props) {
 
-    const [skinColor, setSkinColor] = useState("")
-    const [hairColor, setHairColor] = useState("")
+    const [skinColor, setSkinColor] = useState("#FFC8AC")
+    const [hairColor, setHairColor] = useState("#CC5440")
 
     const skinColorFunc = (item) => {
         setSkinColor(item)
@@ -28,7 +28,8 @@ export default function HairSkinColor(props) {
             <HeaderZooziez/>
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, Zuzie</Text>
-                <Girl skinColor={skinColor} hairColor={hairColor}/>
+                {/*<Girl skinColor={skinColor} hairColor={hairColor}/>*/}
+                <Boy  skinColor={skinColor} hairColor={hairColor}/>
             </View>
             <View style={styles.colorView}>
                 <Text style={styles.chooseText}>Choose Hair Color</Text>

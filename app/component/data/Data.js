@@ -75,15 +75,15 @@ const ColorHairData = [
 const ColorSkinData = [
     {
         id: 1,
-        color: "#6C3D3D"
+        color: "#88563D"
     },
     {
         id: 2,
-        color: "#121212"
+        color: "#411814"
     },
     {
         id: 3,
-        color: "#FBECC7"
+        color: "#FFEDE3"
     },
 ]
 const ShirtData = [
