@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import GameTwoMap from "../dataMap/GameTwoMap";
 import GameOneMap from "../dataMap/GameOneMap";
 import GameThreeMap from "../dataMap/GameThreeMap";
@@ -12,6 +12,12 @@ import FotterShoes2 from "../../svg/FotterShoes/FotterShoes2";
 import BotasDataMap from "../dataMap/BotasDataMap";
 import AccessoriesDataMap from "../dataMap/accessoriesDataMap";
 import AnimalMap from "../dataMap/AnimalMap";
+import MiddleShoesGirl1 from "../../svg/middleShoes/MiddleShoesGirl1";
+import MiddleShoesGirl2 from "../../svg/middleShoes/MiddleShoesGirl2";
+import BotasGirlLeft1 from "../../svg/botasShoes/botasGirl2/BotasGirlLeft1";
+import BotasGirlRight1 from "../../svg/botasShoes/botasGirl2/botasGirlRight1";
+import BotasGirlLeft from "../../svg/botasShoes/botasGirl/BotasGirlLeft";
+import BotasGirlRight from "../../svg/botasShoes/botasGirl/BotasGirlRight";
 
 const gameTwoData = [
     {
@@ -43,12 +49,12 @@ const animalData = [
     {
         img: require("../../assets/image/animal.png"),
         name: "Tilly",
-        QrCodeImg:require("../../assets/image/qrIcon.png")
+        QrCodeImg: require("../../assets/image/qrIcon.png")
     },
     {
         img: require("../../assets/image/Tilly.png"),
         name: "George",
-        QrCodeImg:require("../../assets/image/qrIcon.png")
+        QrCodeImg: require("../../assets/image/qrIcon.png")
     }
 ]
 
@@ -89,9 +95,11 @@ const ColorSkinData = [
 const ShirtData = [
     {
         id: 1,
-        img: require("../../assets/image/shoes1.png")
+        img: require("../../assets/image/shoes1.png"),
+        shoes: MiddleShoesGirl2()
     },
     {
+        shoes: MiddleShoesGirl1(),
         id: 2,
         img: require("../../assets/image/shoes2.png")
     },
@@ -102,18 +110,17 @@ const TrouserData = [
     {
         id: 1,
         img: require("../../assets/image/shoes3.png"),
-        img2: FooterShoes1
-
+        footerShoes: FotterShoes3()
     },
     {
         id: 2,
         img: require("../../assets/image/shoes4.png"),
-        img2: FotterShoes2
+        footerShoes: FotterShoes2()
     },
     {
         id: 3,
         img: require("../../assets/image/shoes5.png"),
-        img2: FotterShoes3
+        footerShoes: FooterShoes1()
     },
 
 ]
@@ -122,10 +129,14 @@ const BotasData = [
     {
         id: 1,
         img: require("../../assets/image/Botas1.png"),
+        left: BotasGirlLeft1(),
+        right: BotasGirlRight1()
     },
     {
         id: 2,
         img: require("../../assets/image/Botas2.png"),
+        left: BotasGirlLeft(),
+        right: BotasGirlRight()
     },
 ]
 const AccessoriesData = [
@@ -153,7 +164,6 @@ const AccessoriesData = [
 
 export const AnimalDataFunc = () => {
     return (
-
         animalData.map((item, index) => {
             return (
                 <AnimalMap
@@ -168,6 +178,10 @@ export const AnimalDataFunc = () => {
 
 
 export const AccessoriesDataFunc = () => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
     return (
         AccessoriesData.map((item, index) => {
             return (
@@ -175,6 +189,8 @@ export const AccessoriesDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    activeIndex={activeIndex}
+                    widthBorder={widthBorder}
                 />
             )
         })
@@ -182,7 +198,11 @@ export const AccessoriesDataFunc = () => {
 }
 
 
-export const BotasDataFunc = () => {
+export const BotasDataFunc = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
     return (
         BotasData.map((item, index) => {
             return (
@@ -190,6 +210,10 @@ export const BotasDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    activeIndex={activeIndex}
+                    widthBorder={widthBorder}
+                    BotasRightMap={props.BotasRightMap}
+                    BotasLeftMap={props.BotasLeftMap}
                 />
             )
         })
@@ -197,7 +221,11 @@ export const BotasDataFunc = () => {
 }
 
 
-export const ShirtDataFunc = () => {
+export const ShirtDataFunc = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
     return (
         ShirtData.map((item, index) => {
             return (
@@ -205,12 +233,19 @@ export const ShirtDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    activeIndex={activeIndex}
+                    widthBorder={widthBorder}
+                    shirtShoesMap={props.shirtShoesMap}
                 />
             )
         })
     )
 }
-export const TrouserDataFunc = () => {
+export const TrouserDataFunc = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
     return (
         TrouserData.map((item, index) => {
             return (
@@ -218,6 +253,9 @@ export const TrouserDataFunc = () => {
                     item={item}
                     index={index}
                     key={index}
+                    activeIndex={activeIndex}
+                    widthBorder={widthBorder}
+                    trouserShoesMap={props.trouserShoesMap}
                 />
             )
         })
@@ -225,6 +263,11 @@ export const TrouserDataFunc = () => {
 }
 
 export const ColorSkinDataFunc = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
+
     return (
         ColorSkinData.map((item, index) => {
             return (
@@ -233,7 +276,8 @@ export const ColorSkinDataFunc = (props) => {
                     index={index}
                     key={index}
                     skinColorFunc={props.skinColorFunc}
-
+                    widthBorder={widthBorder}
+                    activeIndex={activeIndex}
                 />
             )
         })
@@ -241,6 +285,10 @@ export const ColorSkinDataFunc = (props) => {
 }
 
 export const ColorHairDataFunc = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
     return (
         ColorHairData.map((item, index) => {
             return (
@@ -249,6 +297,8 @@ export const ColorHairDataFunc = (props) => {
                     index={index}
                     key={index}
                     setHairColorFunc={props.setHairColorFunc}
+                    activeIndex={activeIndex}
+                    widthBorder={widthBorder}
                 />
             )
         })

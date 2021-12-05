@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from "react-native"
 
 
 export default function ColorHairDataMap(props) {
-    const [width,setWidth] = useState(0)
+
     return (
         <View style={{
             flex: 1,
@@ -12,16 +12,18 @@ export default function ColorHairDataMap(props) {
         }}>
 
             <TouchableOpacity
-                style={{
+                style={[{
                     width: 68,
                     height: 68,
                     backgroundColor: props.item.color,
                     borderRadius: 100,
                     borderColor:"#F19100",
-                     borderWidth:width
-                }}
+                },
+                    props.activeIndex === props.index ? { borderWidth: 2  } : 1
+                ]}
                 onPress={() => {
                     props.setHairColorFunc(props.item.color)
+                    props.widthBorder(props.index)
                 }}>
 
             </TouchableOpacity>

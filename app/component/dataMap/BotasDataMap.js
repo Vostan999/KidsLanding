@@ -5,26 +5,25 @@ import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 export default function BotasDataMap(props) {
     return (
         <TouchableOpacity
-            style={styles.container}
+            style={
+                {
+                    borderWidth: props.activeIndex === props.index ? 2 : 1,
+                    borderColor: props.activeIndex === props.index ? "#FFE3BA" : "#DADADA",
+                    height: 92,
+                    width: 125,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginLeft: 15,
+                    marginVertical: 15,
+                }
+            }
             onPress={() => {
-
-            }}
-        >
-            <Image source={props.item.img} />
+                props.widthBorder(props.index)
+                props.BotasLeftMap(props.item.left)
+                props.BotasRightMap(props.item.right)
+            }}>
+            <Image source={props.item.img}/>
 
         </TouchableOpacity>
     )
 }
-const styles = StyleSheet.create({
-    container:{
-        borderWidth: 1,
-        borderColor: "#DADADA",
-        height: 92,
-        width: 125,
-        alignItems: "center",
-        justifyContent: "center",
-        marginLeft: 15,
-        marginVertical:15
-    }
-
-})

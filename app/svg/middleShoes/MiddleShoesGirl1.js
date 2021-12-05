@@ -1,11 +1,11 @@
 import React from "react";
 import Svg, {Circle, ClipPath, Defs, G, LinearGradient, Path, Rect, Stop,} from "react-native-svg";
-import {View, StyleSheet} from "react-native"
+import {View} from "react-native"
 
 
 export default function MiddleShoesGirl1(props) {
     return (
-        <View style={{borderWidth:1,alignItems:"center",marginTop:-3,borderColor:"transparent",marginLeft:1.5}}>
+        <View style={{borderWidth:1,alignItems:"center",borderColor:"transparent",marginLeft:1.8}}>
             <Svg width="57" height="70.91" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <Path d="M21.012 2.03154L15.6887 4.29681L10.3655 2.03154C10.3655 2.03154 2.08418 10.8992 0 27.7522C0 27.7522 0.93297 32 15.6887 32C30.4445 32 31.4336 28.6018 31.4336 28.6018C29.3548 11.7541 21.012 2.03154 21.012 2.03154Z" fill="#EC5E76"/>
                 <Path d="M26.1714 13.0265L22.7732 6.51327C21.2629 4.90855 18.8086 1.5292 21.0741 0.849555C23.9059 -2.38419e-06 28.4369 4.24778 29.2865 5.09734L32.1183 7.9292L26.1714 13.0265Z" fill="#EC5E76"/>

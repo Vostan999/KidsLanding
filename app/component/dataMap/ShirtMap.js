@@ -5,21 +5,27 @@ export default function ShirtMap(props) {
 
 
     return (
-        <TouchableOpacity style={styles.container}>
-            <Image source={props.item.img}/>
+        <TouchableOpacity
+            onPress={()=>{
+                props.widthBorder(props.index)
+                props.shirtShoesMap(props.item.shoes)
 
+            }}
+            style={[{
+                borderWidth: props.activeIndex ===props.index ? 2: 1,
+                borderColor: props.activeIndex ===props.index ? "#FFE3BA": "#DADADA",
+                height: 92,
+                width: 67,
+                alignItems: "center",
+                justifyContent: "center",
+                marginLeft: 8,
+            },
+
+            ]}>
+
+            <Image source={props.item.img}/>
         </TouchableOpacity>
     )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        borderWidth: 1,
-        borderColor: "#DADADA",
-        height: 92,
-        width: 67,
-        alignItems: "center",
-        justifyContent: "center",
-        marginLeft: 8,
-    },
-})
+

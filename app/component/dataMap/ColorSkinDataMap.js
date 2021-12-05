@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import {View, Text, TouchableOpacity} from "react-native"
 
 export default function ColorSkinDataMap(props) {
-    const [activeIndex, setActiveIndex] = useState(-1)
+
 
 
     return (
@@ -18,10 +18,10 @@ export default function ColorSkinDataMap(props) {
                     borderRadius: 100,
                     borderColor: "#F19100",
                 },
-                    activeIndex === props.index ? { borderWidth: 2  } : null
+                    props.activeIndex === props.index ? { borderWidth: 2  } : null
                 ]}
                 onPress={() => {
-                    setActiveIndex(props.index)
+                    props.widthBorder(props.index)
                     props.skinColorFunc(props.item.color)
 
                 }}>

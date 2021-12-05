@@ -6,8 +6,8 @@ export default function FotterShoes2() {
     return (
         <View style={{
             borderWidth: 1,
-            marginTop: -24,
-            marginLeft: 4.60,
+            marginTop: -19,
+            marginLeft: -0.8,
             borderColor: 'transparent',
             position: "relative"
         }}>
