@@ -14,6 +14,7 @@ import HairSkinColor from "../screen/HairSkinColor";
 import Shoes from "../screen/Shoes";
 import Accessories from "../screen/Accessories";
 import FinishPage from "../screen/FinishPage";
+import Zoopark from "../screen/Zoopark";
 
 export default function StackNavigation() {
     const Stack = createStackNavigator()
@@ -22,10 +23,13 @@ export default function StackNavigation() {
             screenOptions={{
                 headerShown: false
             }}>
-            <Stack.Screen name={"shoes"} component={Shoes}/>
-            <Stack.Screen name={"hairSkinColor"} component={HairSkinColor}/>
-            <Stack.Screen name={"character"} component={Character}/>
             <Stack.Screen name={"firstPage"} component={FirstPage}/>
+            <Stack.Screen name={"character"} component={Character}/>
+            <Stack.Screen name={"zoopark"} component={Zoopark}/>
+            <Stack.Screen name={"finishPage"} component={FinishPage}/>
+            <Stack.Screen name={"hairSkinColor"} component={HairSkinColor}/>
+            <Stack.Screen name={"accessories"} component={Accessories}/>
+            <Stack.Screen name={"shoes"} component={Shoes}/>
             <Stack.Screen name={"login"} component={Login}/>
             <Stack.Screen name={"signUp"} component={Signup}/>
             <Stack.Screen name={"gameOne"} component={GameOne}/>
@@ -34,8 +38,6 @@ export default function StackNavigation() {
             <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
             <Stack.Screen name={"zookeeperName"} component={ZookeeperName}/>
             <Stack.Screen name={"qrCodeScanner"} component={QrCodeScanner}/>
-            <Stack.Screen name={"accessories"} component={Accessories}/>
-            <Stack.Screen name={"finishPage"} component={FinishPage}/>
         </Stack.Navigator>
     )
 }

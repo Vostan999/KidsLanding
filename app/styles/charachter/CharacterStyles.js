@@ -11,13 +11,12 @@ export const styles = StyleSheet.create({
     },
     characterText:{
         color:"#9E724E",
-        marginBottom:31,
+
         marginTop:55,
        fontFamily:"PoppinsRegular",
         fontWeight:"bold",
     },
     welcomeTextView:{
-        flex:1,
         alignItems:"center",
         marginTop:82
     },
@@ -34,9 +33,9 @@ export const styles = StyleSheet.create({
         height:41
     },
     animalViewTillyGeorge:{
-        height:168,
         flexDirection:"row",
         justifyContent:"space-around",
+        flexWrap:"wrap"
     },
     centerText: {
         flex: 1,

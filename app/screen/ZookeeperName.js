@@ -26,10 +26,10 @@ export default function ZookeeperName(props) {
                 placeholderTextColor={"#989898"}
                 style={styles.inputName}
             />
-            {/*<Footer*/}
-            {/*    NavigationProps={props}*/}
-            {/*    text={"hairSkinColor"}*/}
-            {/*/>*/}
+            <Footer
+                NavigationProps={props}
+                text={"hairSkinColor"}
+            />
             <Leaf
                 leaf3={require("../assets/image/leaf.png")}
                 Leaf={require("../assets/image/leaf.png")}

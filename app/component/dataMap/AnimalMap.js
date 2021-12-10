@@ -9,7 +9,8 @@ export default function AnimalMap(props) {
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
-                context.navigate("qrCodeScanner")
+                // context.navigate("qrCodeScanner")
+                context.navigate("gameOne")
             }}>
             <View style={styles.container}>
                 <Image source={props.item.img} style={{width: 82, height: 124}}/>
@@ -30,7 +31,7 @@ const styles = StyleSheet.create({
         width: 168,
         height: 193,
         marginHorizontal: 5,
-        position: "relative"
+        marginVertical: 37
     },
     animalName: {
         fontSize: 24,
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         marginTop: 12
     },
     container: {
-        position: "relative"
+        alignItems: "center",
     },
     iconScanner: {
         width: 21,
@@ -49,4 +50,4 @@ const styles = StyleSheet.create({
         top: 15.5
     }
 })
-//style={{width: 82, height: 124}}
+

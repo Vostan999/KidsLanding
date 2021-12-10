@@ -1,14 +1,18 @@
 import QRCodeScanner from "react-native-qrcode-scanner";
 import {RNCamera} from "react-native-camera";
-import {Linking, Text, TouchableOpacity, StyleSheet} from "react-native";
+import {Linking, Text, TouchableOpacity, StyleSheet,Vibration} from "react-native";
 import React from "react";
 
 
 export default function QrCodeScanner(props) {
     const onSuccess = e => {
-        Linking.openURL(e.data).catch(err =>
+        Linking.openURL(`'https://www.facebook.com'`).then((res)=>{
+            Vibration.vibrate()
+            console.log(res)
+        }).catch(err => {
             console.error('An error occured', err)
-        );
+            Vibration.vibrate()
+        });
     }
 
     return (
@@ -16,16 +20,13 @@ export default function QrCodeScanner(props) {
         <QRCodeScanner
             onRead={onSuccess}
             flashMode={RNCamera.Constants.FlashMode.torch}
-            topContent={
-                <Text style={styles.centerText}>
-                    Go to{' '}
-                    <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-                    your computer and scan the QR code.
-                </Text>
-            }
+            fadeIn={true}
+            showMarker={true}
+            cameraType={'back'}
             bottomContent={
                 <TouchableOpacity
                     onPress={() => {
+                        Vibration.vibrate()
                         props.navigation.goBack()
                     }}
                     style={styles.buttonTouchable}>

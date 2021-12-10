@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {ScrollView, StatusBar, Text, View} from "react-native"
+import {Image, ScrollView, StatusBar, Text, View} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/shoes/ShoesStyles";
@@ -8,8 +8,7 @@ import Leaf from "../component/leaf/Leaf";
 import Footer from "../component/footer/Footer";
 import HeaderBaby from "../svg/newBabyPuzzle/HeaderBaby";
 import Knee from "../svg/newBabyPuzzle/Knee";
-import FootRight from "../svg/newBabyPuzzle/FootRight";
-import FootLeft from "../svg/newBabyPuzzle/FootLeft";
+import Foot from "../svg/newBabyPuzzle/Foot";
 import Middle from "../svg/newBabyPuzzle/Middle";
 
 export default function (props) {
@@ -17,26 +16,30 @@ export default function (props) {
     let shirtShoesMap = (item) => {
         setShirtShoes(item)
     }
-    const [trouserShoes,setTrouserShoes] = useState()
+    const [trouserShoes, setTrouserShoes] = useState()
     let trouserShoesMap = (item) => {
         setTrouserShoes(item)
     }
+
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez/>
             <Text style={styles.textHello}>Hello, Zuzie</Text>
-            <View style={{justifyContent: "center", alignItems: "center",position:"relative"}}>
+            <View style={{justifyContent: "center", alignItems: "center"}}>
                 <HeaderBaby/>
-                <View style={{position:"relative",zIndex:100}}>
-                    <Middle shirtShoes={shirtShoes}/>
-                </View>
-                    <View style={{position:"relative"}}>
-                        <Knee trouserShoes={trouserShoes}/>
+                <View style={{alignItems:'center'}}>
+                        <Middle shirtShoes={shirtShoes} />
+                    <View style={{position:'absolute',alignSelf:'center',zIndex:2,top:4}}>
+                        <Image source={shirtShoes}/>
                     </View>
-                <View style={{flexDirection: "row"}}>
-                    <FootLeft/>
-                    <FootRight/>
+                        <Knee trouserShoes={trouserShoes} style={{}}/>
+                    <View style={{alignSelf: 'center', position: 'absolute', top: 50, zIndex: 1}}>
+                        <Image source={trouserShoes}/>
+                    </View>
+                </View>
+                <View style={{flexDirection: "row", justifyContent: 'center', alignItems: 'center'}}>
+                    <Foot/>
                 </View>
             </View>
             <View style={styles.colorView}>
@@ -57,6 +60,7 @@ export default function (props) {
             <Footer
                 NavigationProps={props}
                 text={"accessories"}
+
             />
             <Leaf/>
         </ScrollView>

@@ -18,11 +18,8 @@ export default function ShirtMap(props) {
                 width: 67,
                 alignItems: "center",
                 justifyContent: "center",
-                marginLeft: 8,
-            },
-
-            ]}>
-
+                marginHorizontal: 4,
+            },]}>
             <Image source={props.item.img}/>
         </TouchableOpacity>
     )

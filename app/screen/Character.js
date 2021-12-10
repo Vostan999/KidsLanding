@@ -12,7 +12,6 @@ export default function Character(props) {
 
     return (
         <ContextValue.Provider value={props.navigation}>
-            <View style={{flex: 1}}>
                 <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
                     <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
                     <View style={styles.welcomeTextView}>
@@ -30,7 +29,6 @@ export default function Character(props) {
                         leaf3={require("../assets/image/leaf.png")}
                     />
                 </ScrollView>
-            </View>
         </ContextValue.Provider>
 
     )

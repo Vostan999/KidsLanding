@@ -1,23 +1,15 @@
 import React, {useState} from "react"
 import GameTwoMap from "../dataMap/GameTwoMap";
-import GameOneMap from "../dataMap/GameOneMap";
 import GameThreeMap from "../dataMap/GameThreeMap";
 import ColorHairDataMap from "../dataMap/ColorHairDataMap";
 import ColorSkinDataMap from "../dataMap/ColorSkinDataMap";
 import ShirtMap from "../dataMap/ShirtMap";
 import TrouserMap from "../dataMap/TrouserMap";
-import FotterShoes3 from "../../svg/FotterShoes/FotterShoes3";
-import FooterShoes1 from "../../svg/FotterShoes/FooterShoes1";
-import FotterShoes2 from "../../svg/FotterShoes/FotterShoes2";
 import BotasDataMap from "../dataMap/BotasDataMap";
 import AccessoriesDataMap from "../dataMap/accessoriesDataMap";
 import AnimalMap from "../dataMap/AnimalMap";
-import MiddleShoesGirl1 from "../../svg/middleShoes/MiddleShoesGirl1";
-import MiddleShoesGirl2 from "../../svg/middleShoes/MiddleShoesGirl2";
-import BotasGirlLeft1 from "../../svg/botasShoes/botasGirl2/BotasGirlLeft1";
-import BotasGirlRight1 from "../../svg/botasShoes/botasGirl2/botasGirlRight1";
-import BotasGirlLeft from "../../svg/botasShoes/botasGirl/BotasGirlLeft";
-import BotasGirlRight from "../../svg/botasShoes/botasGirl/BotasGirlRight";
+import ZooParkMap from "../dataMap/ZooParkMap";
+
 
 const gameTwoData = [
     {
@@ -57,6 +49,18 @@ const animalData = [
         QrCodeImg: require("../../assets/image/qrIcon.png")
     }
 ]
+const ZooparkData = [
+    {
+        img: require("../../assets/image/animal.png"),
+        name: "Tilly",
+        QrCodeImg: require("../../assets/image/qrIcon.png")
+    },
+    {
+        img: require("../../assets/image/Tilly.png"),
+        name: "George",
+        QrCodeImg: require("../../assets/image/qrIcon.png")
+    },
+]
 
 const ColorHairData = [
     {
@@ -75,7 +79,6 @@ const ColorHairData = [
         id: 4,
         color: "#FF0505"
     },
-
 ]
 
 const ColorSkinData = [
@@ -95,48 +98,49 @@ const ColorSkinData = [
 const ShirtData = [
     {
         id: 1,
-        img: require("../../assets/image/shoes1.png"),
-        shoes: MiddleShoesGirl2()
-    },
-    {
-        shoes: MiddleShoesGirl1(),
-        id: 2,
+        shoes: require("../../assets/image/Shirt/Shirt1.png"),
         img: require("../../assets/image/shoes2.png")
     },
-
-
+    {
+        shoes: require("../../assets/image/Shirt/Shirt2.png"),
+        id: 2,
+        img: require("../../assets/image/shoes1.png"),
+    },
 ]
 const TrouserData = [
     {
         id: 1,
         img: require("../../assets/image/shoes3.png"),
-        footerShoes: FotterShoes3()
+        footerShoes: require("../../assets/image/Trouser/trouser2.png")
     },
     {
+
         id: 2,
         img: require("../../assets/image/shoes4.png"),
-        footerShoes: FotterShoes2()
+        footerShoes: require("../../assets/image/Trouser/trouser1.png")
     },
     {
         id: 3,
         img: require("../../assets/image/shoes5.png"),
-        footerShoes: FooterShoes1()
+        footerShoes: require("../../assets/image/Trouser/trouser3.png")
     },
-
 ]
 
 const BotasData = [
     {
         id: 1,
         img: require("../../assets/image/Botas1.png"),
-        left: BotasGirlLeft1(),
-        right: BotasGirlRight1()
+        botas: require("../../assets/image/botas/botas1.png")
     },
     {
         id: 2,
         img: require("../../assets/image/Botas2.png"),
-        left: BotasGirlLeft(),
-        right: BotasGirlRight()
+        botas: require("../../assets/image/botas/botas2.png")
+    },
+    {
+        id: 3,
+        img: require("../../assets/image/botas3.png"),
+        botas: require("../../assets/image/botas/botas3.png")
     },
 ]
 const AccessoriesData = [
@@ -147,10 +151,6 @@ const AccessoriesData = [
     {
         id: 2,
         img: require("../../assets/image/accessories2.png"),
-    },
-    {
-        id: 3,
-        img: require("../../assets/image/accessories3.png"),
     },
     {
         id: 4,
@@ -197,7 +197,19 @@ export const AccessoriesDataFunc = () => {
     )
 }
 
-
+export const ZooparkFunc = () =>{
+    return (
+        ZooparkData.map((item,index)=>{
+            return (
+                <ZooParkMap
+                item={item}
+                index={index}
+                key={index}
+                />
+            )
+        })
+    )
+}
 export const BotasDataFunc = (props) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const widthBorder = (item) => {
@@ -212,8 +224,7 @@ export const BotasDataFunc = (props) => {
                     key={index}
                     activeIndex={activeIndex}
                     widthBorder={widthBorder}
-                    BotasRightMap={props.BotasRightMap}
-                    BotasLeftMap={props.BotasLeftMap}
+                    botasFunc={props.botasFunc}
                 />
             )
         })
@@ -241,6 +252,7 @@ export const ShirtDataFunc = (props) => {
         })
     )
 }
+
 export const TrouserDataFunc = (props) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const widthBorder = (item) => {

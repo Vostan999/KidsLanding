@@ -16,6 +16,7 @@ export default function Footer(props) {
             <TouchableOpacity
                 style={styles.childView}
                 onPress={() => {
+
                     props.NavigationProps.navigation.navigate(`${props.text}`)
                 }}
             >

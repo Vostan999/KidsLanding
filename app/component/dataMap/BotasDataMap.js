@@ -3,6 +3,7 @@ import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 
 export default function BotasDataMap(props) {
+
     return (
         <TouchableOpacity
             style={
@@ -13,14 +14,14 @@ export default function BotasDataMap(props) {
                     width: 125,
                     alignItems: "center",
                     justifyContent: "center",
-                    marginLeft: 15,
+                    marginHorizontal: 7.5,
                     marginVertical: 15,
                 }
             }
             onPress={() => {
                 props.widthBorder(props.index)
-                props.BotasLeftMap(props.item.left)
-                props.BotasRightMap(props.item.right)
+                // props.botasFunc(props.item.botas)
+
             }}>
             <Image source={props.item.img}/>
 
