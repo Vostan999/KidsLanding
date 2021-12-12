@@ -16,14 +16,14 @@ export default function Zookeeper(props) {
                 <TouchableOpacity
                     style={styles.unionView}
                     onPress={() => {
-                        props.navigation.navigate("zookeeperName")
+                        props.navigation.navigate("zookeeperName",{name:"girl"})
                     }}>
                     <Image source={require("../assets/image/Union.png")} style={styles.Union}/>
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={[styles.unionView, {borderColor: "#DADADA"}]}
                     onPress={() => {
-                        props.navigation.navigate("zookeeperName")
+                        props.navigation.navigate("zookeeperName",{name:"boy"})
                     }}>
                     <Image source={require("../assets/image/Frame.png")} style={styles.Frame}/>
                 </TouchableOpacity>

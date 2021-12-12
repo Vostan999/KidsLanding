@@ -5,18 +5,24 @@ import HeaderHair1 from "../headerHair/HeaderHair2Girl";
 import HeaderHair2Girl from "../headerHair/HeaderHair2Girl";
 import HeaderHair1Boy from "../headerHair/HeaderHair1Boy";
 
-export default function HeaderBaby() {
+export default function HeaderBaby(props) {
     return (
 
-        <View style={{flex:1,alignItems:"center",marginLeft:10,marginBottom:-1}}>
+        <View style={{flex: 1, alignItems: "center", marginLeft: 10, marginBottom: -1}}>
 
             <Svg xmlns="http://www.w3.org/2000/svg" width="85" height="67" viewBox="0 0 85 67" fill="none">
-                {/*<HeaderHair1 />*/}
-                <HeaderHair1Boy />
+                {props.baby === "boy" ?
+                    <HeaderHair1Boy
+                        hairColor={props.hairColor}
+                    />
+                    :
+                    <HeaderHair1
+                        hairColor={props.hairColor}
+                    />
+                }
                 <Path
                     d="M34.0745 66.76C43.7045 66.76 54.9545 65.61 61.8345 59.19C68.7145 52.77 69.4045 36.25 65.2745 19.96C61.1445 3.67 45.3145 0 34.0745 0C22.8345 0 7.00448 3.67 2.87448 19.96C-1.25552 36.25 -0.565525 52.77 6.31448 59.19C13.1945 65.62 24.4345 66.76 34.0745 66.76Z"
-                    fill="#FFC8AC"/>
-
+                    fill={`${props.skinColor}`}/>
                 <Path
                     d="M32.4143 45.4C29.8943 45.31 27.6243 46.91 27.6343 47.66C27.6743 49.41 36.5843 49.76 36.4943 47.66C36.4443 46.48 34.5743 45.47 32.4143 45.4Z"
                     fill="#FCA39A"/>
@@ -61,7 +67,7 @@ export default function HeaderBaby() {
                     fill="#A03717"/>
                 <Path
                     d="M67.1145 29.37C68.2245 25.83 73.0945 20.86 78.7145 23.02C84.3345 25.18 85.6345 33.62 82.5045 39.89C79.3645 46.16 70.8145 48.46 67.6245 43.9L67.1145 29.37Z"
-                    fill="#FFC8AC"/>
+                    fill={`${props.skinColor}`}/>
                 <Path
                     d="M66.7943 33.79C66.7243 34 67.0143 34.45 67.2543 34.29C68.3143 33.59 69.0743 32.58 70.1743 31.95C71.3743 31.27 72.6943 31.08 74.0243 31.22C74.6443 32.08 75.2043 32.74 75.0743 34.06C74.9643 35.2 74.4743 36.47 73.6843 37.31C73.0643 37.97 72.1243 38.17 71.3643 38.62C71.3043 38.65 71.2443 38.84 71.3443 38.86C74.9643 39.74 77.3843 34.71 76.2743 31.8C78.3143 32.66 80.0043 34.37 79.8943 36.76C79.8943 36.87 80.0043 36.85 80.0443 36.77C83.0143 29.27 69.1443 26.63 66.7943 33.79Z"
                     fill="#9E5147"/>

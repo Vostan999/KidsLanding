@@ -16,8 +16,14 @@ export default function Footer(props) {
             <TouchableOpacity
                 style={styles.childView}
                 onPress={() => {
-
-                    props.NavigationProps.navigation.navigate(`${props.text}`)
+                    props.NavigationProps.navigation.navigate(`${props.text}`,{
+                        name:props.name,
+                        baby:props.baby,
+                        skinColor:props.skinColor,
+                        hairColor:props.hairColor,
+                        shirtShoes:props.shirtShoes,
+                        trouserShoes:props.trouserShoes
+                    })
                 }}
             >
                 <Text style={[styles.containerText, {color: "#000000"}]}>Next</Text>

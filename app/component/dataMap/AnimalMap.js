@@ -9,8 +9,8 @@ export default function AnimalMap(props) {
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
-                // context.navigate("qrCodeScanner")
-                context.navigate("gameOne")
+                context.navigate("qrCodeScanner")
+                // context.navigate("gameOne")
             }}>
             <View style={styles.container}>
                 <Image source={props.item.img} style={{width: 82, height: 124}}/>

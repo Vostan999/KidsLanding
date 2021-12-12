@@ -24,7 +24,7 @@ export default function Signup(props) {
     const [passwordText, setPasswordText] = useState("")
     const [repPasswordText, setRepPasswordText] = useState("")
     const [visibleLoading, setVisibleLoading] = useState(false)
-
+    const [registration, setRegistration] = useState("")
     const handle = async () => {
         setVisibleLoading(true)
         try {
@@ -38,7 +38,7 @@ export default function Signup(props) {
             setVisibleLoading(false)
             props.navigation.replace("login")
         } catch (e) {
-            console.log(e.response.data.message)
+            setRegistration(e.response.data.message)
             setVisibleLoading(false)
         }
     }
@@ -86,6 +86,7 @@ export default function Signup(props) {
                     onChangeText={(evt) => {
                         setFirstName(evt)
                         setFirstNameText("")
+                        setRegistration("")
                     }}
                 />
                 <Text style={GContent.validateTextStyles}>{firstNameText}</Text>
@@ -94,6 +95,7 @@ export default function Signup(props) {
                     onChangeText={(evt) => {
                         setLastName(evt)
                         setLastNameText("")
+                        setRegistration("")
                     }}
                 />
                 <Text style={GContent.validateTextStyles}>{lastNameText}</Text>
@@ -103,6 +105,7 @@ export default function Signup(props) {
                     onChangeText={(evt) => {
                         setEmail(evt)
                         setEmailText("")
+                        setRegistration("")
                     }}
                 />
                 <Text style={GContent.validateTextStyles}>{emailText}</Text>
@@ -112,6 +115,7 @@ export default function Signup(props) {
                     onChangeText={(evt) => {
                         setPassword(evt)
                         setPasswordText("")
+                        setRegistration("")
                     }}
                 />
                 <Text style={GContent.validateTextStyles}>{passwordText}</Text>
@@ -120,6 +124,7 @@ export default function Signup(props) {
                     onChangeText={(evt) => {
                         setRepPassword(evt)
                         setRepPasswordText("")
+                        setRegistration("")
                     }}
                 />
                 <Text style={GContent.validateTextStyles}>{repPasswordText}</Text>
@@ -137,13 +142,13 @@ export default function Signup(props) {
 
                     <Text style={styles.terms}>Terms and Conditions </Text>
                 </View>
+                <Text style={[GContent.validateTextStyles, {marginBottom: 20}]}>{registration}</Text>
                 <View>
                     <Button
                         title={"Sign Up"}
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
                         onPress={() => {
-
                             ValidateFunction()
                         }}
                     />

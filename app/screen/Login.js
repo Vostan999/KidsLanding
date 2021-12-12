@@ -17,7 +17,7 @@ export default function Login(props) {
     const [password, setPassword] = useState("")
     const [emailText, setEmailText] = useState("")
     const [passwordText, setPasswordText] = useState("")
-
+    const [registration,setRegistration] = useState("")
     const storeData = async (value) => {
         try {
             await AsyncStorage.setItem('token', value)
@@ -36,7 +36,7 @@ export default function Login(props) {
             await storeData(response.data.token)
             props.navigation.replace("character")
         } catch (e) {
-            console.log(e.response)
+            setRegistration(e.response.data.error)
         }
     }
 
@@ -92,6 +92,7 @@ export default function Login(props) {
                             <Text style={styles.signupText}>Forgot the password?</Text>
                         </TouchableOpacity>
                     </View>
+                    <Text style={GContent.validateTextStyles}>{registration}</Text>
                 </View>
                 <View style={styles.loginView}>
                     <Button

@@ -23,19 +23,19 @@ export default function StackNavigation() {
             screenOptions={{
                 headerShown: false
             }}>
-            <Stack.Screen name={"firstPage"} component={FirstPage}/>
+            <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
             <Stack.Screen name={"character"} component={Character}/>
+            <Stack.Screen name={"gameOne"} component={GameOne}/>
+            <Stack.Screen name={"firstPage"} component={FirstPage}/>
+            <Stack.Screen name={"shoes"} component={Shoes}/>
             <Stack.Screen name={"zoopark"} component={Zoopark}/>
             <Stack.Screen name={"finishPage"} component={FinishPage}/>
             <Stack.Screen name={"hairSkinColor"} component={HairSkinColor}/>
             <Stack.Screen name={"accessories"} component={Accessories}/>
-            <Stack.Screen name={"shoes"} component={Shoes}/>
             <Stack.Screen name={"login"} component={Login}/>
             <Stack.Screen name={"signUp"} component={Signup}/>
-            <Stack.Screen name={"gameOne"} component={GameOne}/>
             <Stack.Screen name={"gameTwo"} component={GameTwo}/>
             <Stack.Screen name={"gameThree"} component={GameThree}/>
-            <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
             <Stack.Screen name={"zookeeperName"} component={ZookeeperName}/>
             <Stack.Screen name={"qrCodeScanner"} component={QrCodeScanner}/>
         </Stack.Navigator>

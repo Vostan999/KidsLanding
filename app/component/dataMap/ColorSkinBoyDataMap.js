@@ -1,7 +1,7 @@
 import React, {useState} from "react"
 import {View, Text, TouchableOpacity} from "react-native"
 
-export default function ColorSkinDataMap(props) {
+export default function ColorSkinBoyDataMap(props) {
     return (
         <View style={{
             flex: 1,

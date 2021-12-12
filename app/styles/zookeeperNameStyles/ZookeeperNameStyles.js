@@ -24,6 +24,7 @@ export const styles = StyleSheet.create({
     unionImage: {
         width: 137,
         height: 252.02,
+        resizeMode:"contain"
     },
     footerView: {
         alignItems: "center",

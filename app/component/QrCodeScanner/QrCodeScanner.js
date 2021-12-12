@@ -6,13 +6,16 @@ import React from "react";
 
 export default function QrCodeScanner(props) {
     const onSuccess = e => {
-        Linking.openURL(`'https://www.facebook.com'`).then((res)=>{
-            Vibration.vibrate()
-            console.log(res)
-        }).catch(err => {
-            console.error('An error occured', err)
-            Vibration.vibrate()
-        });
+        console.log(e);
+        /*  Linking.openURL(e.data).then((res)=>{
+              Vibration.vibrate()
+              console.log(res)
+          }).catch(err => {
+              console.error('An error occured', err)
+              Vibration.vibrate()
+          });*/
+        Vibration.vibrate()
+        props.navigation.goBack()
     }
 
     return (
