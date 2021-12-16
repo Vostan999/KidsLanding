@@ -9,6 +9,7 @@ export default function Button(props) {
                 borderWidth: props.borderWidth,
                 borderColor: props.borderColor,
                 backgroundColor: props.backgroundColor,
+                marginBottom:props.marginBottom,
                 height: 50,
                 borderRadius: 6,
                 justifyContent: "center",

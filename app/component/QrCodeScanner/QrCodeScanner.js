@@ -30,10 +30,10 @@ export default function QrCodeScanner(props) {
                 <TouchableOpacity
                     onPress={() => {
                         Vibration.vibrate()
-                        props.navigation.goBack()
+                        props.navigation.navigate("chooseGame")
                     }}
                     style={styles.buttonTouchable}>
-                    <Text style={styles.buttonText}>OK. Got it!</Text>
+                    <Text style={styles.buttonText}>Click for User!</Text>
                 </TouchableOpacity>
             }
         />

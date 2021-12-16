@@ -150,7 +150,7 @@ const ShirtDataBoy = [
         img: require("../../assets/image/ShoesBoy1.png"),
     },
     {
-        shoes: require("../../assets/image/ShirtBoy/ShirtBoy.png"),
+        shoes: require("../../assets/image/ShirtBoy/ShirtBoy1.png"),
         id: 1,
         img: require("../../assets/image/ShoesBoy2.png"),
     },
@@ -175,7 +175,6 @@ const TrouserData = [
 ]
 const TrouserDataBoy = [
     {
-
         id: 2,
         img: require("../../assets/image/shoes4.png"),
         footerShoes: require("../../assets/image/Trouser/trouser1.png")
@@ -205,11 +204,11 @@ const BotasData = [
     },
 ]
 const BotasBoyData = [
-    {
-        id: 1,
-        img: require("../../assets/image/Botas1.png"),
-        botas: require("../../assets/image/botas/botas1.png")
-    },
+    // {
+    //     id: 1,
+    //     img: require("../../assets/image/Botas1.png"),
+    //     botas: require("../../assets/image/botas/botas1.png")
+    // },
     {
         id: 2,
         img: require("../../assets/image/botas3.png"),
@@ -246,9 +245,9 @@ const AccessoriesDataBoy = [
 
 ]
 
-export const AnimalDataFunc = () => {
+export const AnimalDataFunc = (props) => {
     return (
-        animalData.map((item, index) => {
+        ZooparkData.map((item, index) => {
             return (
                 <AnimalMap
                     item={item}

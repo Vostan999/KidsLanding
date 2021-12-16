@@ -6,14 +6,17 @@ import Cloud from "../component/cloud/Cloud";
 import {GContent} from "../styles/gContent/gContent";
 import {styles} from "../styles/gameTwoStyles/GameTwoStyles";
 import {GameTwoDataFunc} from "../component/data/Data";
+import Back from "../component/back/Back";
 
 
 export default function GameTwo(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+
             <View style={styles.allView}>
                 <HeaderZooziez/>
+                <Back navigationProps={props.navigation}/>
                 <Cloud
                     textOne={"What does it mean to be"}
                     textTwo={"Generous?"}

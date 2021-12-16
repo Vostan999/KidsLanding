@@ -7,7 +7,7 @@ export default function GameThreeMap(props) {
 
     useEffect(() => {
         if (checked) {
-            props.propsNavigation.navigation.navigate("zookeeper")
+            props.propsNavigation.navigation.navigate("good")
         }
     }, [checked])
     return (

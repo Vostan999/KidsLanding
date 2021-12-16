@@ -5,12 +5,14 @@ import {ContextValue} from "../../screen/Character";
 
 export default function AnimalMap(props) {
     const context = useContext(ContextValue)
+
     return (
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
                 context.navigate("qrCodeScanner")
-                // context.navigate("gameOne")
+
+
             }}>
             <View style={styles.container}>
                 <Image source={props.item.img} style={{width: 82, height: 124}}/>

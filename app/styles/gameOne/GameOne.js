@@ -8,5 +8,5 @@ export const styles = StyleSheet.create({
     },
     codeInputView:{
         marginBottom:110
-    }
+    },
 })

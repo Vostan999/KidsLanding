@@ -6,6 +6,7 @@ import Cloud from "../component/cloud/Cloud";
 import {GameThreeDataFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
+import Back from "../component/back/Back";
 export default function GameThree(props) {
 
     return (
@@ -13,6 +14,7 @@ export default function GameThree(props) {
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.threeView}>
                 <HeaderZooziez/>
+                <Back navigationProps={props.navigation}/>
                 <Cloud
                     textOne={"How can you be"}
                     textTwo={"Generous"}

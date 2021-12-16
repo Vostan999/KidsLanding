@@ -31,7 +31,6 @@ export default function HairSkinColor(props) {
             <HeaderZooziez/>
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, {name}</Text>
-
                 <Boy
                     skinColor={skinColor}
                     hairColor={hairColor}
