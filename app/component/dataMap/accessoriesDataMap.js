@@ -19,6 +19,8 @@ export default function AccessoriesDataMap(props) {
             ]}
             onPress={() => {
                 props.widthBorder(props.index)
+                props.accessoriesNameFunc(props.item.name)
+                props.accessoriesFunc(props.item.accessories)
             }}
         >
             <Image source={props.item.img}/>

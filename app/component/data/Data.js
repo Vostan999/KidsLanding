@@ -13,6 +13,7 @@ import ColorSkinBoyDataMap from "../dataMap/ColorSkinBoyDataMap";
 import TrouserDataBoyMap from "../dataMap/TrouserDataBoyMap";
 import ShirtDataBoyMap from "../dataMap/ShirtDataBoyMap";
 import AccessoriesBoyMap from "../dataMap/AccessoriesBoyMap";
+import AddAnimalDataMap from "../dataMap/AddAnimalDataMap";
 
 
 const gameTwoData = [
@@ -52,6 +53,16 @@ const animalData = [
         name: "George",
         QrCodeImg: require("../../assets/image/qrIcon.png")
     }
+]
+const AddanimalData = [
+    {
+        img: require("../../assets/image/animal.png"),
+        name: "Tilly",
+    },
+    {
+        img: require("../../assets/image/Tilly.png"),
+        name: "George",
+    },
 ]
 const ZooparkData = [
     {
@@ -145,7 +156,7 @@ const ShirtData = [
 ]
 const ShirtDataBoy = [
     {
-        shoes: require("../../assets/image/ShirtBoy/ShirtBoy.png"),
+        // shoes: require("../../assets/image/ShirtBoy/ShirtBoy.png"),
         id: 2,
         img: require("../../assets/image/ShoesBoy1.png"),
     },
@@ -162,7 +173,6 @@ const TrouserData = [
         footerShoes: require("../../assets/image/Trouser/trouser2.png")
     },
     {
-
         id: 2,
         img: require("../../assets/image/shoes4.png"),
         footerShoes: require("../../assets/image/Trouser/trouser1.png")
@@ -204,11 +214,11 @@ const BotasData = [
     },
 ]
 const BotasBoyData = [
-    // {
-    //     id: 1,
-    //     img: require("../../assets/image/Botas1.png"),
-    //     botas: require("../../assets/image/botas/botas1.png")
-    // },
+    {
+        id: 1,
+        img: require("../../assets/image/Botas1.png"),
+        // botas: require("../../assets/image/botas/botas1.png")
+    },
     {
         id: 2,
         img: require("../../assets/image/botas3.png"),
@@ -217,37 +227,53 @@ const BotasBoyData = [
 ]
 const AccessoriesData = [
     {
-        id: 1,
+        name: "earring",
         img: require("../../assets/image/accessories1.png"),
+        accessories: require("../../assets/image/accessoriesGirl/earring.png")
+        // earring
     },
     {
-        id: 2,
+        name: "scarf",
         img: require("../../assets/image/accessories2.png"),
+        accessories: require("../../assets/image/accessoriesGirl/scarf.png")
+        //scarf
     },
     {
-        id: 4,
+        name: "glove",
         img: require("../../assets/image/accessories4.png"),
+        accessories: require("../../assets/image/accessoriesGirl/glove.png")
+        // glove
     },
     {
-        id: 5,
+        name: "necklace",
         img: require("../../assets/image/accessories5.png"),
+        accessories: require("../../assets/image/accessoriesGirl/necklace.png")
+        // NECKLACE
     },
+    {
+        name: "hat",
+        img: require("../../assets/image/AccessoriesBoy/accessoriesBoy2.png"),
+        accessories: require("../../assets/image/accessoriesGirl/hat.png")
+        //hat
+    },
+
 ]
 const AccessoriesDataBoy = [
     {
-        id: 1,
+        name: "glove",
         img: require("../../assets/image/AccessoriesBoy/accessoriesBoy1.png"),
+        accessories: require("../../assets/image/accessoriesGirl/glove.png")
     },
     {
-        id: 2,
+        name: "hat",
         img: require("../../assets/image/AccessoriesBoy/accessoriesBoy2.png"),
+        accessories: require("../../assets/image/accessoriesGirl/hat.png")
     },
-
 ]
 
 export const AnimalDataFunc = (props) => {
     return (
-        ZooparkData.map((item, index) => {
+        props.data.map((item, index) => {
             return (
                 <AnimalMap
                     item={item}
@@ -259,8 +285,21 @@ export const AnimalDataFunc = (props) => {
     )
 }
 
+export const AddAnimalDataFunc = (props) => {
+    return (
+        AddanimalData.map((item, index) => {
+            return (
+                <AddAnimalDataMap
+                    item={item}
+                    index={index}
+                    key={index}
+                />
+            )
+        })
+    )
+}
 
-export const AccessoriesDataFunc = () => {
+export const AccessoriesDataFunc = (props) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const widthBorder = (item) => {
         setActiveIndex(item)
@@ -274,12 +313,15 @@ export const AccessoriesDataFunc = () => {
                     key={index}
                     activeIndex={activeIndex}
                     widthBorder={widthBorder}
+                    accessoriesFunc={props.accessoriesFunc}
+                    accessoriesNameFunc={props.accessoriesNameFunc}
                 />
             )
         })
     )
 }
-export const AccessoriesDataBoyFunc = () => {
+
+export const AccessoriesDataBoyFunc = (props) => {
     const [activeIndex, setActiveIndex] = useState(0)
     const widthBorder = (item) => {
         setActiveIndex(item)
@@ -293,6 +335,8 @@ export const AccessoriesDataBoyFunc = () => {
                     key={index}
                     activeIndex={activeIndex}
                     widthBorder={widthBorder}
+                    accessoriesFunc={props.accessoriesFunc}
+                    accessoriesNameFunc={props.accessoriesNameFunc}
                 />
             )
         })

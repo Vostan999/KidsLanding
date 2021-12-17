@@ -14,6 +14,7 @@ export default function (props) {
     const name = props.route.params.name
     const baby = props.route.params.baby
     const hairColor = props.route.params.hairColor
+    const botas = props.route.params.botas
 
     let shirtShoesMap = (item) => {
         setShirtShoes(item)
@@ -34,6 +35,7 @@ export default function (props) {
                 skinColor={skinColor}
                 baby={baby}
                 hairColor={hairColor}
+                botas={botas}
             />
             <View style={styles.colorView}>
                 <Text style={styles.text}>Choose Clothing</Text>

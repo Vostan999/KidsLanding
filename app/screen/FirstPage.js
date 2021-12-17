@@ -4,6 +4,7 @@ import Button from "../component/button/Button";
 import {styles} from "../styles/firstPageStyles/FirstPagesStyles";
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
+import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 export default function FirstPage(props) {
 

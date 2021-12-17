@@ -16,7 +16,7 @@ export default function GameOne(props) {
 
     useEffect(() => {
         if (_onFinishCheckingCode1) {
-                props.navigation.navigate("gameTwo")
+                props.navigation.navigate("good",{})
         }
     }, [_onFinishCheckingCode1])
 

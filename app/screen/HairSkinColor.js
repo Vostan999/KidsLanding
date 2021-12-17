@@ -63,7 +63,6 @@ export default function HairSkinColor(props) {
                             skinColorFunc={skinColorFunc}
                         />
                     }
-
                 </ScrollView>
             </View>
             <Footer

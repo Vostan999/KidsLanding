@@ -9,7 +9,6 @@ export default function ShirtMap(props) {
             onPress={()=>{
                 props.widthBorder(props.index)
                 props.shirtShoesMap(props.item.shoes)
-
             }}
             style={[{
                 borderWidth: props.activeIndex ===props.index ? 2: 1,

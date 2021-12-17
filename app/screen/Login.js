@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import Input from "../component/input/Input";
 import {styles} from "../styles/loginStyles/LoginStyles";
@@ -17,7 +17,7 @@ export default function Login(props) {
     const [password, setPassword] = useState("")
     const [emailText, setEmailText] = useState("")
     const [passwordText, setPasswordText] = useState("")
-    const [registration,setRegistration] = useState("")
+    const [registration, setRegistration] = useState("")
     const storeData = async (value) => {
         try {
             await AsyncStorage.setItem('token', value)
@@ -31,14 +31,15 @@ export default function Login(props) {
                 "email": email,
                 "password": password
             }
-
             const response = await axiosInstance.post("/login", data)
             await storeData(response.data.token)
-            props.navigation.replace("character")
+            props.navigation.replace("addNewAnimal")
         } catch (e) {
             setRegistration(e.response.data.error)
+            console.log(e)
         }
     }
+
 
     const validateFunction = () => {
         if (validateEmail(email) && passwordValidate.test(password)) {
@@ -100,7 +101,6 @@ export default function Login(props) {
                         backgroundColor={"#D56638"}
                         color={"#FDFDFD"}
                         onPress={() => {
-
                             validateFunction()
                         }}
                     />

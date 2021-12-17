@@ -51,4 +51,15 @@ export const styles = StyleSheet.create({
         marginHorizontal: 40
     },
 
+    deleteAccountText:{
+        color:"#BCB5AC" ,
+        textAlign:"center",
+        fontSize:12,
+        fontFamily:"PoppinsRegular"
+    },
+    deleteViewAccount:{
+        marginTop:24,
+        alignItems:"center",
+        justifyContent:"center",
+    }
 })

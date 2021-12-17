@@ -1,22 +1,24 @@
 import React, {useContext} from "react";
 import {Image, Text, TouchableOpacity, StyleSheet, View} from "react-native";
-import {ContextValue} from "../../screen/Character";
+import {ContextValue1} from "../../screen/AddNewAnimal";
 
 
-export default function AnimalMap(props) {
-    const context = useContext(ContextValue)
+export default function AddAnimalDataMap(props) {
+    const context = useContext(ContextValue1)
 
     return (
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
-                context.navigate("qrCodeScanner")
+                context.navigate("chooseGame")
+
+
             }}>
             <View style={styles.container}>
-                <Image source={{uri:"https://2003.freelancedeveloper.site/" +props.item.img}} style={{width: 82, height: 124}}/>
-                <Text style={styles.animalName}>{props.item.title}</Text>
+                <Image source={props.item.img} style={{width: 82, height: 124}}/>
+                <Text style={styles.animalName}>{props.item.name}</Text>
             </View>
-            <Image  source={require("../../assets/image/qrIcon.png")} style={styles.iconScanner}/>
+
         </TouchableOpacity>
     )
 }
@@ -42,12 +44,6 @@ const styles = StyleSheet.create({
     container: {
         alignItems: "center",
     },
-    iconScanner: {
-        width: 21,
-        height: 21,
-        position: "absolute",
-        right: 15.5,
-        top: 15.5
-    }
+
 })
 

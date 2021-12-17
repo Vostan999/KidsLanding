@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
     welcomeTextView:{
         alignItems:"center",
-        marginTop:82
+        marginVertical:82
     },
 
     to:{
@@ -43,5 +43,44 @@ export const styles = StyleSheet.create({
         padding: 32,
         color: '#777'
     },
+    animalView: {
+        borderWidth: 1,
+        borderColor: "#E2E2E2",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: 10,
+        width: 168,
+        height: 193,
+        marginHorizontal: 5,
+        marginVertical: 37
+    },
+    animalName: {
+        fontSize: 14,
+        color: "#D56638",
+        fontFamily: "ShortStack",
+        marginTop: 12
+    },
+    container: {
+        alignItems: "center",
+    },
+    title1:{
+        fontFamily:"PoppinsRegular",
+        color:"#9E724E",
+        fontSize:18,
+        textTransform:"uppercase",
 
+    },
+    title2:{
+        fontFamily:"PoppinsRegular",
+        color:"#A79A90",
+        fontSize:18,
+        textTransform:"capitalize",
+    },
+    title3:{
+        fontFamily:"PoppinsRegular",
+        color:"#BCB5AC",
+        fontSize:12,
+        textTransform:"capitalize",
+
+    }
 })

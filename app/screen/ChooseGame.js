@@ -40,18 +40,21 @@ export default function ChooseGame(props) {
                         marginHorizontal={40}
                         marginBottom={37}
                         onPress={() => {
-                            props.navigation.navigate("zookeeper")
+                            props.navigation.navigate("gameTwo")
                         }}
                     />
                     <TouchableOpacity onPress={() =>{
-                        // props.navigation.goBack()
+                         props.navigation.navigate("addNewAnimal")
                     }}>
                         <Text style={styles.contText}>BACK TO MY ZOOPARK</Text>
                     </TouchableOpacity>
-
                 </View>
                 <View>
-                    <Text style={styles.contText}>MY ZOOKEEPER</Text>
+                    <TouchableOpacity onPress={() =>{
+                        props.navigation.navigate("zookeeper")
+                    }}>
+                        <Text style={styles.contText}>MY ZOOKEEPER</Text>
+                    </TouchableOpacity>
                     <Text style={[styles.contText, {marginBottom: 40, marginTop: 27}]}>EDIT SETINGS</Text>
                 </View>
             </View>

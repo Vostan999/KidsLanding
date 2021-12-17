@@ -3,6 +3,7 @@ import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 
 export default function AccessoriesBoyMap(props) {
+
     return (
         <TouchableOpacity
             style={[
@@ -19,6 +20,8 @@ export default function AccessoriesBoyMap(props) {
             ]}
             onPress={() => {
                 props.widthBorder(props.index)
+                    props.accessoriesNameFunc(props.item.name)
+                    props.accessoriesFunc(props.item.accessories)
             }}
         >
             <Image source={props.item.img}/>

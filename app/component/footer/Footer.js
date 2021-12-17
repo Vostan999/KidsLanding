@@ -2,6 +2,7 @@ import React from "react";
 import {Image, Text, View, StyleSheet, TouchableOpacity} from "react-native";
 
 export default function Footer(props) {
+
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.childView}>
@@ -22,7 +23,10 @@ export default function Footer(props) {
                         skinColor:props.skinColor,
                         hairColor:props.hairColor,
                         shirtShoes:props.shirtShoes,
-                        trouserShoes:props.trouserShoes
+                        trouserShoes:props.trouserShoes,
+                        botas:props.botas,
+                        accessories:props.accessories,
+                        accessoriesName:props.accessoriesName,
                     })
                 }}
             >
