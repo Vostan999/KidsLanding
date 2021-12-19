@@ -44,7 +44,15 @@ export default function FinishPage(props) {
                 marginHorizontal={40}
                 marginVertical={20}
                 onPress={() => {
-                    props.navigation.navigate("hairSkinColor", {baby: baby, name: name})
+                    props.navigation.navigate("hairSkinColor", {
+                        baby: baby,
+                        name: name,
+                        trouserShoes:trouserShoes,
+                        shirtShoes:shirtShoes,
+                        botas:botas,
+                        accessories:accessories,
+                        accessoriesName:accessoriesName
+                    })
                 }}
             />
             <TouchableOpacity onPress={() => {

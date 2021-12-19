@@ -18,9 +18,8 @@ export const styles = StyleSheet.create({
     },
     welcomeTextView:{
         alignItems:"center",
-        marginVertical:82
+        marginVertical:20
     },
-
     to:{
         fontSize:16,
         color:"#D56638",
@@ -81,6 +80,8 @@ export const styles = StyleSheet.create({
         color:"#BCB5AC",
         fontSize:12,
         textTransform:"capitalize",
-
+    },
+    backView:{
+        marginTop:50
     }
 })

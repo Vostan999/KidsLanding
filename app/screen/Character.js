@@ -7,6 +7,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import {RNCamera} from 'react-native-camera';
 import {AnimalDataFunc} from "../component/data/Data";
 import axiosInstance from "../networking/axiosinstance";
+import Back from "../component/back/Back";
 
 export const ContextValue = createContext()
 export default function Character(props) {
@@ -29,7 +30,11 @@ export default function Character(props) {
         <ContextValue.Provider value={props.navigation}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
                 <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+                <View style={styles.backView}>
+                    <Back navigationProps={props.navigation}/>
+                </View>
                 <View style={styles.welcomeTextView}>
+
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>
                     <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>

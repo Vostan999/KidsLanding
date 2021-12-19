@@ -10,10 +10,17 @@ import Girl from "../svg/transparentGirl/Girl";
 import Boy from "../svg/transparentGirl/Boy";
 import ColorSkinBoyDataMap from "../component/dataMap/ColorSkinBoyDataMap";
 import ColorHairDataBoyMap from "../component/dataMap/ColorHairDataBoyMap";
+import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 
 export default function HairSkinColor(props) {
+
     const baby = props.route.params.baby
+    const shirtShoes = props.route.params.shirtShoes
+    const trouserShoes = props.route.params.trouserShoes
+    const botas = props.route.params.botas
+    const accessories = props.route.params.accessories
+    const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
     const [skinColor, setSkinColor] = useState("#FFC8AC")
     const [hairColor, setHairColor] = useState("#CC5440")
@@ -31,10 +38,20 @@ export default function HairSkinColor(props) {
             <HeaderZooziez/>
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, {name}</Text>
-                <Boy
+                {/*<Boy*/}
+                {/*    skinColor={skinColor}*/}
+                {/*    hairColor={hairColor}*/}
+                {/*    baby={baby}*/}
+                {/*/>*/}
+                <PuzzleBaby
+                    accessoriesName={accessoriesName}
+                    accessories={accessories}
+                    shirtShoes={shirtShoes}
+                    trouserShoes={trouserShoes}
                     skinColor={skinColor}
-                    hairColor={hairColor}
                     baby={baby}
+                    hairColor={hairColor}
+                    botas={botas}
                 />
             </View>
             <View style={styles.colorView}>

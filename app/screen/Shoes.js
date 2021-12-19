@@ -49,7 +49,6 @@ export default function (props) {
                             shirtShoesMap={shirtShoesMap}
                         />
                     }
-
                 </ScrollView>
             </View>
             <View style={[styles.colorView, styles.colorView2]}>
