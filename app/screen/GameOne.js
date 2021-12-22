@@ -7,13 +7,16 @@ import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameOne/GameOne";
 import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
+import axiosInstance from "../networking/axiosinstance";
+import Loading from "../component/loading/Loading";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
 export default function GameOne(props) {
     const [_onFinishCheckingCode1, set_onFinishCheckingCode1] = useState("")
     const ref = useRef(_onFinishCheckingCode1)
-
+    const [loading,setLoading] = useState(false)
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
@@ -23,7 +26,30 @@ export default function GameOne(props) {
             }
         }
     }, [_onFinishCheckingCode1])
+    useEffect(() => {
+        handle()
+    }, [])
 
+
+    let idAnimal = async () => {
+        try {
+            let data = await AsyncStorage.getItem("animalId");
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const handle = async () => {
+        const id = await idAnimal()
+        try {
+            const response = await axiosInstance.get(`/character/${id}`)
+            console.log(response.data)
+            setLoading(false)
+        } catch (e) {
+            console.log(e.message)
+            setLoading(false)
+        }
+    }
 
 
     return (
@@ -46,7 +72,7 @@ export default function GameOne(props) {
                     codeLength={8}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8 ? "#F19100" : "red",
+                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA"  && _onFinishCheckingCode1? "green" :_onFinishCheckingCode1 ?  "red" :  "#F19100",
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
@@ -62,6 +88,7 @@ export default function GameOne(props) {
                 leaf4={require("../assets/image/leaf.png")}
                 leaf3={require("../assets/image/leaf.png")}
             />
+            <Loading loading={loading}/>
         </ScrollView>
     )
 }

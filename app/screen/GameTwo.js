@@ -27,6 +27,7 @@ export default function GameTwo(props) {
         try {
             const response = await axiosInstance.get(`/questionsingle/${id}`)
             setCharacterImage(response.data.character.img)
+            console.log(response.data)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
             setLoading(false)

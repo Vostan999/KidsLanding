@@ -23,8 +23,8 @@ export default function AnimalMap(props) {
             style={styles.animalView}
             onPress={() => {
                 handle(props.item.id)
-                // context.navigate("qrCodeScanner")
-                context.navigate("chooseGame")
+                context.navigate("qrCodeScanner")
+
             }}>
             <View style={styles.container}>
                 <Image source={{uri: "https://2003.freelancedeveloper.site/" + props.item.img}}

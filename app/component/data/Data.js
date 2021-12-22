@@ -15,33 +15,6 @@ import ShirtDataBoyMap from "../dataMap/ShirtDataBoyMap";
 import AccessoriesBoyMap from "../dataMap/AccessoriesBoyMap";
 import AddAnimalDataMap from "../dataMap/AddAnimalDataMap";
 
-
-const gameTwoData = [
-    {
-        text: "To give because your parents tell you to"
-    },
-    {
-        text: "To give with a happy heart"
-    },
-    {
-        text: "To keep everything for yourself"
-    }
-]
-const GameThreeData = [
-    {
-        text: "Share"
-    },
-    {
-        text: "To give with a happy heart"
-    },
-    {
-        text: "To keep everything for yourself"
-    },
-    {
-        text: "Help others"
-    },
-]
-
 const AddanimalData = [
     {
         img: require("../../assets/image/animal.png"),
@@ -273,7 +246,7 @@ export const AnimalDataFunc = (props) => {
     )
 }
 
-export const AddAnimalDataFunc = (props) => {
+export const AddAnimalDataFunc = () => {
     return (
         AddanimalData.map((item, index) => {
             return (
