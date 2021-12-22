@@ -11,14 +11,11 @@ export default function AddAnimalDataMap(props) {
             style={styles.animalView}
             onPress={() => {
                 context.navigate("chooseGame")
-
-
             }}>
             <View style={styles.container}>
                 <Image source={props.item.img} style={{width: 82, height: 124}}/>
                 <Text style={styles.animalName}>{props.item.name}</Text>
             </View>
-
         </TouchableOpacity>
     )
 }

@@ -18,7 +18,7 @@ export default function ChooseGame(props) {
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.container}>
                 <View>
-                    <HeaderZooziez/>
+                    <HeaderZooziez propsNavigation={props.navigation}/>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <Text style={styles.welcomeText}>George`s Games</Text>
                     <Button

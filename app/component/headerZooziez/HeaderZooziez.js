@@ -3,12 +3,15 @@ import {Image, StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import {GContent} from "../../styles/gContent/gContent";
 
 
-export default function HeaderZooziez() {
+export default function HeaderZooziez(props) {
     return (
-        <View style={styles.headerView}>
+        <View
+            style={styles.headerView}>
             <Text></Text>
             <Image source={require("../../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
-            <TouchableOpacity>
+            <TouchableOpacity onPress = { () => {
+                props.propsNavigation.navigate("addNewAnimal")
+            }}>
                 <Image source={require("../../assets/image/profileIcon.png")} style={styles.imageProfile}/>
             </TouchableOpacity>
         </View>

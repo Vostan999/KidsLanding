@@ -35,7 +35,7 @@ export default function HairSkinColor(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez/>
+            <HeaderZooziez propsNavigation={props.navigation}/>
             <View style={styles.container}>
                 <Text style={styles.helloText}>Hello, {name}</Text>
                 {/*<Boy*/}

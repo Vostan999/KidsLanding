@@ -15,7 +15,7 @@ export default function Good(props) {
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
                 <View>
-                    <HeaderZooziez/>
+                    <HeaderZooziez propsNavigation={props.navigation}/>
                     <Text style={styles.welcomeText}>CONGRATULATIONS</Text>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <Button

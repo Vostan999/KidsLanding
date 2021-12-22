@@ -8,21 +8,25 @@ import {RNCamera} from 'react-native-camera';
 import {AnimalDataFunc} from "../component/data/Data";
 import axiosInstance from "../networking/axiosinstance";
 import Back from "../component/back/Back";
+import Loading from "../component/loading/Loading";
 
 export const ContextValue = createContext()
 export default function Character(props) {
     const [data, setData] = useState([])
-
+    const [loading,setLoading] = useState(false)
     useEffect(() => {
         handle()
     }, [])
 
     const handle = async () => {
+        setLoading(true)
         try {
             const response = await axiosInstance.get("/characters")
             setData(response.data.characters)
+            setLoading(false)
         } catch (e) {
             console.log(e.response)
+            setLoading(false)
         }
     }
 
@@ -49,6 +53,7 @@ export default function Character(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
             </ScrollView>
+            <Loading loading={loading}/>
         </ContextValue.Provider>
 
     )

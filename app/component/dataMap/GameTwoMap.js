@@ -1,40 +1,45 @@
-import React, {useEffect} from "react";
-import {Text, View, StyleSheet, TouchableOpacity,} from "react-native";
+import React, {useState} from "react";
+import {Text, TouchableOpacity,} from "react-native";
 
 export default function GameTwoMap(props) {
-
-
-
+    const [color, setColor, View] = useState("#F19100")
+    const [width, setwidth] = useState(1)
     const handle = () => {
-            props.twoProps.navigation.navigate("gameThree")
+        if (props.item.true == 1) {
+            setColor("green")
+            setwidth(3)
+            setTimeout(() => {
+                props.twoProps.navigation.replace("gameThree")
+                console.log("aa")
+            }, 1000)
+        }
     }
 
     return (
+
         <TouchableOpacity
-            style={styles.footerButton}
-            onPress={() => {
-                handle()
+            style={{
+                borderWidth: width,
+                borderColor: color,
+                height: 45,
+                borderRadius: 6,
+                justifyContent: "center",
+                alignItems: "flex-start",
+                paddingLeft: 17,
+                marginBottom: 10,
+                marginHorizontal: 25
             }}
-        >
-            <Text style={styles.footerText}>{props.item.text}</Text>
+            onPress={() => {
+                if (props.item.true != 1) {
+                    setColor("red")
+                    setwidth(3)
+                }
+                handle()
+            }}>
+            <Text style={{
+                color: "#563C31",
+                fontFamily: "PoppinsRegular"
+            }}>{props.item.answer}</Text>
         </TouchableOpacity>
     )
 }
-
-const styles = StyleSheet.create({
-    footerButton: {
-        borderWidth: 1,
-        borderColor: "#F19100",
-        height: 45,
-        borderRadius: 6,
-        justifyContent: "center",
-        alignItems: "flex-start",
-        paddingLeft: 17,
-        marginBottom: 10,
-        marginHorizontal: 25
-    },
-    footerText: {
-        color: "#563C31",
-        fontFamily: "PoppinsRegular"
-    },
-})

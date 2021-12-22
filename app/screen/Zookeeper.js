@@ -10,7 +10,7 @@ export default function Zookeeper(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez/>
+            <HeaderZooziez propsNavigation={props.navigation}/>
             <Text style={styles.createZookeeper}>Create your zookeeper</Text>
             <View style={styles.babyView}>
                 <TouchableOpacity

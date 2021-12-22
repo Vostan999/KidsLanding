@@ -22,7 +22,7 @@ export default function FinishPage(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez/>
+            <HeaderZooziez propsNavigation={props.navigation}/>
             <Text style={styles.textHello}>Hello {name}</Text>
             <View style={styles.bigBaby}>
                 <PuzzleBaby

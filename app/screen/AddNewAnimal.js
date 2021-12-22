@@ -14,6 +14,7 @@ export default function AddNewAnimal(props) {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
     }
+
     return (
         <ContextValue1.Provider value={props.navigation}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -36,10 +37,12 @@ export default function AddNewAnimal(props) {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => {
+                        props.navigation.navigate("zookeeper")
+                    }}>
                         <Text style={styles.title1}>MY ZOOKEEPER</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() =>{
+                    <TouchableOpacity onPress={() => {
                         props.navigation.navigate("editPassword")
                     }}>
                         <Text style={styles.title2}>Edit Settings</Text>

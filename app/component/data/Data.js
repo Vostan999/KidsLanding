@@ -42,18 +42,6 @@ const GameThreeData = [
     },
 ]
 
-const animalData = [
-    {
-        img: require("../../assets/image/animal.png"),
-        name: "Tilly",
-        QrCodeImg: require("../../assets/image/qrIcon.png")
-    },
-    {
-        img: require("../../assets/image/Tilly.png"),
-        name: "George",
-        QrCodeImg: require("../../assets/image/qrIcon.png")
-    }
-]
 const AddanimalData = [
     {
         img: require("../../assets/image/animal.png"),
@@ -156,7 +144,7 @@ const ShirtData = [
 ]
 const ShirtDataBoy = [
     {
-        // shoes: require("../../assets/image/ShirtBoy/ShirtBoy.png"),
+        shoes: require("../../assets/image/ShirtBoy/ShirtBoy.png"),
         id: 2,
         img: require("../../assets/image/ShoesBoy1.png"),
     },
@@ -217,7 +205,7 @@ const BotasBoyData = [
     {
         id: 1,
         img: require("../../assets/image/Botas1.png"),
-        // botas: require("../../assets/image/botas/botas1.png")
+        botas: require("../../assets/image/botas/botas1.png")
     },
     {
         id: 2,
@@ -567,7 +555,7 @@ export const ColorHairDataBoyFunc = (props) => {
 
 export const GameTwoDataFunc = (props) => {
     return (
-        gameTwoData.map((item, index) => {
+        props.data.map((item, index) => {
             return (
                 <GameTwoMap
                     item={item}
@@ -582,7 +570,7 @@ export const GameTwoDataFunc = (props) => {
 
 export const GameThreeDataFunc = (props) => {
     return (
-        GameThreeData.map((item, index) => {
+        props.data.map((item, index) => {
             return (
                 <GameThreeMap
                     item={item}

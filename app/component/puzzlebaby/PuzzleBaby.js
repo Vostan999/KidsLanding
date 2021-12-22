@@ -84,38 +84,43 @@ export default function PuzzleBaby(props) {
                 <Path
                     d="M72 120.436L70.0944 156.38C70.0944 156.38 74.8944 157.8 77.3544 159.21C79.8144 160.63 79.2144 162.35 68.2744 162.35C57.3344 162.35 52.3644 162.35 52.3644 162.35L49 122.936L72 120.436Z"
                     fill={`${props.skinColor}`}/>
-                <View style={{justifyContent: "center", alignItems: "center"}}>
-                    <View style={{alignItems: 'center'}}>
-                        <View style={{position: 'absolute', alignSelf: 'center', zIndex: 2, top: 68}}>
-                            <Image source={props.shirtShoes}/>
+            </Svg>
+            <View style={{position:"absolute",top:70,justifyContent:'center',alignItems:'center'}}>
+                <View style={{justifyContent: "flex-start", alignItems: "center",height:'100%',flex:1}}>
+                    <View style={{alignItems: 'center',borderColor:'green',height:90,zIndex:2}}>
+                        <View style={{alignSelf: 'center',justifyContent:'center', zIndex: 2,marginLeft:-1,marginTop:2}}>
+                            <Image style={{}} source={props.shirtShoes}/>
                         </View>
                         <View style={{
-                            position: 'absolute',
-                            top: 118,
                             zIndex: 1,
                             justifyContent: "center",
-                            alignItems: "center"
+                            position:'absolute',
+                            bottom:5,
+                            alignItems: "center",
+
                         }}>
-                            <Image source={props.trouserShoes}/>
+                           <View style={{position:'relative',justifyContent:'center',alignItems:'center'}}>
+                               <Image style={{resizeMode:'stretch',position:'absolute',bottom:0}} source={props.trouserShoes}/>
+                           </View>
                         </View>
                     </View>
-                    <View style={{justifyContent: 'center', alignItems: 'center', position: "relative"}}>
+                    <View style={{position: "relative"}}>
                         <View style={{
                             alignSelf: "center",
-                            position: "absolute",
-                            top: 154,
+                            position:'absolute',
+                            bottom:-5
                         }}>
                             <Image source={props.botas}/>
                         </View>
                     </View>
                 </View>
-                <View style={{position: "relative"}}>
+                <View style={{position: "absolute",width:103,height:180,top:-83,zIndex:1000}}>
                     {props.accessoriesName === "earring" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
                             position: "absolute",
-                            top: 38,
+                            top:52,
                             right: 9,
                             zIndex: 1000,
                         }}>
@@ -124,13 +129,14 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-                    {props.accessoriesName === "scarf" && props.baby === "girl" ?
+                    {props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl"  ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
                             position: "absolute",
-                            top: 65,
-                            left: 30,
+                            top:80,
+                            left:-2,
+                            right:0,
                             zIndex: 1000
                         }}>
                             <Image source={props.accessories}/>
@@ -154,50 +160,40 @@ export default function PuzzleBaby(props) {
                     {/*    :*/}
                     {/*    null*/}
                     {/*}*/}
-                    {props.accessoriesName === "necklace" && props.baby === "girl" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: 72,
-                            left: 37,
-                            zIndex: 1000,
-                        }}>
-                            <Image source={props.accessories}/>
-                        </View>
-                        :
-                        null
-                    }
+
                     {props.accessoriesName === "hat" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
                             position: "absolute",
-                            top: -35,
-                            left: 1.5,
+                            top: -27,
+                            left:-2,
+                            right:0,
                             zIndex: 1000,
                         }}>
-                            <Image source={props.accessories}/>
+                            <Image style={{resizeMode:'contain'}} source={props.accessories}/>
                         </View>
                         :
                         null
                     }
-                    {props.accessoriesName === "hat" && props.baby === "boy" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: -38,
-                            left: -2,
-                            zIndex: 1000,
-                        }}>
-                            <Image source={props.accessories}/>
-                        </View>
-                        :
-                        null
+                    {
+                        props.accessoriesName === "hat" && props.baby === "boy" ?
+                            <View style={{
+                                alignItems: "center",
+                                justifyContent: "center",
+                                position: "absolute",
+                                top: -27,
+                                left:-8,
+                                right:0,
+                                zIndex: 1000,
+                            }}>
+                                <Image source={props.accessories}/>
+                            </View>
+                            :
+                            null
                     }
                 </View>
-            </Svg>
+            </View>
         </View>
 
     )

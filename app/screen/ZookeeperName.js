@@ -13,7 +13,7 @@ export default function ZookeeperName(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez/>
+            <HeaderZooziez propsNavigation={props.navigation}/>
             <Text style={styles.header}>Create your zookeeper</Text>
             <View style={styles.footerView}>
                 {baby === "boy" ?

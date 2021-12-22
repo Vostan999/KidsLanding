@@ -33,7 +33,7 @@ export default function Accessories(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez/>
+            <HeaderZooziez propsNavigation={props.navigation}/>
             <Text style={styles.textHello}>Hello, {name}</Text>
             <PuzzleBaby
                 accessoriesName={accessoriesName}
@@ -88,7 +88,6 @@ export default function Accessories(props) {
                 botas={botas}
                 accessories={accessories}
                 accessoriesName={accessoriesName}
-
             />
             <Leaf/>
         </ScrollView>
