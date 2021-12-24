@@ -24,7 +24,6 @@ export default function GameThree(props) {
         const id = await idAnimal()
         try {
             const response = await axiosInstance.get(`/questionmulti/${id}`)
-
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
@@ -34,7 +33,6 @@ export default function GameThree(props) {
             setLoading(false)
         }
     }
-
     let idAnimal = async () => {
         try {
             let data = await AsyncStorage.getItem("animalId");
@@ -60,7 +58,6 @@ export default function GameThree(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
             </View>
-
         </ScrollView>
     )
 }

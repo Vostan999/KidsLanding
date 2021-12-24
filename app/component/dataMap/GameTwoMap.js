@@ -1,22 +1,13 @@
 import React, {useState} from "react";
-import {Text, TouchableOpacity,} from "react-native";
+import {Text, TouchableOpacity,View} from "react-native";
 
 export default function GameTwoMap(props) {
-    const [color, setColor, View] = useState("#F19100")
-    const [width, setwidth] = useState(1)
+    const [color, setColor] = useState("#F19100")
+    const [width, setWidth] = useState(1)
     const handle = () => {
-        if (props.item.true == 1) {
-            setColor("green")
-            setwidth(3)
-            setTimeout(() => {
-                props.twoProps.navigation.replace("gameThree")
-                console.log("aa")
-            }, 1000)
-        }
+            props.twoProps.navigation.replace("gameThree")
     }
-
     return (
-
         <TouchableOpacity
             style={{
                 borderWidth: width,
@@ -30,11 +21,15 @@ export default function GameTwoMap(props) {
                 marginHorizontal: 25
             }}
             onPress={() => {
-                if (props.item.true != 1) {
-                    setColor("red")
-                    setwidth(3)
+                if (props.item.true == 1) {
+                    setColor("green")
+                    setWidth(3)
+                    handle()
                 }
-                handle()
+                if (props.item.true == 0) {
+                    setColor("red")
+                    setWidth(2)
+                }
             }}>
             <Text style={{
                 color: "#563C31",

@@ -12,11 +12,11 @@ import Loading from "../component/loading/Loading";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-
 export default function GameOne(props) {
     const [_onFinishCheckingCode1, set_onFinishCheckingCode1] = useState("")
     const ref = useRef(_onFinishCheckingCode1)
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState({})
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
@@ -30,7 +30,6 @@ export default function GameOne(props) {
         handle()
     }, [])
 
-
     let idAnimal = async () => {
         try {
             let data = await AsyncStorage.getItem("animalId");
@@ -41,9 +40,12 @@ export default function GameOne(props) {
     }
     const handle = async () => {
         const id = await idAnimal()
+        console.log(id)
+        setLoading(true)
         try {
             const response = await axiosInstance.get(`/character/${id}`)
-            console.log(response.data)
+            console.log(response)
+            setData(response.data.character)
             setLoading(false)
         } catch (e) {
             console.log(e.message)
@@ -51,15 +53,15 @@ export default function GameOne(props) {
         }
     }
 
-
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez propsNavigation={props.navigation}/>
             <Back navigationProps={props.navigation}/>
             <Cloud
-                textOne={"Spell"}
+                textOne={data.question_word ? data.question_word : ""}
                 textTwo={"GENEROUS"}
+                characterImage={data.img ? data.img : null}
             />
             <View style={styles.codeInputView}>
                 <CodeInput
@@ -72,7 +74,7 @@ export default function GameOne(props) {
                     codeLength={8}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA"  && _onFinishCheckingCode1? "green" :_onFinishCheckingCode1 ?  "red" :  "#F19100",
+                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,

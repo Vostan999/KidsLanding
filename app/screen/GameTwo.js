@@ -50,7 +50,6 @@ export default function GameTwo(props) {
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.allView}>
-
                 <Back navigationProps={props.navigation}/>
                 <Cloud
                     characterImage={characterImage}

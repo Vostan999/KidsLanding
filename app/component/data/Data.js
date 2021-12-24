@@ -19,10 +19,12 @@ const AddanimalData = [
     {
         img: require("../../assets/image/animal.png"),
         name: "Tilly",
+        id:39
     },
     {
         img: require("../../assets/image/Tilly.png"),
         name: "George",
+        id:40
     },
 ]
 const ZooparkData = [
@@ -542,6 +544,8 @@ export const GameTwoDataFunc = (props) => {
 }
 
 export const GameThreeDataFunc = (props) => {
+    const [count, setCount] = useState([])
+
     return (
         props.data.map((item, index) => {
             return (
@@ -550,6 +554,7 @@ export const GameThreeDataFunc = (props) => {
                     index={index}
                     key={index}
                     propsNavigation={props.propsNavigation}
+                    count={count}
                 />
             )
         })

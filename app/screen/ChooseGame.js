@@ -13,7 +13,6 @@ export default function ChooseGame(props) {
 
 
     return (
-
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <View style={styles.container}>
@@ -43,19 +42,23 @@ export default function ChooseGame(props) {
                             props.navigation.navigate("gameTwo")
                         }}
                     />
-                    <TouchableOpacity onPress={() =>{
-                         props.navigation.navigate("addNewAnimal")
+                    <TouchableOpacity onPress={() => {
+                        props.navigation.navigate("addNewAnimal")
                     }}>
                         <Text style={styles.contText}>BACK TO MY ZOOPARK</Text>
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity onPress={() =>{
+                    <TouchableOpacity onPress={() => {
                         props.navigation.navigate("zookeeper")
                     }}>
                         <Text style={styles.contText}>MY ZOOKEEPER</Text>
                     </TouchableOpacity>
-                    <Text style={[styles.contText, {marginBottom: 40, marginTop: 27}]}>EDIT SETINGS</Text>
+                    <TouchableOpacity onPress={() => {
+                        props.navigation.navigate("editPassword")
+                    }}>
+                        <Text style={[styles.contText, {marginBottom: 40, marginTop: 27}]}>EDIT SETINGS</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <Leaf/>

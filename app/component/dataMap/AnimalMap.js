@@ -6,25 +6,13 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AnimalMap(props) {
     const context = useContext(ContextValue)
-    const animalId = async (value) => {
-        try {
-            await AsyncStorage.setItem('animalId', `${value}`)
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-    const handle = async (id) => {
-        await animalId(id)
-    }
 
     return (
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
-                handle(props.item.id)
-                context.navigate("qrCodeScanner")
 
+                context.navigate("qrCodeScanner")
             }}>
             <View style={styles.container}>
                 <Image source={{uri: "https://2003.freelancedeveloper.site/" + props.item.img}}

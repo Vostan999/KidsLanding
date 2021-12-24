@@ -4,7 +4,6 @@ import Svg, {ClipPath, Defs, G, Path, Rect} from "react-native-svg";
 
 export default function HeaderHair1Boy(props) {
     return (
-        <View style={{borderWidth: 1, marginLeft:-1.5, marginTop: -30, borderColor: 'transparent',position:"absolute"}}>
             <Svg xmlns="http://www.w3.org/2000/svg" width="88" height="95" viewBox="0 0 71 64" fill="none">
                 <G clip-path="url(#clip0_259_46)">
                     <Path
@@ -20,6 +19,5 @@ export default function HeaderHair1Boy(props) {
                     </ClipPath>
                 </Defs>
             </Svg>
-        </View>
     )
 }

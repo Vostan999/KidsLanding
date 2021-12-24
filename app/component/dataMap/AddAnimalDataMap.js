@@ -1,15 +1,28 @@
 import React, {useContext} from "react";
 import {Image, Text, TouchableOpacity, StyleSheet, View} from "react-native";
 import {ContextValue1} from "../../screen/AddNewAnimal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export default function AddAnimalDataMap(props) {
     const context = useContext(ContextValue1)
+    const animalId = async (value) => {
+        try {
+            await AsyncStorage.setItem('animalId', `${value}`)
+        } catch (e) {
+            console.log(e)
+        }
+    }
 
+    const handle = async (id) => {
+        await animalId(id)
+    }
+    //popoxveluya
     return (
         <TouchableOpacity
             style={styles.animalView}
             onPress={() => {
+                animalId(props.item.id)
                 context.navigate("chooseGame")
             }}>
             <View style={styles.container}>
