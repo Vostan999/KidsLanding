@@ -34,8 +34,6 @@ export default function EditPassword() {
         }
     }
 
-
-
         return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View>

@@ -2,7 +2,7 @@ import React from "react";
 import {View} from "react-native";
 import Svg, {ClipPath, Defs, G, Path, Rect} from "react-native-svg";
 
-export default function HeaderHair1(props) {
+export default function HeaderHair2Girl(props) {
 
     return (
         <View style={{borderWidth: 1, marginLeft: .5, marginTop: -12.5, borderColor: 'transparent',position:"absolute"}}>

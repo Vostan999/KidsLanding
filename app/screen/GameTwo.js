@@ -17,6 +17,7 @@ export default function GameTwo(props) {
     const [question, setQuestion] = useState("")
     const [characterImage, setCharacterImage] = useState()
     const [loading,setLoading] = useState(false)
+
     useEffect(() => {
         handle()
     }, [])

@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {ScrollView, StatusBar, Text, View, TouchableOpacity} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Leaf from "../component/leaf/Leaf";
 import Button from "../component/button/Button";
 import {styles} from "../styles/finishPage/FinishPageStyles"
-import FinishPageBaby from "../svg/finishPageBaby/FinishPageBaby";
 import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function FinishPage(props) {
     const baby = props.route.params.baby
@@ -18,6 +18,30 @@ export default function FinishPage(props) {
     const accessories = props.route.params.accessories
     const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
+
+    const data = {
+        hairColor:hairColor,
+        skinColor:skinColor,
+        shirtShoes:shirtShoes,
+        trouserShoes:trouserShoes,
+        botas:botas,
+        accessories:accessories,
+        accessoriesName:accessoriesName,
+        name:name,
+        baby:baby,
+    }
+
+    const _StoreData = async (value) => {
+        try {
+            await AsyncStorage.setItem('svg',JSON.stringify(data))
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        _StoreData()
+    },[data])
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -51,7 +75,10 @@ export default function FinishPage(props) {
                         shirtShoes:shirtShoes,
                         botas:botas,
                         accessories:accessories,
-                        accessoriesName:accessoriesName
+                        accessoriesName:accessoriesName,
+                        hairColor:hairColor,
+                        skinColor:skinColor
+
                     })
                 }}
             />

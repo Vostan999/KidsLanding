@@ -8,7 +8,6 @@ import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 export default function FirstPage(props) {
 
-
     return (
         <View style={styles.cont}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>

@@ -9,17 +9,20 @@ import Footer from "../component/footer/Footer";
 import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 export default function (props) {
-    const [shirtShoes, setShirtShoes] = useState()
+    const [shirtShoes, setShirtShoes] = useState(props.route.params.shirtShoes ? props.route.params.shirtShoes : null)
+    const [trouserShoes, setTrouserShoes] = useState(props.route.params.trouserShoes ? props.route.params.trouserShoes : null)
     const skinColor = props.route.params.skinColor
     const name = props.route.params.name
     const baby = props.route.params.baby
     const hairColor = props.route.params.hairColor
     const botas = props.route.params.botas
+    const accessories = props.route.params.accessories
+    const accessoriesName = props.route.params.accessoriesName
 
     let shirtShoesMap = (item) => {
         setShirtShoes(item)
     }
-    const [trouserShoes, setTrouserShoes] = useState()
+
     let trouserShoesMap = (item) => {
         setTrouserShoes(item)
     }
@@ -36,6 +39,8 @@ export default function (props) {
                 baby={baby}
                 hairColor={hairColor}
                 botas={botas}
+                accessoriesName={accessoriesName}
+                accessories={accessories}
             />
             <View style={styles.colorView}>
                 <Text style={styles.text}>Choose Clothing</Text>
@@ -56,10 +61,12 @@ export default function (props) {
                     {baby === "boy" ?
                         <TrouserDataBoyFunc
                             trouserShoesMap={trouserShoesMap}
+                            baby={baby}
                         />
                         :
                         <TrouserDataFunc
                             trouserShoesMap={trouserShoesMap}
+                            baby={baby}
                         />
                     }
                 </ScrollView>
@@ -73,6 +80,8 @@ export default function (props) {
                 skinColor={skinColor}
                 shirtShoes={shirtShoes}
                 trouserShoes={trouserShoes}
+                accessories={accessories}
+                accessoriesName={accessoriesName}
             />
             <Leaf/>
         </ScrollView>

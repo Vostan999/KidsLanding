@@ -11,10 +11,8 @@ export const styles = StyleSheet.create({
         fontFamily: "Poppins",
         fontSize: 18,
         fontWeight: "bold",
-        marginBottom: 33
-    },
-    container: {
-        alignItems: "center"
+        marginBottom: 33,
+        textAlign:"center"
     },
     colorContainer: {
         flexGrow: 1,

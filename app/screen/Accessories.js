@@ -11,17 +11,19 @@ import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 export default function Accessories(props) {
     const [botas, setBotas] = useState()
-    const [accessories,setAccessoriesFunc] = useState()
-    const [accessoriesName,setAccessoriesName] = useState("")
+    const [accessories,setAccessoriesFunc] = useState(props.route.params.accessories ? props.route.params.accessories : null)
+    const [accessoriesName,setAccessoriesName] = useState(props.route.params.accessoriesName ? props.route.params.accessoriesName : "" )
     const name = props.route.params.name
     const baby = props.route.params.baby
     const hairColor = props.route.params.hairColor
     const skinColor = props.route.params.skinColor
     const shirtShoes = props.route.params.shirtShoes
     const trouserShoes = props.route.params.trouserShoes
+
     let accessoriesNameFunc = (item) => {
         setAccessoriesName(item)
     }
+
     let botasFunc = (item) => {
         setBotas(item)
     }

@@ -17,6 +17,7 @@ export default function GameOne(props) {
     const ref = useRef(_onFinishCheckingCode1)
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})
+
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
@@ -26,6 +27,7 @@ export default function GameOne(props) {
             }
         }
     }, [_onFinishCheckingCode1])
+
     useEffect(() => {
         handle()
     }, [])
@@ -38,6 +40,7 @@ export default function GameOne(props) {
             console.log(error);
         }
     }
+
     const handle = async () => {
         const id = await idAnimal()
         console.log(id)

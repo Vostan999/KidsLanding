@@ -33,6 +33,7 @@ export default function GameThree(props) {
             setLoading(false)
         }
     }
+
     let idAnimal = async () => {
         try {
             let data = await AsyncStorage.getItem("animalId");

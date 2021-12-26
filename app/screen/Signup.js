@@ -25,6 +25,7 @@ export default function Signup(props) {
     const [repPasswordText, setRepPasswordText] = useState("")
     const [visibleLoading, setVisibleLoading] = useState(false)
     const [registration, setRegistration] = useState("")
+
     const handle = async () => {
         setVisibleLoading(true)
         try {

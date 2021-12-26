@@ -9,7 +9,6 @@ export default function Splash(props) {
             handle()
     }, [])
 
-
     let getToken = async () => {
         try {
             let data = await AsyncStorage.getItem("token");
@@ -29,7 +28,6 @@ export default function Splash(props) {
             props.navigation.replace("firstPage")
         }
     }
-
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>

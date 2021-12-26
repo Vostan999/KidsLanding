@@ -1,14 +1,38 @@
-import React, {useEffect} from "react";
-import {Image, View, TouchableOpacity, Text} from "react-native";
-import Svg, {Path, SvgXml} from "react-native-svg";
-import HeaderHair1Boy from "../../svg/headerHair/HeaderHair1Boy";
-import HeaderHair1 from "../../svg/headerHair/HeaderHair2Girl";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
+import React from "react";
+import {View, TouchableOpacity, Text} from "react-native";
+import {SvgXml} from "react-native-svg";
 
 export default function PuzzleBaby(props) {
+    const headerBoy = `<svg xmlns="http://www.w3.org/2000/svg" width="86" height="93" viewBox="0 0 71 64" fill="none">
+        <g clip-path="url(#clip0_259_49)">
+        <path d="M17.6643 22.0628C18.341 23.6731 19.4166 25.8809 21.1083 28.2609C22.6788 30.4687 24.8199 33.4816 28.2386 35.4109C33.6267 38.4543 39.4844 37.2795 41.666 36.7225C41.7215 35.578 41.7316 34.3425 41.666 33.031C41.5498 30.656 41.2266 28.5394 40.8327 26.7164C41.6811 29.0356 42.893 30.6054 43.6859 31.4814C44.5948 32.4891 47.3369 35.2438 51.7655 36.0085C53.7198 36.3477 55.366 36.1857 56.4012 36.0085C55.9467 35.2337 55.5074 34.3982 55.0933 33.507C53.0987 29.2129 52.4169 25.1011 52.2402 21.8299C52.8563 23.5212 53.7299 25.4808 54.9721 27.5469C56.9618 30.8535 59.214 33.274 61.0319 34.9349C61.2743 36.7883 61.4763 38.7379 61.6278 40.7735C61.7439 42.3331 61.8196 43.8422 61.8651 45.3005C62.5771 45.0777 63.1629 44.779 63.6477 44.465C67.7279 41.8116 67.7026 35.7857 67.6875 34.8134C68.1723 34.7932 68.7833 34.8084 69.4701 34.9349C69.9751 35.0261 70.4144 35.1578 70.778 35.2945C71.1567 32.7119 70.9901 30.6054 70.778 29.2179C70.4598 27.1063 69.7226 22.24 65.7888 19.0903C64.4859 18.0472 63.2033 17.4902 62.3448 17.1864C62.4054 16.0875 62.365 14.4519 61.7489 12.6593C59.5775 6.31945 52.2654 3.83313 47.7307 2.29374C44.7261 1.27592 36.0152 -1.54968 25.3905 1.45821C23.8049 1.90889 16.6544 4.05087 9.9432 10.3958C7.31731 12.8619 3.08054 16.8673 1.03032 23.6123C0.737436 24.5694 -0.898694 30.18 0.671789 36.7174C1.68175 40.9203 3.26233 42.3483 3.9996 42.9155C5.78217 44.2827 7.77179 44.5359 8.87264 44.5815C8.93324 41.8268 9.27662 39.5835 9.58466 38.0289C10.1553 35.1426 11.2864 29.7598 15.2859 24.6858C16.2251 23.4958 17.0937 22.6097 17.6643 22.0628Z"   fill=${props.hairColor}/>
+        <path d="M62.2185 51.3711C62.4356 52.5104 62.5821 54.0296 62.3397 55.7817C61.7337 60.1264 59.1432 62.9469 58.0625 64.0053C59.2038 63.6761 60.5167 63.1596 61.865 62.3393C66.3139 59.6251 68.1924 55.3766 68.8741 53.5232C68.4095 53.827 67.6722 54.1967 66.733 54.2372C64.9706 54.3081 63.2436 53.1839 62.2185 51.3711Z"   fill=${props.hairColor}/>
+        </g>
+    <defs>
+        <clipPath id="clip0_259_49">
+            <rect width="71" height="63.9" fill="white" transform="translate(0 0.100098)"/>
+        </clipPath>
+    </defs>
+</svg>`
 
-    const x = `<svg xmlns="http://www.w3.org/2000/svg/rtg" width="96" height="163" viewBox="0 0 96 163" fill="none">
+    const headerGirl = `<svg xmlns="http://www.w3.org/2000/svg" width="89" height="102" viewBox="0 0 87 104" fill="none">
+                <g clip-path="url(#clip0_527_2602)">
+                    <path
+                        d="M84.5205 57.3301C81.0205 59.0601 77.0305 58.8601 75.0505 56.0701C74.4705 62.7501 72.5805 68.2301 69.2505 71.3401C65.3605 74.9701 60.0805 76.9101 54.4805 77.9101C54.4905 78.4901 54.5105 79.3401 54.5605 80.5401L54.5705 80.7201L54.6205 81.4901C57.7605 81.3901 61.4805 81.0001 65.6305 80.0701C65.1705 82.9601 66.4805 86.0801 68.2505 88.2801C67.5505 89.0001 66.9205 89.8401 66.4705 90.8701C63.7905 96.9701 71.0605 105.23 73.9605 103.45C76.8605 101.67 78.6405 97.0001 79.3705 93.6001C79.9005 91.1501 78.4505 88.8701 76.7605 87.3601C77.8605 85.3801 78.6105 83.0501 79.0205 81.1301C79.5105 78.8601 78.3005 76.7401 76.7805 75.2401C81.3105 71.2201 83.4105 64.9101 84.5205 57.3301Z"
+                        fill=${props.hairColor}/>
+                    <path
+                        d="M59.7104 7.87997C59.4903 7.90997 59.2704 7.95997 59.0504 7.99997C58.7904 8.04997 58.5403 8.09997 58.2803 8.15997C58.1104 8.04997 57.9503 7.93997 57.7803 7.83997C57.6804 7.76997 57.5803 7.70997 57.4804 7.65997C26.9503 -11.64 -0.21965 9.24997 0.000350299 29.08C0.16035 44.5 8.00035 45.47 8.00035 45.47C8.12035 44.01 8.30035 42.53 8.52035 41.03C38.2104 31.03 43.0504 12.18 43.0504 12.18C43.0504 12.18 48.5404 27.7 73.1804 41.92C73.0104 44.35 72.9104 46.64 73.4004 47.48C73.6304 47.87 74.1204 47.92 74.7504 47.65C74.8704 47.6 75.0004 47.54 75.1303 47.47C76.1804 46.87 77.5303 45.55 78.7604 43.61V43.6C79.1104 43.05 79.4504 42.45 79.7604 41.8C80.7204 39.87 81.5104 37.51 81.8904 34.8C83.2104 34.53 84.6404 34.6 86.1303 35.17H86.1404C87.0804 17.86 75.9104 5.10997 59.7104 7.87997Z"
+                        fill=${props.hairColor}/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_527_2602">
+                        <rect width="86.2" height="103.7" fill="white"/>
+                    </clipPath>
+                </defs>
+            </svg>`
+
+    const baby = `<svg xmlns="http://www.w3.org/2000/svg/rtg" width="96" height="163" viewBox="0 0 96 163" fill="none">
+
                 <path
                     d="M66.0827 91.478C62.1186 79.6051 57.2604 76.721 56.9027 72.7633C56.5649 69.0695 56.4755 64.9299 56.4755 64.9299H38.4929C38.4929 64.9299 38.3936 69.0695 38.0657 72.7633C37.708 76.721 32.8398 79.6051 28.8857 91.478C24.3155 105.171 22.9941 121.089 22.9941 121.089C22.9941 121.089 32.5517 122.93 47.4941 122.93C62.4366 122.93 71.9941 120.628 71.9941 120.628C71.9941 120.628 70.6529 105.171 66.0827 91.478Z"
                     fill=${props.skinColor}/>
@@ -42,7 +66,7 @@ export default function PuzzleBaby(props) {
                 <path
                     d="M51.5947 36.4102C51.5947 32.2702 54.9547 28.9102 59.0947 28.9102C63.2447 28.9102 66.6047 32.2702 66.6047 36.4102C66.6047 40.5602 63.2447 43.9202 59.0947 43.9202C54.9547 43.9102 51.5947 40.5502 51.5947 36.4102Z"
                     fill="#19313A"/>
-                <Path
+                <path
                     d="M52.7441 35.7201C52.7441 34.3901 53.8141 33.3201 55.1441 33.3201C56.4741 33.3201 57.5441 34.3901 57.5441 35.7201C57.5441 37.0501 56.4741 38.1201 55.1441 38.1201C53.8141 38.1201 52.7441 37.0501 52.7441 35.7201Z"
                     fill="white"/>
                 <path
@@ -76,76 +100,98 @@ export default function PuzzleBaby(props) {
                     d="M72 120.436L70.0944 156.38C70.0944 156.38 74.8944 157.8 77.3544 159.21C79.8144 160.63 79.2144 162.35 68.2744 162.35C57.3344 162.35 52.3644 162.35 52.3644 162.35L49 122.936L72 120.436Z"
                     fill=${props.skinColor}/>
             </svg>`
-
-
-    const storeData = async (value) => {
-        try {
-            await AsyncStorage.setItem('svg', x)
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
-
     return (
-        <View style={{justifyContent: "center", alignItems: "center", position: "relative"}}>
-            <SvgXml xml={x} />
-
-            <View style={{position:"absolute",top:70,justifyContent:'center',alignItems:'center'}}>
-                <View style={{justifyContent: "flex-start", alignItems: "center",height:'100%',flex:1}}>
-                    <View style={{alignItems: 'center',borderColor:'green',height:90,zIndex:2}}>
-                        <View style={{alignSelf: 'center',justifyContent:'center', zIndex: 2,marginLeft:-1,marginTop:2}}>
-                            <Image style={{}} source={props.shirtShoes}/>
+        <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
+            <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
+                {props.baby === "boy" ?
+                    <View style={{position:"absolute",borderWidth:1,borderColor:"transparent",top:-28.3,zIndex:1,left:1.5,right:9,alignItems:"center",justifyContent:"center"}}>
+                        <SvgXml xml={headerBoy}/>
+                    </View>
+                    :
+                    <View style={{position:"absolute",borderWidth:1,top:-12.5,zIndex:1,left:-.5,right:2.5,alignItems:"center",justifyContent:"center",borderColor:"transparent",}}>
+                        <SvgXml xml={headerGirl}/>
+                    </View>
+                }
+                <SvgXml xml={baby}/>
+            </View>
+            <View style={{position: "absolute", top: 70, justifyContent: 'center', alignItems: 'center',borderColor:"transparent",}}>
+                <View style={{justifyContent: "flex-start", alignItems: "center", height: '100%', flex: 1}}>
+                    <View style={{alignItems: 'center', borderColor: 'green', height: 90, zIndex: 2}}>
+                        <View style={{
+                            alignSelf: 'center',
+                            justifyContent: 'center',
+                            zIndex: 2,
+                            marginLeft: -1.5,
+                            marginTop: -1.5
+                        }}>
+                            <SvgXml xml={props.shirtShoes ? props.shirtShoes : null}/>
                         </View>
                         <View style={{
                             zIndex: 1,
                             justifyContent: "center",
-                            position:'absolute',
-                            bottom:5,
+                            position: 'absolute',
+                            bottom: 5,
                             alignItems: "center",
 
                         }}>
-                           <View style={{position:'relative',justifyContent:'center',alignItems:'center'}}>
-                               <Image style={{resizeMode:'stretch',position:'absolute',bottom:0}} source={props.trouserShoes}/>
-                           </View>
+                            <View style={{position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
+
+                                <SvgXml xml={props.trouserShoes ? props.trouserShoes : null}/>
+                            </View>
                         </View>
                     </View>
                     <View style={{position: "relative"}}>
                         <View style={{
                             alignSelf: "center",
-                            position:'absolute',
-                            bottom:-5
+                            position: 'absolute',
+                            bottom: -5
                         }}>
-                            <Image source={props.botas}/>
+                            <SvgXml xml={props.botas ? props.botas : null}/>
                         </View>
                     </View>
                 </View>
-                <View style={{position: "absolute",width:103,height:180,top:-83,zIndex:1000}}>
+                <View style={{position: "absolute", width: 103, height: 180, top: -83, zIndex: 1000}}>
+                    {
+                        props.accessoriesName === "hat" && props.baby === "boy" ?
+                            <View style={{
+                                alignItems: "center",
+                                justifyContent: "center",
+                                position: "absolute",
+                                top: -27,
+                                left: -8,
+                                right: 0,
+                                zIndex: 1000,
+                            }}>
+                                <SvgXml xml={props.accessories ? props.accessories : null}/>
+                            </View>
+                            :
+                            null
+                    }
                     {props.accessoriesName === "earring" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
                             position: "absolute",
-                            top:52,
+                            top: 52,
                             right: 9,
                             zIndex: 1000,
                         }}>
-                            <Image source={props.accessories}/>
+                            <SvgXml xml={props.accessories ? props.accessories : null}/>
                         </View>
                         :
                         null
                     }
-                    {props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl"  ?
+                    {props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
                             position: "absolute",
-                            top:80,
-                            left:-2,
-                            right:0,
+                            top: 78,
+                            left: 0,
+                            right: 0,
                             zIndex: 1000
                         }}>
-                            <Image source={props.accessories}/>
+                            <SvgXml xml={props.accessories ? props.accessories : null}/>
                         </View>
                         :
                         null
@@ -173,35 +219,17 @@ export default function PuzzleBaby(props) {
                             justifyContent: "center",
                             position: "absolute",
                             top: -27,
-                            left:-2,
-                            right:0,
+                            left: -2,
+                            right: 0,
                             zIndex: 1000,
                         }}>
-                            <Image style={{resizeMode:'contain'}} source={props.accessories}/>
+                            <SvgXml xml={props.accessories ? props.accessories : null}/>
                         </View>
                         :
                         null
                     }
-                    {
-                        props.accessoriesName === "hat" && props.baby === "boy" ?
-                            <View style={{
-                                alignItems: "center",
-                                justifyContent: "center",
-                                position: "absolute",
-                                top: -27,
-                                left:-8,
-                                right:0,
-                                zIndex: 1000,
-                            }}>
-                                <Image source={props.accessories}/>
-                            </View>
-                            :
-                            null
-                    }
+
                 </View>
-                <TouchableOpacity onPress={() => storeData()}>
-                    <Text>tgtrhgtrhtgtg</Text>
-                </TouchableOpacity>
             </View>
         </View>
 

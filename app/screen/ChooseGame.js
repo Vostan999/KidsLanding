@@ -3,14 +3,41 @@ import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View, Linking} fro
 import {styles} from "../styles/chooseGameStyles/chooseGameStyles";
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
-
-import axiosInstance from "../networking/axiosinstance";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Button from "../component/button/Button";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export const ContextValue = createContext()
+
 export default function ChooseGame(props) {
 
+    let babyData = async () => {
+        try {
+            let data = await AsyncStorage.getItem("svg");
+            return JSON.parse(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const zookeper = async () => {
+        const data = await babyData()
+        if (data) {
+            props.navigation.navigate("finishPage", {
+                baby: data.baby,
+                hairColor: data.hairColor,
+                skinColor: data.skinColor,
+                name: data.name,
+                accessories: data.accessories,
+                trouserShoes: data.trouserShoes,
+                accessoriesName: data.accessoriesName,
+                botas: data.botas,
+                shirtShoes: data.shirtShoes
+            })
+        } else if (!data) {
+            props.navigation.navigate("zookeeper")
+        }
+    }
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -50,7 +77,7 @@ export default function ChooseGame(props) {
                 </View>
                 <View>
                     <TouchableOpacity onPress={() => {
-                        props.navigation.navigate("zookeeper")
+                        zookeper()
                     }}>
                         <Text style={styles.contText}>MY ZOOKEEPER</Text>
                     </TouchableOpacity>

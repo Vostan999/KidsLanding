@@ -18,6 +18,7 @@ export default function Login(props) {
     const [emailText, setEmailText] = useState("")
     const [passwordText, setPasswordText] = useState("")
     const [registration, setRegistration] = useState("")
+
     const storeData = async (value) => {
         try {
             await AsyncStorage.setItem('token', value)
@@ -25,6 +26,7 @@ export default function Login(props) {
             console.log(e)
         }
     }
+
     const handle = async () => {
         try {
             const data = {
@@ -39,7 +41,6 @@ export default function Login(props) {
             console.log(e)
         }
     }
-
 
     const validateFunction = () => {
         if (validateEmail(email) && passwordValidate.test(password)) {

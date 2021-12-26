@@ -9,10 +9,37 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export const ContextValue1 = createContext()
 export default function AddNewAnimal(props) {
 
-
     const handle = async () => {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
+    }
+
+    let babyData = async () => {
+        try {
+            let data = await AsyncStorage.getItem("svg");
+            return JSON.parse(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const zookeper = async () => {
+        const data = await babyData()
+        if (data) {
+            props.navigation.navigate("finishPage", {
+                baby: data.baby,
+                hairColor: data.hairColor,
+                skinColor: data.skinColor,
+                name: data.name,
+                accessories: data.accessories,
+                trouserShoes: data.trouserShoes,
+                accessoriesName: data.accessoriesName,
+                botas: data.botas,
+                shirtShoes: data.shirtShoes
+            })
+        } else if (!data) {
+            props.navigation.navigate("zookeeper")
+        }
     }
 
     return (
@@ -38,7 +65,7 @@ export default function AddNewAnimal(props) {
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity onPress={() => {
-                        props.navigation.navigate("zookeeper")
+                        zookeper()
                     }}>
                         <Text style={styles.title1}>MY ZOOKEEPER</Text>
                     </TouchableOpacity>
