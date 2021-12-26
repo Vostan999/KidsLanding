@@ -12,7 +12,7 @@ import {passwordValidate, validateEmail} from "../component/validate/Validate";
 import axiosInstance from "../networking/axiosinstance";
 
 export default function Login(props) {
-    const [checked, setChecked] = useState(false)
+    const [isSelected, setIsSelected] = useState(false);
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [emailText, setEmailText] = useState("")
@@ -27,17 +27,11 @@ export default function Login(props) {
         }
     }
 
-    const handle = async () => {
+    const storeKeep = async (value) => {
         try {
-            const data = {
-                "email": email,
-                "password": password
-            }
-            const response = await axiosInstance.post("/login", data)
-            await storeData(response.data.token)
-            props.navigation.replace("addNewAnimal")
+            await AsyncStorage.setItem('keep', JSON.stringify(isSelected))
+
         } catch (e) {
-            setRegistration(e.response.data.error)
             console.log(e)
         }
     }
@@ -54,7 +48,21 @@ export default function Login(props) {
             setPasswordText("The password you’ve entered is incorrect.")
         }
     }
-
+    const handle = async () => {
+        try {
+            const data = {
+                "email": email,
+                "password": password
+            }
+            const response = await axiosInstance.post("/login", data)
+            await storeKeep()
+            await storeData(response.data.token)
+            props.navigation.replace("addNewAnimal")
+        } catch (e) {
+            setRegistration(e.response.data.error)
+            console.log(e)
+        }
+    }
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View>
@@ -83,8 +91,8 @@ export default function Login(props) {
                         <View style={styles.checkBoxView}>
                             <CheckBox
                                 disabled={false}
-                                value={checked}
-                                onValueChange={(newValue) => setChecked(newValue)}
+                                value={isSelected}
+                                onValueChange={(newValue) => setIsSelected(newValue)}
                                 style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
                                 tintColors={{true: '#F19100', false: '#9E724E'}}
                             />

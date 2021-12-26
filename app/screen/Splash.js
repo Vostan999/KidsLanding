@@ -6,7 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Splash(props) {
     useEffect(() => {
-            handle()
+        handle()
     }, [])
 
     let getToken = async () => {
@@ -18,9 +18,21 @@ export default function Splash(props) {
         }
     }
 
+    const getKeep = async () => {
+        try {
+            const value = await AsyncStorage.getItem('keep')
+            if (value !== null) {
+                return JSON.parse(value)
+            }
+        } catch (e) {
+            return null
+        }
+    }
+
     const handle = async () => {
         let token = await getToken()
-        if (token) {
+        let keep = await getKeep()
+        if (token && keep) {
             props.navigation.replace("addNewAnimal")
         } else if (!token) {
             props.navigation.replace("firstPage")
