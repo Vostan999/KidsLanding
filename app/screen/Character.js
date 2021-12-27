@@ -1,10 +1,8 @@
 import React, {createContext, useEffect, useState} from "react";
-import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View, Linking} from "react-native";
+import {Image, ScrollView, StatusBar, Text, View} from "react-native";
 import {styles} from "../styles/charachter/CharacterStyles";
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
-import QRCodeScanner from 'react-native-qrcode-scanner';
-import {RNCamera} from 'react-native-camera';
 import {AnimalDataFunc} from "../component/data/Data";
 import axiosInstance from "../networking/axiosinstance";
 import Back from "../component/back/Back";

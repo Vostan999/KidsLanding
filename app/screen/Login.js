@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import Input from "../component/input/Input";
 import {styles} from "../styles/loginStyles/LoginStyles";
@@ -27,7 +27,7 @@ export default function Login(props) {
         }
     }
 
-    const storeKeep = async (value) => {
+    const storeKeep = async () => {
         try {
             await AsyncStorage.setItem('keep', JSON.stringify(isSelected))
 

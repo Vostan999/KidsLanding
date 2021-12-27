@@ -14,16 +14,18 @@ import TrouserDataBoyMap from "../dataMap/TrouserDataBoyMap";
 import ShirtDataBoyMap from "../dataMap/ShirtDataBoyMap";
 import AccessoriesBoyMap from "../dataMap/AccessoriesBoyMap";
 import AddAnimalDataMap from "../dataMap/AddAnimalDataMap";
+import GameTigerOneMap from "../dataMap/GameTigerOneMap";
+import GameTigerTwoMap from "../../screen/GameTigerTwoMap";
 
 const AddanimalData = [
     {
         img: require("../../assets/image/animal.png"),
-        name: "Tilly",
+        name: "George",
         id: 39
     },
     {
         img: require("../../assets/image/Tilly.png"),
-        name: "George",
+        name: "Tilly",
         id: 40
     },
 ]
@@ -1244,6 +1246,21 @@ const AccessoriesDataBoy = [
     },
 ]
 
+const GameTigerTwodata = [
+    {
+        img:require("../../assets/image/icon1.png")
+    },
+    {
+        img:require("../../assets/image/icon2.png")
+    },
+    {
+        img:require("../../assets/image/icon3.png")
+    },
+    {
+        img:require("../../assets/image/icon4.png")
+    }
+]
+
 export const AnimalDataFunc = (props) => {
     return (
         props.data.map((item, index) => {
@@ -1570,4 +1587,38 @@ export const GameThreeDataFunc = (props) => {
         })
     )
 }
+export const GameTigerOneFunc = (props) => {
+    const [count, setCount] = useState([])
 
+    return (
+        props.data.map((item, index) => {
+            return (
+                <GameTigerOneMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    propsNavigation={props.propsNavigation}
+                    count={count}
+                />
+            )
+        })
+    )
+}
+export const GameTigerTwoFunc = (props) => {
+    const [count, setCount] = useState([])
+    console.log(props.text)
+    return (
+        GameTigerTwodata.map((item, index) => {
+            return (
+                <GameTigerTwoMap
+                    item={item}
+                    index={index}
+                    key={index}
+                    propsNavigation={props.propsNavigation}
+                    count={count}
+                    text={props.text}
+                />
+            )
+        })
+    )
+}

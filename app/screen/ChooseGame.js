@@ -23,10 +23,11 @@ export default function ChooseGame(props) {
             console.log(error);
         }
     }
+
     useEffect(() => {
         handle()
-        console.log("ss")
     }, [])
+
     let idAnimal = async () => {
         try {
             let data = await AsyncStorage.getItem("animalId");
@@ -35,10 +36,10 @@ export default function ChooseGame(props) {
             console.log(error);
         }
     }
+
     const handle = async () => {
         setLoading(true)
         const id = await idAnimal()
-        console.log(id)
         try {
             const response = await axiosInstance.get(`/questionmulti/${id}`)
             setLoading(false)

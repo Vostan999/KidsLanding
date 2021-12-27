@@ -31,7 +31,7 @@ export default function FinishPage(props) {
         baby:baby,
     }
 
-    const _StoreData = async (value) => {
+    const _StoreData = async () => {
         try {
             await AsyncStorage.setItem('svg',JSON.stringify(data))
         } catch (e) {

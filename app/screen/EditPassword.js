@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Image, ScrollView, StatusBar, Text, TouchableNativeFeedback, TouchableOpacity, View} from "react-native";
+import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/forgotStyles/ForgotStyles";

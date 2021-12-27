@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react"
 import {TouchableOpacity, Text} from "react-native"
 import CheckBox from "@react-native-community/checkbox";
 
-export default function GameThreeMap(props) {
+export default function GameTigerOneMap(props) {
 
     const [checked, setChecked] = useState(false)
     const [color, setColor] = useState("#FFE3BA")
@@ -14,9 +14,9 @@ export default function GameThreeMap(props) {
             setChecked(true)
             setWidth(3)
             setColor("green")
-            if (props.count.length === 3) {
+            if (props.count.length === 2) {
                 setTimeout(() => {
-                    props.propsNavigation.navigation.navigate("good")
+                    props.propsNavigation.navigation.replace("gameTigerTwo")
                 }, 1000)
             }
         } else if (props.item.true == 0) {
@@ -51,5 +51,4 @@ export default function GameThreeMap(props) {
         </TouchableOpacity>
     )
 }
-
 

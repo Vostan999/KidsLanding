@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {ScrollView, StatusBar, Image, View, Text, TouchableOpacity} from "react-native";
+import {ScrollView, StatusBar, View, } from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";

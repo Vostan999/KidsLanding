@@ -23,6 +23,8 @@ import GameTigerOneInput from "../screen/GameTigerOneInput";
 import GameTigerTwoInput from "../screen/GameTigerTwoInput";
 import GameTigerThreeInput from "../screen/GameTigerThreeInput";
 import GameTigerOne from "../screen/GameTigerOne";
+import GameTigerTwo from "../screen/GameTigerTwo";
+import GameTigerThree from "../screen/GameTigerThree";
 
 export default function StackNavigation() {
     const Stack = createStackNavigator()
@@ -31,20 +33,22 @@ export default function StackNavigation() {
             screenOptions={{
                 headerShown: false
             }}>
-                <Stack.Screen name={"chooseGame"} component={ChooseGame}/>
-                <Stack.Screen name={"gameTigerOneInput"} component={GameTigerOneInput}/>
-                <Stack.Screen name={"gameTigerTwoInput"} component={GameTigerTwoInput}/>
-                <Stack.Screen name={"gameTigerThreeInput"} component={GameTigerThreeInput}/>
-                <Stack.Screen name={"gameTigerOne"} component={GameTigerOne}/>
-                <Stack.Screen name={"splash"} component={Splash}/>
-                <Stack.Screen name={"gameTwo"} component={GameTwo}/>
-                <Stack.Screen name={"gameThree"} component={GameThree}/>
-                <Stack.Screen name={"finishPage"} component={FinishPage}/>
-                <Stack.Screen name={"addNewAnimal"} component={AddNewAnimal}/>
-                <Stack.Screen name={"gameOne"} component={GameOne}/>
-                <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
-                <Stack.Screen name={"login"} component={Login}/>
-                <Stack.Screen name={"character"} component={Character}/>
+            <Stack.Screen name={"splash"} component={Splash}/>
+            <Stack.Screen name={"chooseGame"} component={ChooseGame}/>
+            <Stack.Screen name={"gameTigerOneInput"} component={GameTigerOneInput}/>
+            <Stack.Screen name={"gameTigerTwoInput"} component={GameTigerTwoInput}/>
+            <Stack.Screen name={"gameTigerThreeInput"} component={GameTigerThreeInput}/>
+            <Stack.Screen name={"gameTigerOne"} component={GameTigerOne}/>
+            <Stack.Screen name={"gameTigerTwo"} component={GameTigerTwo}/>
+            <Stack.Screen name={"gameTigerThree"} component={GameTigerThree}/>
+            <Stack.Screen name={"gameOne"} component={GameOne}/>
+            <Stack.Screen name={"gameTwo"} component={GameTwo}/>
+            <Stack.Screen name={"gameThree"} component={GameThree}/>
+            <Stack.Screen name={"finishPage"} component={FinishPage}/>
+            <Stack.Screen name={"addNewAnimal"} component={AddNewAnimal}/>
+            <Stack.Screen name={"zookeeper"} component={Zookeeper}/>
+            <Stack.Screen name={"login"} component={Login}/>
+            <Stack.Screen name={"character"} component={Character}/>
             <Stack.Screen name={"firstPage"} component={FirstPage}/>
             <Stack.Screen name={"editPassword"} component={EditPassword}/>
             <Stack.Screen name={"good"} component={Good}/>

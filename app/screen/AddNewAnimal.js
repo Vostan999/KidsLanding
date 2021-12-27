@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
+import React, {createContext} from "react";
 import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View, Linking} from "react-native";
 import {styles} from "../styles/charachter/CharacterStyles";
 import Leaf from "../component/leaf/Leaf";

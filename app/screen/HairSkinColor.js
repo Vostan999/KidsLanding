@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from "react"
-import {View, Text, Image, ScrollView, StatusBar} from "react-native"
+import React, { useState} from "react"
+import {View, Text, ScrollView, StatusBar} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/hairSkinColor/HairSkinColorStyles";
 import {ColorHairDataBoyFunc, ColorHairDataFunc, ColorSkinDataBoyFunc, ColorSkinDataFunc} from "../component/data/Data";
 import Footer from "../component/footer/Footer";
-import Girl from "../svg/transparentGirl/Girl";
-import Boy from "../svg/transparentGirl/Boy";
-import ColorSkinBoyDataMap from "../component/dataMap/ColorSkinBoyDataMap";
-import ColorHairDataBoyMap from "../component/dataMap/ColorHairDataBoyMap";
 import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 
 export default function HairSkinColor(props) {

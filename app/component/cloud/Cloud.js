@@ -33,11 +33,11 @@ const styles = StyleSheet.create({
         position: "relative"
     },
     animalImg: {
-        borderRadius: 45,
-        width: 162,
+        width: 250,
         height: 267,
         position: "absolute",
-        bottom: 2
+        bottom: 2,
+        resizeMode:"contain"
     },
     animalView: {
         justifyContent: "center",

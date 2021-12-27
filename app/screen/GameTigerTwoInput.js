@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {ScrollView, StatusBar, Image, View, Text, TouchableOpacity} from "react-native";
+import {ScrollView, StatusBar, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
@@ -43,7 +43,6 @@ export default function GameTigerTwoInput(props) {
 
     const handle = async () => {
         const id = await idAnimal()
-        console.log(id)
         setLoading(true)
         try {
             const response = await axiosInstance.get(`/character/${id}`)

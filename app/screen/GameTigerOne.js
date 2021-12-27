@@ -3,7 +3,7 @@ import {ScrollView, StatusBar,View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Cloud from "../component/cloud/Cloud";
-import {GameThreeDataFunc} from "../component/data/Data";
+import {GameTigerOneFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
 import Back from "../component/back/Back";
@@ -54,7 +54,7 @@ export default function GameTigerOne(props) {
                     textTwo={"Generous"}
                     characterImage={characterImage}
                 />
-                <GameThreeDataFunc propsNavigation={props} data={data}/>
+                <GameTigerOneFunc propsNavigation={props} data={data}/>
                 <Leaf
                     leaf3={require("../assets/image/leaf.png")}
                 />

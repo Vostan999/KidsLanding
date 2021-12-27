@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Image, ScrollView, StatusBar, Text, View} from "react-native";
+import { ScrollView, StatusBar, Text, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Footer from "../component/footer/Footer";
