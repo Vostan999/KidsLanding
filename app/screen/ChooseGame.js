@@ -6,10 +6,14 @@ import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Button from "../component/button/Button";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import axiosInstance from "../networking/axiosinstance";
+import Loading from "../component/loading/Loading";
 
 export const ContextValue = createContext()
 
 export default function ChooseGame(props) {
+    const [name,setName] = useState("")
+    const [loading,setLoading] = useState(false)
 
     let babyData = async () => {
         try {
@@ -17,6 +21,32 @@ export default function ChooseGame(props) {
             return JSON.parse(data)
         } catch (error) {
             console.log(error);
+        }
+    }
+    useEffect(() => {
+        handle()
+        console.log("ss")
+    }, [])
+    let idAnimal = async () => {
+        try {
+            let data = await AsyncStorage.getItem("animalId");
+            return data;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const handle = async () => {
+        setLoading(true)
+        const id = await idAnimal()
+        console.log(id)
+        try {
+            const response = await axiosInstance.get(`/questionmulti/${id}`)
+            setLoading(false)
+            setName(response.data.character.title)
+
+        } catch (e) {
+            console.log(e.message)
+            setLoading(false)
         }
     }
 
@@ -55,7 +85,10 @@ export default function ChooseGame(props) {
                         color={"#D56638"}
                         marginHorizontal={40}
                         onPress={() => {
+                            name === "George" ?
                             props.navigation.navigate("gameOne")
+                                :
+                                props.navigation.navigate("gameTigerOneInput")
                         }}
                     />
                     <Button
@@ -66,7 +99,10 @@ export default function ChooseGame(props) {
                         marginHorizontal={40}
                         marginBottom={37}
                         onPress={() => {
+                            name === "George" ?
                             props.navigation.navigate("gameTwo")
+                                :
+                                props.navigation.navigate("gameTigerOne")
                         }}
                     />
                     <TouchableOpacity onPress={() => {
@@ -89,6 +125,7 @@ export default function ChooseGame(props) {
                 </View>
             </View>
             <Leaf/>
+            <Loading loading={loading}/>
         </ScrollView>
     )
 }

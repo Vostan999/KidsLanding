@@ -12,17 +12,18 @@ import Loading from "../component/loading/Loading";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-export default function GameOne(props) {
+export default function GameTigerOneInput(props) {
     const [_onFinishCheckingCode1, set_onFinishCheckingCode1] = useState("")
     const ref = useRef(_onFinishCheckingCode1)
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})
-    const [lengthName,setLengthName] = useState(0)
+    const [lengthTiger,setLengthTiger] = useState(0)
+
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
                 setTimeout(() => {
-                    props.navigation.replace("good")
+                    props.navigation.replace("gameTigerTwoInput")
                 }, 1000)
             }
         }
@@ -46,8 +47,8 @@ export default function GameOne(props) {
         setLoading(true)
         try {
             const response = await axiosInstance.get(`/character/${id}`)
+            setLengthTiger(response.data.character.question_word)
             setData(response.data.character)
-            setLengthName(response.data.character.question_word.length)
             setLoading(false)
         } catch (e) {
             console.log(e.message)
@@ -73,7 +74,7 @@ export default function GameOne(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={lengthName}
+                    codeLength={lengthTiger.length ?lengthTiger.length : 0}
                     codeInputStyle={{
                         borderWidth: 1,
                         borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",

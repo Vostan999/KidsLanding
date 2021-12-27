@@ -1,23 +1,20 @@
-import React, {useEffect, useState} from "react";
-import {ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
-import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
-import Leaf from "../component/leaf/Leaf";
-import Cloud from "../component/cloud/Cloud";
+import React, {useState,useEffect} from "react";
+import {ScrollView, StatusBar,View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
-import {styles} from "../styles/gameTwoStyles/GameTwoStyles";
-import {GameTwoDataFunc} from "../component/data/Data";
+import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
+import Cloud from "../component/cloud/Cloud";
+import {GameThreeDataFunc} from "../component/data/Data";
+import Leaf from "../component/leaf/Leaf";
+import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
 import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import Loading from "../component/loading/Loading";
+export default function GameTigerOne(props) {
 
-
-export default function GameTwo(props) {
     const [data, setData] = useState([{}])
     const [question, setQuestion] = useState("")
     const [characterImage, setCharacterImage] = useState()
     const [loading,setLoading] = useState(false)
-
     useEffect(() => {
         handle()
     }, [])
@@ -26,7 +23,7 @@ export default function GameTwo(props) {
         setLoading(true)
         const id = await idAnimal()
         try {
-            const response = await axiosInstance.get(`/questionsingle/${id}`)
+            const response = await axiosInstance.get(`/questionmulti/${id}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
@@ -49,20 +46,19 @@ export default function GameTwo(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <View style={styles.allView}>
+            <View style={styles.threeView}>
+                <HeaderZooziez propsNavigation={props.navigation}/>
                 <Back navigationProps={props.navigation}/>
                 <Cloud
-                    characterImage={characterImage}
                     textOne={question}
-                    textTwo={"Generous?"}
+                    textTwo={"Generous"}
+                    characterImage={characterImage}
                 />
-                <GameTwoDataFunc twoProps={props} data={data}/>
+                <GameThreeDataFunc propsNavigation={props} data={data}/>
+                <Leaf
+                    leaf3={require("../assets/image/leaf.png")}
+                />
             </View>
-            <Leaf
-                leaf4={require("../assets/image/leaf.png")}
-                leaf3={require("../assets/image/leaf.png")}
-            />
-            <Loading  loading={loading}/>
         </ScrollView>
     )
 }
