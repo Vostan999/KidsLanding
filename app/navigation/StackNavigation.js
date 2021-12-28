@@ -25,6 +25,7 @@ import GameTigerThreeInput from "../screen/GameTigerThreeInput";
 import GameTigerOne from "../screen/GameTigerOne";
 import GameTigerTwo from "../screen/GameTigerTwo";
 import GameTigerThree from "../screen/GameTigerThree";
+import GameTigerFor from "../screen/gameTigerFor";
 
 export default function StackNavigation() {
     const Stack = createStackNavigator()
@@ -41,6 +42,7 @@ export default function StackNavigation() {
             <Stack.Screen name={"gameTigerOne"} component={GameTigerOne}/>
             <Stack.Screen name={"gameTigerTwo"} component={GameTigerTwo}/>
             <Stack.Screen name={"gameTigerThree"} component={GameTigerThree}/>
+            <Stack.Screen name={"gameTigerFor"} component={GameTigerFor}/>
             <Stack.Screen name={"gameOne"} component={GameOne}/>
             <Stack.Screen name={"gameTwo"} component={GameTwo}/>
             <Stack.Screen name={"gameThree"} component={GameThree}/>

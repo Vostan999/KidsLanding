@@ -15,9 +15,7 @@ export default function GameThreeMap(props) {
             setWidth(3)
             setColor("green")
             if (props.count.length === 3) {
-                setTimeout(() => {
-                    props.propsNavigation.navigation.navigate("good")
-                }, 1000)
+                    props.propsNavigation.navigation.replace("good")
             }
         } else if (props.item.true == 0) {
             setChecked(true)

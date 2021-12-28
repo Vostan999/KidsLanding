@@ -18,30 +18,32 @@ export default function FinishPage(props) {
     const accessories = props.route.params.accessories
     const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
+    const mini = props.route.params.mini
 
     const data = {
-        hairColor:hairColor,
-        skinColor:skinColor,
-        shirtShoes:shirtShoes,
-        trouserShoes:trouserShoes,
-        botas:botas,
-        accessories:accessories,
-        accessoriesName:accessoriesName,
-        name:name,
-        baby:baby,
+        hairColor: hairColor,
+        skinColor: skinColor,
+        shirtShoes: shirtShoes,
+        trouserShoes: trouserShoes,
+        botas: botas,
+        accessories: accessories,
+        accessoriesName: accessoriesName,
+        name: name,
+        baby: baby,
+        mini: mini,
     }
 
     const _StoreData = async () => {
         try {
-            await AsyncStorage.setItem('svg',JSON.stringify(data))
+            await AsyncStorage.setItem('svg', JSON.stringify(data))
         } catch (e) {
             console.log(e)
         }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         _StoreData()
-    },[data])
+    }, [data])
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -58,6 +60,7 @@ export default function FinishPage(props) {
                     botas={botas}
                     accessories={accessories}
                     accessoriesName={accessoriesName}
+                    mini={mini}
                 />
             </View>
             <Button
@@ -71,14 +74,14 @@ export default function FinishPage(props) {
                     props.navigation.navigate("hairSkinColor", {
                         baby: baby,
                         name: name,
-                        trouserShoes:trouserShoes,
-                        shirtShoes:shirtShoes,
-                        botas:botas,
-                        accessories:accessories,
-                        accessoriesName:accessoriesName,
-                        hairColor:hairColor,
-                        skinColor:skinColor
-
+                        trouserShoes: trouserShoes,
+                        shirtShoes: shirtShoes,
+                        botas: botas,
+                        accessories: accessories,
+                        accessoriesName: accessoriesName,
+                        hairColor: hairColor,
+                        skinColor: skinColor,
+                        mini: mini
                     })
                 }}
             />

@@ -9,6 +9,7 @@ import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
 import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import Loading from "../component/loading/Loading";
 
 export default function GameTigerTwo(props) {
 
@@ -62,6 +63,7 @@ export default function GameTigerTwo(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
             </View>
+            <Loading loading={loading}/>
         </ScrollView>
     )
 }

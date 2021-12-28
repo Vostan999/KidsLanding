@@ -27,6 +27,7 @@ export default function Footer(props) {
                         botas:props.botas,
                         accessories:props.accessories,
                         accessoriesName:props.accessoriesName,
+                        mini:props.mini
                     })
                 }}
             >

@@ -21,9 +21,7 @@ export default function GameOne(props) {
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
-                setTimeout(() => {
                     props.navigation.replace("good")
-                }, 1000)
             }
         }
     }, [_onFinishCheckingCode1])

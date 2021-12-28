@@ -14,7 +14,9 @@ export default function GameTigerOneMap(props) {
             setChecked(true)
             setWidth(3)
             setColor("green")
-            if (props.count.length === 2) {
+            if (props.text) {
+                props.propsNavigation.navigation.replace("good")
+            } else if (props.count.length === 2) {
                 props.propsNavigation.navigation.replace("gameTigerTwo")
             }
         } else if (props.item.true == 0) {

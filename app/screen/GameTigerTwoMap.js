@@ -13,7 +13,7 @@ export default function GameTigerTwoMap(props) {
             setWidth(3)
             setColor("green")
             if (props.text) {
-                    props.propsNavigation.navigation.replace("good")
+                    props.propsNavigation.navigation.replace("gameTigerFor")
             } else {
                     props.propsNavigation.navigation.replace("gameTigerThree")
             }

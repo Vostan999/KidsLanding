@@ -153,14 +153,6 @@ export default function Signup(props) {
                             ValidateFunction()
                         }}
                     />
-                    <View style={styles.footerLogin}>
-                        <Text style={styles.footerLoginText}>Already have an account? </Text>
-                        <TouchableOpacity onPress={() => {
-                            props.navigation.navigate("login")
-                        }}>
-                            <Text style={[styles.footerLoginText, {fontWeight: "bold"}]}> Log In</Text>
-                        </TouchableOpacity>
-                    </View>
                 </View>
             </View>
             <Leaf

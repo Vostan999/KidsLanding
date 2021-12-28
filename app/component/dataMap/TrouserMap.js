@@ -17,8 +17,10 @@ export default function TrouserMap(props) {
                 },
             ]}
             onPress={() => {
+
                 props.widthBorder(props.index)
                 props.trouserShoesMap(props.item.footerShoes)
+                props.miniFunc(props.item.mini ? props.item.mini : null)
             }}
         >
             <Image source={props.item.img}/>

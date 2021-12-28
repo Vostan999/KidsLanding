@@ -3,6 +3,7 @@ import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 
 export default function AccessoriesDataMap(props) {
+
     return (
         <TouchableOpacity
             style={[

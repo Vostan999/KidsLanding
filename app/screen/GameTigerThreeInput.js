@@ -44,7 +44,6 @@ export default function GameTigerThreeInput(props) {
 
     const handle = async () => {
         const id = await idAnimal()
-        console.log(id)
         setLoading(true)
         try {
             const response = await axiosInstance.get(`/character/${id}`)

@@ -3,6 +3,7 @@ import {View, TouchableOpacity, Text} from "react-native";
 import {SvgXml} from "react-native-svg";
 
 export default function PuzzleBaby(props) {
+
     const headerBoy = `<svg xmlns="http://www.w3.org/2000/svg" width="86" height="93" viewBox="0 0 71 64" fill="none">
         <g clip-path="url(#clip0_259_49)">
         <path d="M17.6643 22.0628C18.341 23.6731 19.4166 25.8809 21.1083 28.2609C22.6788 30.4687 24.8199 33.4816 28.2386 35.4109C33.6267 38.4543 39.4844 37.2795 41.666 36.7225C41.7215 35.578 41.7316 34.3425 41.666 33.031C41.5498 30.656 41.2266 28.5394 40.8327 26.7164C41.6811 29.0356 42.893 30.6054 43.6859 31.4814C44.5948 32.4891 47.3369 35.2438 51.7655 36.0085C53.7198 36.3477 55.366 36.1857 56.4012 36.0085C55.9467 35.2337 55.5074 34.3982 55.0933 33.507C53.0987 29.2129 52.4169 25.1011 52.2402 21.8299C52.8563 23.5212 53.7299 25.4808 54.9721 27.5469C56.9618 30.8535 59.214 33.274 61.0319 34.9349C61.2743 36.7883 61.4763 38.7379 61.6278 40.7735C61.7439 42.3331 61.8196 43.8422 61.8651 45.3005C62.5771 45.0777 63.1629 44.779 63.6477 44.465C67.7279 41.8116 67.7026 35.7857 67.6875 34.8134C68.1723 34.7932 68.7833 34.8084 69.4701 34.9349C69.9751 35.0261 70.4144 35.1578 70.778 35.2945C71.1567 32.7119 70.9901 30.6054 70.778 29.2179C70.4598 27.1063 69.7226 22.24 65.7888 19.0903C64.4859 18.0472 63.2033 17.4902 62.3448 17.1864C62.4054 16.0875 62.365 14.4519 61.7489 12.6593C59.5775 6.31945 52.2654 3.83313 47.7307 2.29374C44.7261 1.27592 36.0152 -1.54968 25.3905 1.45821C23.8049 1.90889 16.6544 4.05087 9.9432 10.3958C7.31731 12.8619 3.08054 16.8673 1.03032 23.6123C0.737436 24.5694 -0.898694 30.18 0.671789 36.7174C1.68175 40.9203 3.26233 42.3483 3.9996 42.9155C5.78217 44.2827 7.77179 44.5359 8.87264 44.5815C8.93324 41.8268 9.27662 39.5835 9.58466 38.0289C10.1553 35.1426 11.2864 29.7598 15.2859 24.6858C16.2251 23.4958 17.0937 22.6097 17.6643 22.0628Z"   fill=${props.hairColor}/>
@@ -100,6 +101,7 @@ export default function PuzzleBaby(props) {
                     d="M72 120.436L70.0944 156.38C70.0944 156.38 74.8944 157.8 77.3544 159.21C79.8144 160.63 79.2144 162.35 68.2744 162.35C57.3344 162.35 52.3644 162.35 52.3644 162.35L49 122.936L72 120.436Z"
                     fill=${props.skinColor}/>
             </svg>`
+
     return (
         <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
             <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
@@ -126,18 +128,34 @@ export default function PuzzleBaby(props) {
                         }}>
                             <SvgXml xml={props.shirtShoes ? props.shirtShoes : null}/>
                         </View>
-                        <View style={{
-                            zIndex: 1,
-                            justifyContent: "center",
-                            position: 'absolute',
-                            bottom: 5,
-                            alignItems: "center",
-                        }}>
-                            <View style={{position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
-
-                                <SvgXml xml={props.trouserShoes ? props.trouserShoes : null}/>
+                        {props.mini ?
+                            <View style={{
+                                zIndex: 1,
+                                justifyContent: "center",
+                                position: 'absolute',
+                                bottom: 10,
+                                alignItems: "center",
+                                left: -8,
+                                right: -13,
+                            }}>
+                                <View style={{position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
+                                    <SvgXml xml={props.trouserShoes ? props.trouserShoes : null}/>
+                                </View>
                             </View>
-                        </View>
+                            :
+                            <View style={{
+                                zIndex: 1,
+                                justifyContent: "center",
+                                position: 'absolute',
+                                bottom: 5,
+                                alignItems: "center",
+
+                            }}>
+                                <View style={{position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
+                                    <SvgXml xml={props.trouserShoes ? props.trouserShoes : null}/>
+                                </View>
+                            </View>
+                        }
                     </View>
                     <View style={{position: "relative"}}>
                         <View style={{
@@ -195,7 +213,21 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-
+                    {props.accessoriesName === "scarf" && props.baby === "boy" ?
+                        <View style={{
+                            alignItems: "center",
+                            justifyContent: "center",
+                            position: "absolute",
+                            top: 79,
+                            left: -4,
+                            right: 0,
+                            zIndex: 1000
+                        }}>
+                            <SvgXml xml={props.accessories ? props.accessories : null}/>
+                        </View>
+                        :
+                        null
+                    }
                     {props.accessoriesName === "glove" ?
                         <View style={{
                             alignItems: "center",

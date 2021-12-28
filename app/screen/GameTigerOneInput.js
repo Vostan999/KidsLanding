@@ -46,7 +46,6 @@ export default function GameTigerOneInput(props) {
         try {
             const response = await axiosInstance.get(`/words/${id}`)
             console.log(response)
-
             // setLengthTiger(response.data.character.question_word)
             // setData(response.data.character)
             setLoading(false)

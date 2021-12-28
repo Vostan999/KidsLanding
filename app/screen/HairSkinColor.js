@@ -19,6 +19,7 @@ export default function HairSkinColor(props) {
     const accessories = props.route.params.accessories
     const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
+    const mini = props.route.params.mini
     const [skinColor, setSkinColor] = useState(props.route.params.skinColor ? props.route.params.skinColor : "#FFC8AC")
     const [hairColor, setHairColor] = useState(props.route.params.hairColor ? props.route.params.hairColor : "#CC5440")
 
@@ -34,9 +35,7 @@ export default function HairSkinColor(props) {
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez propsNavigation={props.navigation}/>
-
                 <Text style={styles.helloText}>Hello, {name}</Text>
-
             <PuzzleBaby
                 accessoriesName={accessoriesName}
                 accessories={accessories}
@@ -46,6 +45,7 @@ export default function HairSkinColor(props) {
                 baby={baby}
                 hairColor={hairColor}
                 botas={botas}
+                mini={mini}
             />
             <View style={styles.colorView}>
                 <Text style={styles.chooseText}>Choose Hair Color</Text>
@@ -87,6 +87,7 @@ export default function HairSkinColor(props) {
                 accessories={accessories}
                 trouserShoes={trouserShoes}
                 botas={botas}
+                mini={mini}
             />
             <Leaf/>
         </ScrollView>

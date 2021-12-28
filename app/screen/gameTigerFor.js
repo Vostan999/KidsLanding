@@ -3,7 +3,7 @@ import {ScrollView, StatusBar, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Cloud from "../component/cloud/Cloud";
-import {GameTigerTwoFunc} from "../component/data/Data";
+import {GameTigerOneFunc, GameTigerTwoFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
 import Back from "../component/back/Back";
@@ -11,7 +11,7 @@ import axiosInstance from "../networking/axiosinstance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Loading from "../component/loading/Loading";
 
-export default function GameTigerThree(props) {
+export default function GameTigerFor(props) {
 
     const [data, setData] = useState([{}])
     const [question, setQuestion] = useState("")
@@ -25,7 +25,8 @@ export default function GameTigerThree(props) {
         setLoading(true)
         const id = await idAnimal()
         try {
-            const response = await axiosInstance.get(`/questionimage/${40}`)
+            const response = await axiosInstance.get(`/questionsingle/${40}`)
+            console.log(response)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
@@ -56,7 +57,7 @@ export default function GameTigerThree(props) {
                     textTwo={"Generous"}
                     characterImage={characterImage}
                 />
-                <GameTigerTwoFunc
+                <GameTigerOneFunc
                     propsNavigation={props}
                     data={data}
                     text={"good"}

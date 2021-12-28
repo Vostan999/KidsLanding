@@ -19,6 +19,8 @@ export default function Accessories(props) {
     const skinColor = props.route.params.skinColor
     const shirtShoes = props.route.params.shirtShoes
     const trouserShoes = props.route.params.trouserShoes
+    const mini = props.route.params.mini
+
 
     let accessoriesNameFunc = (item) => {
         setAccessoriesName(item)
@@ -46,6 +48,7 @@ export default function Accessories(props) {
                 baby={baby}
                 hairColor={hairColor}
                 botas={botas}
+                mini={mini}
             />
             <View style={[styles.boatasView, {marginTop: 25}]}>
                 <Text style={styles.scrolText}>Choose Clothing</Text>
@@ -90,6 +93,7 @@ export default function Accessories(props) {
                 botas={botas}
                 accessories={accessories}
                 accessoriesName={accessoriesName}
+                mini={mini}
             />
             <Leaf/>
         </ScrollView>

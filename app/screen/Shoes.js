@@ -11,6 +11,7 @@ import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 export default function (props) {
     const [shirtShoes, setShirtShoes] = useState(props.route.params.shirtShoes ? props.route.params.shirtShoes : null)
     const [trouserShoes, setTrouserShoes] = useState(props.route.params.trouserShoes ? props.route.params.trouserShoes : null)
+    const [mini, setMini] = useState(props.route.params.mini ? props.route.params.mini : null)
     const skinColor = props.route.params.skinColor
     const name = props.route.params.name
     const baby = props.route.params.baby
@@ -25,6 +26,9 @@ export default function (props) {
 
     let trouserShoesMap = (item) => {
         setTrouserShoes(item)
+    }
+    let miniFunc = (item) => {
+        setMini(item)
     }
 
     return (
@@ -41,6 +45,7 @@ export default function (props) {
                 botas={botas}
                 accessoriesName={accessoriesName}
                 accessories={accessories}
+                mini={mini}
             />
             <View style={styles.colorView}>
                 <Text style={styles.text}>Choose Clothing</Text>
@@ -66,7 +71,9 @@ export default function (props) {
                         :
                         <TrouserDataFunc
                             trouserShoesMap={trouserShoesMap}
+                            miniFunc={miniFunc}
                             baby={baby}
+
                         />
                     }
                 </ScrollView>
@@ -82,6 +89,7 @@ export default function (props) {
                 trouserShoes={trouserShoes}
                 accessories={accessories}
                 accessoriesName={accessoriesName}
+                mini={mini}
             />
             <Leaf/>
         </ScrollView>

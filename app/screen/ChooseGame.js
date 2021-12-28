@@ -12,8 +12,8 @@ import Loading from "../component/loading/Loading";
 export const ContextValue = createContext()
 
 export default function ChooseGame(props) {
-    const [name,setName] = useState("")
-    const [loading,setLoading] = useState(false)
+    const [name, setName] = useState("")
+    const [loading, setLoading] = useState(false)
 
     let babyData = async () => {
         try {
@@ -63,7 +63,8 @@ export default function ChooseGame(props) {
                 trouserShoes: data.trouserShoes,
                 accessoriesName: data.accessoriesName,
                 botas: data.botas,
-                shirtShoes: data.shirtShoes
+                shirtShoes: data.shirtShoes,
+                mini: data.mini
             })
         } else if (!data) {
             props.navigation.navigate("zookeeper")
@@ -87,7 +88,7 @@ export default function ChooseGame(props) {
                         marginHorizontal={40}
                         onPress={() => {
                             name === "George" ?
-                            props.navigation.navigate("gameOne")
+                                props.navigation.navigate("gameOne")
                                 :
                                 props.navigation.navigate("gameTigerOneInput")
                         }}
@@ -101,7 +102,7 @@ export default function ChooseGame(props) {
                         marginBottom={37}
                         onPress={() => {
                             name === "George" ?
-                            props.navigation.navigate("gameTwo")
+                                props.navigation.navigate("gameTwo")
                                 :
                                 props.navigation.navigate("gameTigerOne")
                         }}

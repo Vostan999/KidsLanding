@@ -25,6 +25,7 @@ export default function AddNewAnimal(props) {
 
     const zookeper = async () => {
         const data = await babyData()
+
         if (data) {
             props.navigation.navigate("finishPage", {
                 baby: data.baby,
@@ -35,7 +36,8 @@ export default function AddNewAnimal(props) {
                 trouserShoes: data.trouserShoes,
                 accessoriesName: data.accessoriesName,
                 botas: data.botas,
-                shirtShoes: data.shirtShoes
+                shirtShoes: data.shirtShoes,
+               mini:data.mini
             })
         } else if (!data) {
             props.navigation.navigate("zookeeper")
