@@ -1,13 +1,11 @@
 import React, {useState} from "react";
-import {Text, TouchableOpacity,View} from "react-native";
+import {Text, TouchableOpacity, View} from "react-native";
 
 export default function GameTwoMap(props) {
     const [color, setColor] = useState("#F19100")
     const [width, setWidth] = useState(1)
     const handle = () => {
-        setTimeout(() =>{
-            props.twoProps.navigation.replace("gameThree")
-        },1000)
+        props.twoProps.navigation.replace("gameThree")
     }
     return (
         <TouchableOpacity

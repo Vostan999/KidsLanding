@@ -8,19 +8,14 @@ export default function GameTigerTwoMap(props) {
     const [width, setWidth] = useState(1)
 
     const handle = () => {
-
         if (props.item.true == 1 && color !== "green") {
             setChecked(true)
             setWidth(3)
             setColor("green")
             if (props.text) {
-                setTimeout(() => {
                     props.propsNavigation.navigation.replace("good")
-                }, 1000)
             } else {
-                setTimeout(() => {
-                    props.propsNavigation.navigation.replace("gameTigerTwo")
-                }, 1000)
+                    props.propsNavigation.navigation.replace("gameTigerThree")
             }
         } else if (props.item.true == 0) {
             setChecked(true)
@@ -64,8 +59,10 @@ export default function GameTigerTwoMap(props) {
                                marginLeft: 11
                            }}/>}
             </View>
-            <Image source={props.item.img} style={{
-                marginLeft: 30
+            <Image source={{uri:props.item.answer}} style={{
+                marginLeft: 30,
+                width:30,
+                height:30
             }}/>
         </TouchableOpacity>
     )

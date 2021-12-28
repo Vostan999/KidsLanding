@@ -1,20 +1,21 @@
-import React, {useState,useEffect} from "react";
-import {ScrollView, StatusBar,View} from "react-native";
+import React, {useState, useEffect} from "react";
+import {ScrollView, StatusBar, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Cloud from "../component/cloud/Cloud";
-import { GameTigerTwoFunc} from "../component/data/Data";
+import {GameTigerTwoFunc} from "../component/data/Data";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameThreeStyles/GameThreeStyles";
 import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 export default function GameTigerThree(props) {
 
     const [data, setData] = useState([{}])
     const [question, setQuestion] = useState("")
     const [characterImage, setCharacterImage] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         handle()
     }, [])
@@ -22,9 +23,8 @@ export default function GameTigerThree(props) {
     const handle = async () => {
         setLoading(true)
         const id = await idAnimal()
-
         try {
-            const response = await axiosInstance.get(`/questionmulti/${id}`)
+            const response = await axiosInstance.get(`/questionimage/${40}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])

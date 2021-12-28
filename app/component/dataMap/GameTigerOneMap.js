@@ -15,9 +15,7 @@ export default function GameTigerOneMap(props) {
             setWidth(3)
             setColor("green")
             if (props.count.length === 2) {
-                setTimeout(() => {
-                    props.propsNavigation.navigation.replace("gameTigerTwo")
-                }, 1000)
+                props.propsNavigation.navigation.replace("gameTigerTwo")
             }
         } else if (props.item.true == 0) {
             setChecked(true)

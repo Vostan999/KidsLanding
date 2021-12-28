@@ -22,9 +22,7 @@ export default function GameTigerOneInput(props) {
     useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
-                setTimeout(() => {
                     props.navigation.replace("gameTigerTwoInput")
-                }, 1000)
             }
         }
     }, [_onFinishCheckingCode1])
@@ -46,9 +44,11 @@ export default function GameTigerOneInput(props) {
         const id = await idAnimal()
         setLoading(true)
         try {
-            const response = await axiosInstance.get(`/character/${id}`)
-            setLengthTiger(response.data.character.question_word)
-            setData(response.data.character)
+            const response = await axiosInstance.get(`/words/${id}`)
+            console.log(response)
+
+            // setLengthTiger(response.data.character.question_word)
+            // setData(response.data.character)
             setLoading(false)
         } catch (e) {
             console.log(e.message)

@@ -7,18 +7,32 @@ import Input from "../component/input/Input";
 import PasswordInput from "../component/passwordInput/PasswordInput";
 import Button from "../component/button/Button";
 import {passwordValidate} from "../component/validate/Validate";
+import axiosInstance from "../networking/axiosinstance";
 
-export default function EditPassword() {
+export default function EditPassword(props) {
     const [oldPass,setOldPass] = useState("")
     const [newPass,setNewPass] = useState("")
     const [repPass,setRepPass] = useState("")
     const [oldPassText,setOldPassText] = useState("")
     const [newPassText,setNewPassText] = useState("")
     const [repPassText,setRepPassText] = useState("")
-
+    const[registration,setRegistration] = useState("")
+    const axiosFunc = async () =>{
+        try {
+        const data = {
+            'old_password':oldPass,
+            'new_password' :newPass,
+            'repeat_password':repPass
+        }
+        const response = await axiosInstance.post("resetPassword",data)
+            response.data.success ? props.navigation.navigate("addNewAnimal") : setRegistration("unnotarized")
+        }catch (e) {
+            console.log(e)
+        }
+    }
     const handle = () =>{
         if ( newPass === repPass && passwordValidate.test(newPass) && passwordValidate.test(oldPass) && passwordValidate.test(repPass)) {
-            console.log("OK")
+           axiosFunc()
         }
         if (!passwordValidate.test(newPass)){
             setNewPassText("The new password you’ve entered is incorrect.")
@@ -48,6 +62,7 @@ export default function EditPassword() {
                         onChangeText={(evt) => {
                             setOldPass(evt)
                             setOldPassText("")
+                            setRegistration("")
                         }}/>
                     <Text style={GContent.validateTextStyles}>{oldPassText}</Text>
                     <Input
@@ -55,6 +70,7 @@ export default function EditPassword() {
                         onChangeText={(evt) => {
                             setNewPass(evt)
                             setNewPassText("")
+                            setRegistration("")
                         }}
                     />
                     <Text style={GContent.validateTextStyles}>{newPassText}</Text>
@@ -63,10 +79,12 @@ export default function EditPassword() {
                         onChangeText={(evt) => {
                         setRepPass(evt)
                             setRepPassText("")
+                            setRegistration("")
                         }}/>
                     <Text style={GContent.validateTextStyles}>{repPassText}</Text>
 
                 </View>
+                <Text style={[GContent.validateTextStyles,{marginLeft:40}]}>{registration}</Text>
                 <View style={styles.loginView}>
                     <Button
                         title={"LOG IN"}

@@ -132,7 +132,6 @@ export default function PuzzleBaby(props) {
                             position: 'absolute',
                             bottom: 5,
                             alignItems: "center",
-
                         }}>
                             <View style={{position: 'relative', justifyContent: 'center', alignItems: 'center'}}>
 
@@ -197,21 +196,21 @@ export default function PuzzleBaby(props) {
                         null
                     }
 
-                    {/*{props.accessoriesName === "glove" ?*/}
-                    {/*    <View style={{*/}
-                    {/*        alignItems: "center",*/}
-                    {/*        justifyContent: "center",*/}
-                    {/*        position: "absolute",*/}
-                    {/*        top: 92,*/}
-                    {/*        zIndex: 1000,*/}
-                    {/*        borderWidth: 1,*/}
-                    {/*        width: "100%", height: 29*/}
-                    {/*    }}>*/}
-                    {/*        <Image source={props.accessories}/>*/}
-                    {/*    </View>*/}
-                    {/*    :*/}
-                    {/*    null*/}
-                    {/*}*/}
+                    {props.accessoriesName === "glove" ?
+                        <View style={{
+                            alignItems: "center",
+                            justifyContent: "center",
+                            position: "absolute",
+                            top: 109,
+                            zIndex: 1000,
+                            left:1,
+                            width: "100%", height: 29
+                        }}>
+                            <SvgXml xml={props.accessories ? props.accessories : null}/>
+                        </View>
+                        :
+                        null
+                    }
 
                     {props.accessoriesName === "hat" && props.baby === "girl" ?
                         <View style={{
