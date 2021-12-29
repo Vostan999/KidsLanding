@@ -2,20 +2,15 @@ import QRCodeScanner from "react-native-qrcode-scanner";
 import {RNCamera} from "react-native-camera";
 import {Linking, Text, TouchableOpacity, StyleSheet, Vibration, View, StatusBar} from "react-native";
 import React from "react";
+import axiosInstance from "../../networking/axiosinstance";
 
 
 export default function QrCodeScanner(props) {
-    const onSuccess = e => {
+    const onSuccess =async e => {
         console.log(e);
-        /*  Linking.openURL(e.data).then((res)=>{
-              Vibration.vibrate()
-              console.log(res)
-          }).catch(err => {
-              console.error('An error occured', err)
-              Vibration.vibrate()
-          });*/
+    const response =     await axiosInstance.get('/getUserCharacters',e.data)
+        console.log(response)
         Vibration.vibrate()
-
     }
 
     return (

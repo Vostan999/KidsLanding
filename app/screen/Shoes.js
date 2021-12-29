@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import { ScrollView, StatusBar, Text, View} from "react-native"
+import {ScrollView, StatusBar, Text, View} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/shoes/ShoesStyles";
@@ -51,9 +51,9 @@ export default function (props) {
                 <Text style={styles.text}>Choose Clothing</Text>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
                     {baby === "boy" ?
-                    <ShirtDataBoyFunc
-                        shirtShoesMap={shirtShoesMap}
-                    />
+                        <ShirtDataBoyFunc
+                            shirtShoesMap={shirtShoesMap}
+                        />
                         :
                         <ShirtDataFunc
                             shirtShoesMap={shirtShoesMap}
@@ -63,18 +63,18 @@ export default function (props) {
             </View>
             <View style={[styles.colorView, styles.colorView2]}>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
-                    {baby === "boy" ?
-                        <TrouserDataBoyFunc
-                            trouserShoesMap={trouserShoesMap}
-                            baby={baby}
-                        />
-                        :
-                        <TrouserDataFunc
-                            trouserShoesMap={trouserShoesMap}
-                            miniFunc={miniFunc}
-                            baby={baby}
-
-                        />
+                    {
+                        baby === "boy" ?
+                            <TrouserDataBoyFunc
+                                trouserShoesMap={trouserShoesMap}
+                                baby={baby}
+                            />
+                            :
+                            <TrouserDataFunc
+                                trouserShoesMap={trouserShoesMap}
+                                miniFunc={miniFunc}
+                                baby={baby}
+                            />
                     }
                 </ScrollView>
             </View>

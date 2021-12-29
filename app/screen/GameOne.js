@@ -44,8 +44,10 @@ export default function GameOne(props) {
         setLoading(true)
         try {
             const response = await axiosInstance.get(`/character/${id}`)
+            console.log(response)
             setData(response.data.character)
             setLengthName(response.data.character.question_word.length)
+            // setAnswer(response.data.character)
             setLoading(false)
         } catch (e) {
             console.log(e.message)

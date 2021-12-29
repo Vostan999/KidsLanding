@@ -6,7 +6,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function AnimalMap(props) {
     const context = useContext(ContextValue)
-
+    console.log(props)
     return (
         <TouchableOpacity
             style={styles.animalView}

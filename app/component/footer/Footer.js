@@ -3,6 +3,21 @@ import {Image, Text, View, StyleSheet, TouchableOpacity} from "react-native";
 
 export default function Footer(props) {
 
+    const handle = () => {
+            props.NavigationProps.navigation.navigate(`${props.text}`, {
+                name: props.name,
+                baby: props.baby,
+                skinColor: props.skinColor,
+                hairColor: props.hairColor,
+                shirtShoes: props.shirtShoes,
+                trouserShoes: props.trouserShoes,
+                botas: props.botas,
+                accessories: props.accessories,
+                accessoriesName: props.accessoriesName,
+                mini: props.mini
+            })
+    }
+
     return (
         <View style={styles.container}>
             <TouchableOpacity style={styles.childView}>
@@ -17,18 +32,7 @@ export default function Footer(props) {
             <TouchableOpacity
                 style={styles.childView}
                 onPress={() => {
-                    props.NavigationProps.navigation.navigate(`${props.text}`,{
-                        name:props.name,
-                        baby:props.baby,
-                        skinColor:props.skinColor,
-                        hairColor:props.hairColor,
-                        shirtShoes:props.shirtShoes,
-                        trouserShoes:props.trouserShoes,
-                        botas:props.botas,
-                        accessories:props.accessories,
-                        accessoriesName:props.accessoriesName,
-                        mini:props.mini
-                    })
+                    handle()
                 }}
             >
                 <Text style={[styles.containerText, {color: "#000000"}]}>Next</Text>
