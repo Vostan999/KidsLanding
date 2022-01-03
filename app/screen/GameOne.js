@@ -17,11 +17,11 @@ export default function GameOne(props) {
     const ref = useRef(_onFinishCheckingCode1)
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})
-    const [lengthName,setLengthName] = useState(0)
+
     useEffect(() => {
         if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
-                    props.navigation.replace("good")
+            if (_onFinishCheckingCode1 === data.key) {
+                props.navigation.replace("good")
             }
         }
     }, [_onFinishCheckingCode1])
@@ -43,11 +43,8 @@ export default function GameOne(props) {
         const id = await idAnimal()
         setLoading(true)
         try {
-            const response = await axiosInstance.get(`/character/${id}`)
-            console.log(response)
-            setData(response.data.character)
-            setLengthName(response.data.character.question_word.length)
-            // setAnswer(response.data.character)
+            const response = await axiosInstance.get(`words/${id}`)
+            setData(response.data.words[0])
             setLoading(false)
         } catch (e) {
             console.log(e.message)
@@ -61,8 +58,8 @@ export default function GameOne(props) {
             <HeaderZooziez propsNavigation={props.navigation}/>
             <Back navigationProps={props.navigation}/>
             <Cloud
-                textOne={data.question_word ? data.question_word : ""}
-                textTwo={"GENEROUS"}
+                textOne={"SPELL"}
+                textTwo={data.key}
                 characterImage={data.img ? data.img : null}
             />
             <View style={styles.codeInputView}>
@@ -73,10 +70,10 @@ export default function GameOne(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={lengthName}
+                    codeLength={data.key ? data.key.length : 0}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
+                        borderColor: _onFinishCheckingCode1 === data.key && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,

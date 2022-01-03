@@ -7,53 +7,23 @@ import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameOne/GameOne";
 import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
-import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export default function GameTigerTwoInput(props) {
     const [_onFinishCheckingCode1, set_onFinishCheckingCode1] = useState("")
     const ref = useRef(_onFinishCheckingCode1)
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState({})
-    const [lengthTiger,setLengthTiger] = useState(0)
+    const data = props.route.params.data
+    const dataquestion = props.route.params.data[1]
+
     useEffect(() => {
         if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
-                setTimeout(() => {
-                    props.navigation.replace("gameTigerThreeInput")
-                }, 1000)
+            if (_onFinishCheckingCode1 === dataquestion.key) {
+                props.navigation.replace("gameTigerThreeInput", {data: data})
             }
         }
     }, [_onFinishCheckingCode1])
-
-    useEffect(() => {
-        handle()
-    }, [])
-
-    let idAnimal = async () => {
-        try {
-            let data = await AsyncStorage.getItem("animalId");
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    const handle = async () => {
-        const id = await idAnimal()
-        setLoading(true)
-        try {
-            const response = await axiosInstance.get(`/character/${id}`)
-            setLengthTiger(response.data.character.question_word)
-            setData(response.data.character)
-            setLoading(false)
-        } catch (e) {
-            console.log(e.message)
-            setLoading(false)
-        }
-    }
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -61,9 +31,9 @@ export default function GameTigerTwoInput(props) {
             <HeaderZooziez propsNavigation={props.navigation}/>
             <Back navigationProps={props.navigation}/>
             <Cloud
-                textOne={data.question_word ? data.question_word : ""}
-                textTwo={"GENEROUS"}
-                characterImage={data.img ? data.img : null}
+                textOne={"SPELL"}
+                textTwo={dataquestion.key}
+                characterImage={dataquestion.img ? dataquestion.img : null}
             />
             <View style={styles.codeInputView}>
                 <CodeInput
@@ -73,16 +43,16 @@ export default function GameTigerTwoInput(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={lengthTiger.length}
+                    codeLength={dataquestion.key.length ? dataquestion.key.length : ""}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
+                        borderColor: _onFinishCheckingCode1 === dataquestion.key && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
                         fontFamily: "ShortStack",
-                        width: 35,
-                        height: 52,
+                        width: 25,
+                        height: 40,
                         backgroundColor: "#FFFFFF"
                     }}
                 />

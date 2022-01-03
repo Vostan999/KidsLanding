@@ -24,10 +24,9 @@ export default function GameTigerTwo(props) {
     const handle = async () => {
         setLoading(true)
         const id = await idAnimal()
-        console.log(id)
+
         try {
-            const response = await axiosInstance.get(`/questionimage/${40}`)
-            console.log(response)
+            const response = await axiosInstance.get(`/questionimage/${id}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
@@ -55,7 +54,7 @@ export default function GameTigerTwo(props) {
                 <Back navigationProps={props.navigation}/>
                 <Cloud
                     textOne={question}
-                    textTwo={"Generous"}
+                    textTwo={"Trustworthy?"}
                     characterImage={characterImage}
                 />
                 <GameTigerTwoFunc propsNavigation={props} data={data}/>

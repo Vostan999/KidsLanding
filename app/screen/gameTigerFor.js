@@ -25,8 +25,7 @@ export default function GameTigerFor(props) {
         setLoading(true)
         const id = await idAnimal()
         try {
-            const response = await axiosInstance.get(`/questionsingle/${40}`)
-            console.log(response)
+            const response = await axiosInstance.get(`/questionsingle/${id}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])

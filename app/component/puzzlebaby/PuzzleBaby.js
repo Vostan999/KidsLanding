@@ -123,8 +123,9 @@ export default function PuzzleBaby(props) {
                             alignSelf: 'center',
                             justifyContent: 'center',
                             zIndex: 2,
-                            marginLeft: -1.5,
-                            marginTop: -1.5
+                            marginLeft: -0,
+                            marginTop: -1.5,
+                            bottom:-5
                         }}>
                             <SvgXml xml={props.shirtShoes ? props.shirtShoes : null}/>
                         </View>
@@ -184,7 +185,8 @@ export default function PuzzleBaby(props) {
                             :
                             null
                     }
-                    {props.accessoriesName === "earring" && props.baby === "girl" ?
+                    {
+                        props.accessoriesName === "earring" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
@@ -198,7 +200,8 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-                    {props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl" ?
+                    {
+                        props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
@@ -213,7 +216,8 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-                    {props.accessoriesName === "scarf" && props.baby === "boy" ?
+                    {
+                        props.accessoriesName === "scarf" && props.baby === "boy" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
@@ -228,7 +232,8 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-                    {props.accessoriesName === "glove" ?
+                    {
+                        props.accessoriesName === "glove" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
@@ -242,9 +247,8 @@ export default function PuzzleBaby(props) {
                         </View>
                         :
                         null
-                    }
-
-                    {props.accessoriesName === "hat" && props.baby === "girl" ?
+                    }{
+                        props.accessoriesName === "hat" && props.baby === "girl" ?
                         <View style={{
                             alignItems: "center",
                             justifyContent: "center",
@@ -259,7 +263,6 @@ export default function PuzzleBaby(props) {
                         :
                         null
                     }
-
                 </View>
             </View>
         </View>

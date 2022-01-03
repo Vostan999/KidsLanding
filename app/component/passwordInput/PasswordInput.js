@@ -23,6 +23,7 @@ export default function PasswordInput(props) {
                     fontWeight: props.fontWeight,
                     fontSize: 12,
                     width: windowWidth - 110,
+                    color:"black"
                 }}
                 onChangeText={props.onChangeText}
             />

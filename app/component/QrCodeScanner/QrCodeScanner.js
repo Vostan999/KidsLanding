@@ -6,15 +6,28 @@ import axiosInstance from "../../networking/axiosinstance";
 
 
 export default function QrCodeScanner(props) {
-    const onSuccess =async e => {
-        console.log(e);
-    const response =     await axiosInstance.get('/getUserCharacters',e.data)
-        console.log(response)
-        Vibration.vibrate()
+    const onSuccess = async (e) => {
+
+        try {
+            const data = {
+                "qr": e.data,
+                "character_id": props.route.params.id
+            }
+            const response = await axiosInstance.post('/checkCharacterQr', data)
+            response.data.success ?
+                props.navigation.replace("addNewAnimal")
+                :
+                alert("not equal")
+            Vibration.vibrate()
+        } catch (e) {
+            console.log(e.response)
+            alert("not equal")
+            Vibration.vibrate()
+        }
     }
 
     return (
-        <View>
+        <View style={{flex: 1}}>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <QRCodeScanner
                 onRead={onSuccess}
@@ -25,17 +38,17 @@ export default function QrCodeScanner(props) {
                 bottomContent={
                     <TouchableOpacity
                         onPress={() => {
-
-                            // props.navigation.navigate("chooseGame")
+                            props.navigation.goBack()
                         }}
-                        style={styles.buttonTouchable}>
-                        <Text style={styles.buttonText}>Click for User!</Text>
+                        style={styles.buttonTouchable}
+                    >
+                        <Text style={styles.buttonText}>Back!</Text>
                     </TouchableOpacity>
-                }
-            />
+                }/>
         </View>
     )
 }
+
 const styles = StyleSheet.create({
     textBold: {
         fontWeight: '500',
@@ -43,7 +56,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         fontSize: 21,
-        color: '#D56638'
+        color: 'red'
     },
     buttonTouchable: {
         padding: 16

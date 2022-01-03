@@ -23,7 +23,6 @@ export default function GameThreeMap(props) {
             setColor("red")
         }
     }
-
     return (
         <TouchableOpacity
             style={{

@@ -1,14 +1,33 @@
-import React, {createContext} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View, Linking} from "react-native";
 import {styles} from "../styles/charachter/CharacterStyles";
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
 import {AddAnimalDataFunc} from "../component/data/Data";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import axiosInstance from "../networking/axiosinstance";
+import Loading from "../component/loading/Loading";
 
 export const ContextValue1 = createContext()
 export default function AddNewAnimal(props) {
+    const [data, setData] = useState([])
+    const [loading,setLoading] = useState(false)
 
+    useEffect(() => {
+        animal()
+    }, [])
+    const animal = async () => {
+        setLoading(true)
+        try {
+            const response = await axiosInstance.get("getUserCharacters")
+            setData(response.data.character)
+            setLoading(false)
+        } catch (e) {
+            console.log(e.response)
+            setLoading(false)
+        }
+
+    }
     const handle = async () => {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
@@ -25,7 +44,6 @@ export default function AddNewAnimal(props) {
 
     const zookeper = async () => {
         const data = await babyData()
-
         if (data) {
             props.navigation.navigate("finishPage", {
                 baby: data.baby,
@@ -37,7 +55,7 @@ export default function AddNewAnimal(props) {
                 accessoriesName: data.accessoriesName,
                 botas: data.botas,
                 shirtShoes: data.shirtShoes,
-               mini:data.mini
+                mini: data.mini
             })
         } else if (!data) {
             props.navigation.navigate("zookeeper")
@@ -54,7 +72,7 @@ export default function AddNewAnimal(props) {
                     <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <View style={styles.animalViewTillyGeorge}>
-                        <AddAnimalDataFunc/>
+                        <AddAnimalDataFunc data={data}/>
                         <TouchableOpacity
                             style={styles.animalView}
                             onPress={() => {
@@ -79,7 +97,7 @@ export default function AddNewAnimal(props) {
                     <TouchableOpacity onPress={() => {
                         handle()
                     }}>
-                        <Text>Log Out</Text>
+                        <Text style={styles.title2}>Log Out</Text>
                     </TouchableOpacity>
                 </View>
                 <Leaf
@@ -88,6 +106,7 @@ export default function AddNewAnimal(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
             </ScrollView>
+            <Loading loading={loading}/>
         </ContextValue1.Provider>
     )
 }

@@ -1,5 +1,5 @@
-import React, {useState,useEffect} from "react";
-import {ScrollView, StatusBar,View} from "react-native";
+import React, {useState, useEffect} from "react";
+import {ScrollView, StatusBar, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Cloud from "../component/cloud/Cloud";
@@ -10,12 +10,13 @@ import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Loading from "../component/loading/Loading";
+
 export default function GameTigerOne(props) {
 
     const [data, setData] = useState([{}])
     const [question, setQuestion] = useState("")
     const [characterImage, setCharacterImage] = useState()
-    const [loading,setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
         handle()
     }, [])
@@ -24,11 +25,11 @@ export default function GameTigerOne(props) {
         setLoading(true)
         const id = await idAnimal()
         try {
-            const response = await axiosInstance.get(`/questionmulti/${40}`)
-            console.log(response)
+            const response = await axiosInstance.get(`/questionmulti/${id}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
+
             setLoading(false)
         } catch (e) {
             console.log(e.message)
@@ -53,8 +54,8 @@ export default function GameTigerOne(props) {
                 <Back navigationProps={props.navigation}/>
                 <Cloud
                     textOne={question}
-                    // textTwo={"Generous"}
                     characterImage={characterImage}
+                    textTwo={"Trustworthy?"}
                 />
                 <GameTigerOneFunc propsNavigation={props} data={data}/>
                 <Leaf

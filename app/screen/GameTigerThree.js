@@ -25,7 +25,7 @@ export default function GameTigerThree(props) {
         setLoading(true)
         const id = await idAnimal()
         try {
-            const response = await axiosInstance.get(`/questionimage/${40}`)
+            const response = await axiosInstance.get(`/questionimage/${id}`)
             setCharacterImage(response.data.character.img)
             setQuestion(response.data.question.question)
             setData([...response.data.question.answers])
@@ -53,7 +53,7 @@ export default function GameTigerThree(props) {
                 <Back navigationProps={props.navigation}/>
                 <Cloud
                     textOne={question}
-                    textTwo={"Generous"}
+                    textTwo={"Trustworthy?"}
                     characterImage={characterImage}
                 />
                 <GameTigerTwoFunc

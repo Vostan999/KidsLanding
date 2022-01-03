@@ -94,12 +94,6 @@ export default function EditPassword(props) {
                             handle()
                         }}
                     />
-                    <View style={styles.deleteViewAccount}>
-                        <TouchableOpacity  >
-                            <Text style={styles.deleteAccountText}>Delete account</Text>
-                        </TouchableOpacity>
-                    </View>
-
                 </View>
             </View>
             <Leaf

@@ -7,7 +7,7 @@ export default function GameTigerOneMap(props) {
     const [checked, setChecked] = useState(false)
     const [color, setColor] = useState("#FFE3BA")
     const [width, setWidth] = useState(1)
-
+    console.log(props.item.answer)
     const handle = () => {
         if (props.item.true == 1 && color !== "green") {
             props.count.push(props.item)
@@ -47,7 +47,7 @@ export default function GameTigerOneMap(props) {
                 style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
                 tintColors={{true: '#F19100', false: '#F19100'}}
             />
-            <Text>{props.item.answer}</Text>
+            <Text style={{color:"black",maxWidth:350}}>{props.item.answer}</Text>
         </TouchableOpacity>
     )
 }

@@ -126,23 +126,8 @@ export default function Signup(props) {
                         setRepPassword(evt)
                         setRepPasswordText("")
                         setRegistration("")
-                    }}
-                />
+                    }}/>
                 <Text style={GContent.validateTextStyles}>{repPasswordText}</Text>
-                <View style={styles.chechkedView}>
-                    <View style={styles.check}>
-                        <CheckBox
-                            disabled={false}
-                            value={checked}
-                            onValueChange={(newValue) => setChecked(newValue)}
-                            style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
-                            tintColors={{true: '#F19100', false: '#C1C1C1'}}
-                        />
-                        <Text style={styles.agree}>I agree to the</Text>
-                    </View>
-
-                    <Text style={styles.terms}>Terms and Conditions </Text>
-                </View>
                 <Text style={[GContent.validateTextStyles, {marginBottom: 20}]}>{registration}</Text>
                 <View>
                     <Button
@@ -151,8 +136,7 @@ export default function Signup(props) {
                         color={"#FDFDFD"}
                         onPress={() => {
                             ValidateFunction()
-                        }}
-                    />
+                        }}/>
                 </View>
             </View>
             <Leaf

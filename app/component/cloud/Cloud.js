@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     },
     spell: {
         color: "#9E724E",
-        fontFamily: "PoppinsRegular"
+        fontFamily: "PoppinsRegular",
+        maxWidth:200,
     },
     generousText: {
         color: "#D56638",

@@ -80,7 +80,7 @@ export default function (props) {
             </View>
             <Footer
                 NavigationProps={props}
-                text={"accessories"}
+                text={shirtShoes ? trouserShoes ? "accessories" : "shoes" : "shoes"}
                 name={name}
                 baby={baby}
                 hairColor={hairColor}

@@ -35,8 +35,8 @@ export default function StackNavigation() {
                 headerShown: false
             }}>
             <Stack.Screen name={"splash"} component={Splash}/>
-            <Stack.Screen name={"chooseGame"} component={ChooseGame}/>
             <Stack.Screen name={"gameTigerOneInput"} component={GameTigerOneInput}/>
+            <Stack.Screen name={"chooseGame"} component={ChooseGame}/>
             <Stack.Screen name={"gameTigerTwoInput"} component={GameTigerTwoInput}/>
             <Stack.Screen name={"gameTigerThreeInput"} component={GameTigerThreeInput}/>
             <Stack.Screen name={"gameTigerOne"} component={GameTigerOne}/>

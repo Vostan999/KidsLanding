@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {ScrollView, StatusBar, View, } from "react-native";
+import {ScrollView, StatusBar, View,} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
@@ -17,19 +17,19 @@ export default function GameTigerOneInput(props) {
     const ref = useRef(_onFinishCheckingCode1)
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({})
-    const [lengthTiger,setLengthTiger] = useState(0)
-
-    useEffect(() => {
-        if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1.length === 8) {
-                    props.navigation.replace("gameTigerTwoInput")
-            }
-        }
-    }, [_onFinishCheckingCode1])
+    const [params, setParams] = useState([])
 
     useEffect(() => {
         handle()
     }, [])
+
+    useEffect(() => {
+        if (_onFinishCheckingCode1) {
+            if (_onFinishCheckingCode1 === data.key) {
+                props.navigation.replace("gameTigerTwoInput", {data: params})
+            }
+        }
+    }, [_onFinishCheckingCode1])
 
     let idAnimal = async () => {
         try {
@@ -45,9 +45,8 @@ export default function GameTigerOneInput(props) {
         setLoading(true)
         try {
             const response = await axiosInstance.get(`/words/${id}`)
-            console.log(response)
-            // setLengthTiger(response.data.character.question_word)
-            // setData(response.data.character)
+            setData(response.data.words[0])
+            setParams(response.data.words)
             setLoading(false)
         } catch (e) {
             console.log(e.message)
@@ -61,8 +60,8 @@ export default function GameTigerOneInput(props) {
             <HeaderZooziez propsNavigation={props.navigation}/>
             <Back navigationProps={props.navigation}/>
             <Cloud
-                textOne={data.question_word ? data.question_word : ""}
-                textTwo={"GENEROUS"}
+                textOne={"SPELL"}
+                textTwo={data.key ? data.key : ""}
                 characterImage={data.img ? data.img : null}
             />
             <View style={styles.codeInputView}>
@@ -73,10 +72,10 @@ export default function GameTigerOneInput(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={lengthTiger.length ?lengthTiger.length : 0}
+                    codeLength={data.key ? data.key.length : 0}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === "AAAAAAAA" && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
+                        borderColor: _onFinishCheckingCode1 === data.key && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,

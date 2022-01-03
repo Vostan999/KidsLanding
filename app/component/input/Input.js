@@ -15,8 +15,8 @@ export default function Input(props) {
                 paddingLeft:15,
                 fontSize:12,
                 fontFamily:"PoppinsRegular",
-                marginTop:props.marginTop
-            }}
-        />
+                marginTop:props.marginTop,
+                color:"black"
+            }}/>
     )
 }

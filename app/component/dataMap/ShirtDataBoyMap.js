@@ -20,7 +20,7 @@ export default function ShirtDataBoyMap(props) {
                 justifyContent: "center",
                 marginHorizontal: 4,
             },]}>
-            <Image source={props.item.img}/>
+            <Image source={props.item.img} style={{width:50,resizeMode:"contain"}}/>
         </TouchableOpacity>
     )
 }
