@@ -7,7 +7,6 @@ import axiosInstance from "../../networking/axiosinstance";
 
 export default function QrCodeScanner(props) {
     const onSuccess = async (e) => {
-
         try {
             const data = {
                 "qr": e.data,

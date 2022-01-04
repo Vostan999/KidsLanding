@@ -15,20 +15,8 @@ import ShirtDataBoyMap from "../dataMap/ShirtDataBoyMap";
 import AccessoriesBoyMap from "../dataMap/AccessoriesBoyMap";
 import AddAnimalDataMap from "../dataMap/AddAnimalDataMap";
 import GameTigerOneMap from "../dataMap/GameTigerOneMap";
-import GameTigerTwoMap from "../../screen/GameTigerTwoMap";
+import GameTigerTwoMap from "../dataMap/GameTigerTwoMap";
 
-const AddanimalData = [
-    {
-        img: require("../../assets/image/animal.png"),
-        name: "George",
-        id: 39
-    },
-    {
-        img: require("../../assets/image/Tilly.png"),
-        name: "Tilly",
-        id: 40
-    },
-]
 const ZooparkData = [
     {
         img: require("../../assets/image/animal.png"),
@@ -126,7 +114,7 @@ const ShirtData = [
         img: require("../../assets/image/shoes2.png")
     },
     {
-        shoes:`<svg xmlns="http://www.w3.org/2000/svg" width="84" height="60" viewBox="0 0 84 60" fill="none">
+        shoes: `<svg xmlns="http://www.w3.org/2000/svg" width="84" height="60" viewBox="0 0 84 60" fill="none">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M56.4516 2.19366L51 0.5C51 0.5 49.9184 6.10211 41.3199 8.41712C32.7214 6.10211 32 1 32 1L26.1831 2.19366C10.0036 10.7622 0.5 30 0.5 30C9.55184 29.6693 10 36.5 10 36.5L21.5 21L18 28.5L15 38.5L12.5 52C31.5 59.5 42 59 42 59C42 59 47.5 60 67.5 52L64.5 33.5L62.5 25L75 38C75 38 76 33 84 30.5C84 30.5 72.3842 11.4036 56.4516 2.19366Z" fill="url(#paint0_radial_723_874)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M30.6333 12.2614C30.6333 12.2614 32.6835 15.784 36.6477 15.293C40.612 14.8069 42.3196 8.88912 42.3196 8.88912C42.3196 8.88912 44.7727 14.6416 49.8553 15.2479C54.9378 15.8542 55.5271 9.8512 55.5271 9.8512L51.6082 2.34497C51.6082 2.34497 46.7322 7.81179 42.3196 7.907C37.907 8.0022 33.6002 4.2541 33.6002 4.2541C33.6002 4.2541 30.0692 9.05949 30.6333 12.2614Z" fill="url(#paint1_linear_723_874)"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M43 7.5C43 7.5 46.6445 13.9752 53.6916 13.0683C60.7386 12.1613 54.3111 0.766658 54.3111 0.766658L52 0C52 0 51 5.5 43 7.5Z" fill="url(#paint2_radial_723_874)"/>
@@ -239,7 +227,7 @@ const ShirtData = [
 </radialGradient>
 </defs>
 </svg>`
-,
+        ,
         id: 2,
         img: require("../../assets/image/shoes1.png"),
     },

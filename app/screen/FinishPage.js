@@ -7,6 +7,7 @@ import Button from "../component/button/Button";
 import {styles} from "../styles/finishPage/FinishPageStyles"
 import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import {useSelector} from "react-redux";
 
 export default function FinishPage(props) {
     const baby = props.route.params.baby
@@ -19,6 +20,9 @@ export default function FinishPage(props) {
     const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
     const mini = props.route.params.mini
+    const store = useSelector((state) => {
+        return state.customer
+    })
 
     const data = {
         hairColor: hairColor,
@@ -35,7 +39,7 @@ export default function FinishPage(props) {
 
     const _StoreData = async () => {
         try {
-            await AsyncStorage.setItem('svg', JSON.stringify(data))
+           return  await AsyncStorage.setItem(`${store}`, JSON.stringify(data))
         } catch (e) {
             console.log(e)
         }
@@ -47,8 +51,13 @@ export default function FinishPage(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez propsNavigation={props.navigation}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
+            <HeaderZooziez
+                propsNavigation={props.navigation}
+            />
             <Text style={styles.textHello}>Hello {name}</Text>
             <View style={styles.bigBaby}>
                 <PuzzleBaby

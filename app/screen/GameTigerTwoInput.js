@@ -27,9 +27,16 @@ export default function GameTigerTwoInput(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez propsNavigation={props.navigation}/>
-            <Back navigationProps={props.navigation}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
+            <HeaderZooziez
+                propsNavigation={props.navigation}
+            />
+            <Back
+                navigationProps={props.navigation}
+            />
             <Cloud
                 textOne={"SPELL"}
                 textTwo={dataquestion.key}
@@ -54,8 +61,7 @@ export default function GameTigerTwoInput(props) {
                         width: 25,
                         height: 40,
                         backgroundColor: "#FFFFFF"
-                    }}
-                />
+                    }}/>
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}

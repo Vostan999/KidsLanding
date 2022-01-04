@@ -12,7 +12,6 @@ import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
 
 export default function Signup(props) {
-    const [checked, setChecked] = useState(false)
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -73,13 +72,17 @@ export default function Signup(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
             <View style={styles.zooziViewImg}>
-                <Image source={require("../assets/image/Zooziez.png")} styles={GContent.zoozieImage}/>
+                <Image
+                    source={require("../assets/image/Zooziez.png")}
+                    styles={GContent.zoozieImage}
+                />
             </View>
-
             <View style={styles.ViewContainer}>
-
                 <Text style={styles.signUpText}>SIGN UP</Text>
                 <Input
                     placeholder={"First name"}

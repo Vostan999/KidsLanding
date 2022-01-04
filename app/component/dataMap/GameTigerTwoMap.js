@@ -45,8 +45,8 @@ export default function GameTigerTwoMap(props) {
                         position: "relative",
                         marginLeft: 11
                     }}>
-                        <Image source={require("../assets/image/noChecked.png")}/>
-                        <Image source={require("../assets/image/checked.png")}
+                        <Image source={require("../../assets/image/noChecked.png")}/>
+                        <Image source={require("../../assets/image/checked.png")}
                                style={{
                                    position: "absolute",
                                    alignSelf: "center",
@@ -54,7 +54,7 @@ export default function GameTigerTwoMap(props) {
                                }}/>
                     </View>
                     :
-                    <Image source={require("../assets/image/noChecked.png")}
+                    <Image source={require("../../assets/image/noChecked.png")}
                            style={{
                                marginLeft: 11
                            }}/>}

@@ -51,7 +51,10 @@ export default function EditPassword(props) {
         return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View>
-                <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+                <StatusBar
+                    backgroundColor={"white"}
+                    barStyle={"dark-content"}
+                />
                 <View style={styles.headerView}>
                     <View style={styles.zoziView}>
                         <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>

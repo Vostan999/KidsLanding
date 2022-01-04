@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
         marginHorizontal: 47,
         marginTop: 47,
         marginBottom: 108,
+        color: "#989898"
     },
     unionImage: {
         width: 137,

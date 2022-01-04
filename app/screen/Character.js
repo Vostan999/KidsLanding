@@ -12,6 +12,7 @@ export const ContextValue = createContext()
 export default function Character(props) {
     const [data, setData] = useState([])
     const [loading,setLoading] = useState(false)
+
     useEffect(() => {
         handle()
     }, [])
@@ -30,13 +31,19 @@ export default function Character(props) {
 
     return (
         <ContextValue.Provider value={props.navigation}>
-            <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-                <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <ScrollView
+                contentContainerStyle={GContent.ScroolViewALl}
+            >
+                <StatusBar
+                    backgroundColor={"white"}
+                    barStyle={"dark-content"}
+                />
                 <View style={styles.backView}>
-                    <Back navigationProps={props.navigation}/>
+                    <Back
+                        navigationProps={props.navigation}
+                    />
                 </View>
                 <View style={styles.welcomeTextView}>
-
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>
                     <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>

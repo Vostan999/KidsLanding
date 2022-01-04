@@ -47,10 +47,17 @@ export default function GameTigerFor(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
             <View style={styles.threeView}>
-                <HeaderZooziez propsNavigation={props.navigation}/>
-                <Back navigationProps={props.navigation}/>
+                <HeaderZooziez
+                    propsNavigation={props.navigation}
+                />
+                <Back
+                    navigationProps={props.navigation}
+                />
                 <Cloud
                     textOne={question}
                     textTwo={"Generous"}

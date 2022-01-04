@@ -3,8 +3,12 @@ import {Image, View, ScrollView, StyleSheet} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import axiosInstance from "../networking/axiosinstance";
+import {useDispatch} from "react-redux";
 
 export default function Splash(props) {
+    const dispatch = useDispatch()
+
     useEffect(() => {
         handle()
     }, [])
@@ -32,8 +36,21 @@ export default function Splash(props) {
     const handle = async () => {
         let token = await getToken()
         let keep = await getKeep()
-        if (token && keep) {
-            props.navigation.replace("addNewAnimal")
+        if  (token && keep) {
+            try {
+                const response = await axiosInstance.get("/getUser")
+
+                dispatch({
+                    type: "SET_CUSTOMER",
+                    payload: response.data.user.email
+                })
+                setTimeout(() =>{
+                    props.navigation.replace("addNewAnimal")
+
+                },1000)
+            } catch (e) {
+                console.log(e)
+            }
         } else if (!token) {
             props.navigation.replace("firstPage")
         } else {
@@ -44,7 +61,9 @@ export default function Splash(props) {
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View style={styles.container}>
-                <Image source={require("../assets/image/Zooziez.png")}/>
+                <Image
+                    source={require("../assets/image/Zooziez.png")}
+                />
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}

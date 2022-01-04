@@ -8,16 +8,19 @@ import Button from "../component/button/Button";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
+import {useSelector} from "react-redux";
 
 export const ContextValue = createContext()
 
 export default function ChooseGame(props) {
     const [name, setName] = useState("")
     const [loading, setLoading] = useState(false)
-
+    const store = useSelector((state) => {
+        return state.customer
+    })
     let babyData = async () => {
         try {
-            let data = await AsyncStorage.getItem("svg");
+            let data = await AsyncStorage.getItem(`${store}`);
             return JSON.parse(data)
         } catch (error) {
             console.log(error);
@@ -73,10 +76,15 @@ export default function ChooseGame(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
             <View style={styles.container}>
                 <View>
-                    <HeaderZooziez propsNavigation={props.navigation}/>
+                    <HeaderZooziez
+                        propsNavigation={props.navigation}
+                    />
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <Text style={styles.welcomeText}>George`s Games</Text>
                     <Button

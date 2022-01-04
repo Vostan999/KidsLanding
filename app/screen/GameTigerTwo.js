@@ -48,16 +48,26 @@ export default function GameTigerTwo(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
             <View style={styles.threeView}>
-                <HeaderZooziez propsNavigation={props.navigation}/>
-                <Back navigationProps={props.navigation}/>
+                <HeaderZooziez
+                    propsNavigation={props.navigation}
+                />
+                <Back
+                    navigationProps={props.navigation}
+                />
                 <Cloud
                     textOne={question}
                     textTwo={"Trustworthy?"}
                     characterImage={characterImage}
                 />
-                <GameTigerTwoFunc propsNavigation={props} data={data}/>
+                <GameTigerTwoFunc
+                    propsNavigation={props}
+                    data={data}
+                />
                 <Leaf
                     leaf3={require("../assets/image/leaf.png")}
                 />

@@ -5,7 +5,9 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 export default function AddAnimalDataMap(props) {
+
     const context = useContext(ContextValue1)
+
     const animalId = async (value) => {
         try {
             await AsyncStorage.setItem('animalId', `${value}`)
@@ -17,10 +19,12 @@ export default function AddAnimalDataMap(props) {
     const handle = async (id) => {
         await animalId(id)
     }
-    console.log(props.item.img)
+
     useEffect(() => {
+
         handle()
     }, [])
+
     return (
         <TouchableOpacity
             style={styles.animalView}
@@ -29,8 +33,10 @@ export default function AddAnimalDataMap(props) {
                 context.navigate("chooseGame")
             }}>
             <View style={styles.container}>
-                <Image source={{uri: "https://2003.freelancedeveloper.site/" + props.item.img}}
-                       style={{width: 150, height: 150, resizeMode: "contain"}}/>
+                <Image
+                    source={{uri: "https://2003.freelancedeveloper.site/" + props.item.img}}
+                    style={{width: 150, height: 150, resizeMode: "contain"}}
+                />
                 <Text style={styles.animalName}>{props.item.title}</Text>
             </View>
         </TouchableOpacity>

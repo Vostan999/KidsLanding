@@ -7,15 +7,20 @@ import {AddAnimalDataFunc} from "../component/data/Data";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
+import {useSelector} from "react-redux";
 
 export const ContextValue1 = createContext()
 export default function AddNewAnimal(props) {
     const [data, setData] = useState([])
-    const [loading,setLoading] = useState(false)
-
+    const [loading, setLoading] = useState(false)
+    const store = useSelector((state) => {
+        return state.customer
+    })
+    console.log(store,"gg")
     useEffect(() => {
         animal()
     }, [])
+
     const animal = async () => {
         setLoading(true)
         try {
@@ -26,8 +31,8 @@ export default function AddNewAnimal(props) {
             console.log(e.response)
             setLoading(false)
         }
-
     }
+
     const handle = async () => {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
@@ -35,7 +40,7 @@ export default function AddNewAnimal(props) {
 
     let babyData = async () => {
         try {
-            let data = await AsyncStorage.getItem("svg");
+            let data = await AsyncStorage.getItem(`${store}`);
             return JSON.parse(data)
         } catch (error) {
             console.log(error);
@@ -65,14 +70,18 @@ export default function AddNewAnimal(props) {
     return (
         <ContextValue1.Provider value={props.navigation}>
             <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-                <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+                <StatusBar
+                    backgroundColor={"white"}
+                    barStyle={"dark-content"}/>
                 <View style={styles.welcomeTextView}>
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>
                     <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <View style={styles.animalViewTillyGeorge}>
-                        <AddAnimalDataFunc data={data}/>
+                        <AddAnimalDataFunc
+                            data={data}
+                        />
                         <TouchableOpacity
                             style={styles.animalView}
                             onPress={() => {

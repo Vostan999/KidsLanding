@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, {useState} from "react";
 import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import Input from "../component/input/Input";
 import {styles} from "../styles/loginStyles/LoginStyles";
@@ -10,6 +10,8 @@ import {GContent} from "../styles/gContent/gContent";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import {passwordValidate, validateEmail} from "../component/validate/Validate";
 import axiosInstance from "../networking/axiosinstance";
+import {useDispatch} from "react-redux";
+import Loading from "../component/loading/Loading";
 
 export default function Login(props) {
     const [isSelected, setIsSelected] = useState(false);
@@ -18,7 +20,8 @@ export default function Login(props) {
     const [emailText, setEmailText] = useState("")
     const [passwordText, setPasswordText] = useState("")
     const [registration, setRegistration] = useState("")
-
+    const [loading, setLoading] = useState(false)
+    const dispatch = useDispatch()
     const storeData = async (value) => {
         try {
             await AsyncStorage.setItem('token', value)
@@ -30,7 +33,6 @@ export default function Login(props) {
     const storeKeep = async () => {
         try {
             await AsyncStorage.setItem('keep', JSON.stringify(isSelected))
-
         } catch (e) {
             console.log(e)
         }
@@ -38,7 +40,6 @@ export default function Login(props) {
 
     const validateFunction = () => {
         if (validateEmail(email) && passwordValidate.test(password)) {
-
             handle()
         }
         if (!validateEmail(email)) {
@@ -49,27 +50,40 @@ export default function Login(props) {
         }
     }
     const handle = async () => {
+        setLoading(true)
         try {
             const data = {
                 "email": email,
                 "password": password
             }
             const response = await axiosInstance.post("/login", data)
+            dispatch({
+                type: "SET_CUSTOMER",
+                payload: email
+            })
+            console.log(email)
             await storeKeep()
             await storeData(response.data.token)
+            setLoading(false)
             props.navigation.replace("addNewAnimal")
         } catch (e) {
             setRegistration(e.response.data.error)
+            setLoading(false)
             console.log(e)
         }
     }
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <View>
-                <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+                <StatusBar
+                    backgroundColor={"white"}
+                    barStyle={"dark-content"}/>
                 <View style={styles.headerView}>
                     <View style={styles.zoziView}>
-                        <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
+                        <Image
+                            source={require("../assets/image/Zooziez.png")}
+                            style={GContent.zoozieImage}
+                        />
                     </View>
                     <Text style={styles.loginText}>LOG IN</Text>
                     <Input
@@ -77,8 +91,7 @@ export default function Login(props) {
                         onChangeText={(evt) => {
                             setEmail(evt)
                             setEmailText("")
-                        }}
-                    />
+                        }}/>
                     <Text style={GContent.validateTextStyles}>{emailText}</Text>
                     <PasswordInput
                         placeholder={"Password"}
@@ -98,9 +111,6 @@ export default function Login(props) {
                             />
                             <Text style={styles.signupTextKeep}>Keep Me Logged In</Text>
                         </View>
-                        <TouchableOpacity>
-                            <Text style={styles.signupText}>Forgot the password?</Text>
-                        </TouchableOpacity>
                     </View>
                     <Text style={GContent.validateTextStyles}>{registration}</Text>
                 </View>
@@ -127,6 +137,7 @@ export default function Login(props) {
                 leaf4={require("../assets/image/leaf.png")}
                 leaf3={require("../assets/image/leaf.png")}
             />
+            <Loading loading={loading}/>
         </ScrollView>
     )
 }

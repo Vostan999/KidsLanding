@@ -56,9 +56,16 @@ export default function GameTigerOneInput(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
-            <HeaderZooziez propsNavigation={props.navigation}/>
-            <Back navigationProps={props.navigation}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
+            <HeaderZooziez
+                propsNavigation={props.navigation}
+            />
+            <Back
+                navigationProps={props.navigation}
+            />
             <Cloud
                 textOne={"SPELL"}
                 textTwo={data.key ? data.key : ""}

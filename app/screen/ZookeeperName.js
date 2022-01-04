@@ -28,7 +28,6 @@ export default function ZookeeperName(props) {
                     />
                 }
             </View>
-
             <TextInput
                 placeholder={"What is my name?"}
                 placeholderTextColor={"#989898"}

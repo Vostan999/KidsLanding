@@ -47,15 +47,23 @@ export default function GameTwo(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
+            <StatusBar
+                backgroundColor={"white"}
+                barStyle={"dark-content"}
+            />
             <View style={styles.allView}>
-                <Back navigationProps={props.navigation}/>
+                <Back
+                    navigationProps={props.navigation}
+                />
                 <Cloud
                     characterImage={characterImage}
                     textOne={question}
                     textTwo={"Generous?"}
                 />
-                <GameTwoDataFunc twoProps={props} data={data}/>
+                <GameTwoDataFunc
+                    twoProps={props}
+                    data={data}
+                />
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}
