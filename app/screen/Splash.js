@@ -36,22 +36,20 @@ export default function Splash(props) {
     const handle = async () => {
         let token = await getToken()
         let keep = await getKeep()
-        if  (token && keep) {
+        if (token && keep) {
             try {
                 const response = await axiosInstance.get("/getUser")
-
                 dispatch({
                     type: "SET_CUSTOMER",
                     payload: response.data.user.email
                 })
-                setTimeout(() =>{
+                setTimeout(() => {
                     props.navigation.replace("addNewAnimal")
-
-                },1000)
+                }, 1000)
             } catch (e) {
                 console.log(e)
             }
-        } else if (!token) {
+        } else if (!token)  {
             props.navigation.replace("firstPage")
         } else {
             props.navigation.replace("firstPage")

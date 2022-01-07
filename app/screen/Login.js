@@ -61,7 +61,6 @@ export default function Login(props) {
                 type: "SET_CUSTOMER",
                 payload: email
             })
-            console.log(email)
             await storeKeep()
             await storeData(response.data.token)
             setLoading(false)

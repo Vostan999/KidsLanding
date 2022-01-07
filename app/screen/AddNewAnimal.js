@@ -16,7 +16,7 @@ export default function AddNewAnimal(props) {
     const store = useSelector((state) => {
         return state.customer
     })
-    console.log(store,"gg")
+
     useEffect(() => {
         animal()
     }, [])
