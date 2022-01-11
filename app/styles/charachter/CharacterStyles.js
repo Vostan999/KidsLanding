@@ -7,13 +7,13 @@ export const styles = StyleSheet.create({
     welcomeText:{
         fontSize:24,
         color:"#D56638",
-        fontFamily:"ShortStack",
+        fontFamily:"MochiyPopPOne-Regular",
     },
     characterText:{
         color:"#9E724E",
 
         marginTop:55,
-       fontFamily:"PoppinsRegular",
+       fontFamily:"Poppins-Regular",
         fontWeight:"bold",
     },
     welcomeTextView:{
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
         fontSize:16,
         color:"#D56638",
         marginVertical:10,
-        fontFamily:"ShortStack",
+        fontFamily:"MochiyPopPOne-Regular",
     },
 
     zooziez:{
@@ -56,27 +56,27 @@ export const styles = StyleSheet.create({
     animalName: {
         fontSize: 14,
         color: "#D56638",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         marginTop: 12
     },
     container: {
         alignItems: "center",
     },
     title1:{
-        fontFamily:"PoppinsRegular",
+        fontFamily:"Poppins-Regular",
         color:"#9E724E",
         fontSize:18,
         textTransform:"uppercase",
 
     },
     title2:{
-        fontFamily:"PoppinsRegular",
+        fontFamily:"Poppins-Regular",
         color:"#A79A90",
         fontSize:18,
         textTransform:"capitalize",
     },
     title3:{
-        fontFamily:"PoppinsRegular",
+        fontFamily:"Poppins-Regular",
         color:"#BCB5AC",
         fontSize:12,
         textTransform:"capitalize",

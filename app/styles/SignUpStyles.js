@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
         color: "#D56638",
         fontSize: 12,
         fontWeight: "bold",
-        fontFamily: "PoppinsRegular"
+        fontFamily: "Poppins-Regular"
     },
     zooziViewImg: {
         justifyContent: "center",
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
         color: "#D56638",
         fontSize: 24,
         textAlign: "center",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         marginVertical: 5
 
     }

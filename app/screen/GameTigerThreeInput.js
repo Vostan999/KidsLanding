@@ -58,12 +58,11 @@ export default function GameTigerThreeInput(props) {
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
-                        fontFamily: "ShortStack",
+                        fontFamily: "MochiyPopPOne-Regular",
                         width: 35,
                         height: 52,
                         backgroundColor: "#FFFFFF"
-                    }}
-                />
+                    }}/>
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}

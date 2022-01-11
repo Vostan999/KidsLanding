@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     textHello: {
         fontWeight: "bold",
         fontSize: 18,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         color: "#9E724E",
         textAlign: "center",
         marginBottom: 30
@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: 18,
         color: "black",
-        fontFamily: "PoppinsRegular"
+        fontFamily: "Poppins-Regular"
     },
     colorView: {
         height: 159,

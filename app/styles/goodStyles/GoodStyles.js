@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     welcomeText: {
         fontSize: 24,
         color: "#D56638",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         textAlign: "center",
         marginTop: 100,
         marginBottom: 10
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         color: "#9E724E",
         textAlign: "center",
         marginBottom: 79,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         fontWeight: "bold",
     },
     welcomeTextView: {
@@ -34,7 +34,7 @@ export const styles = StyleSheet.create({
         color: '#777'
     },
     contText:{
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         fontSize:14,
         color:"#9E724E",
         textAlign:'center'

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
+import {Image, Platform, ScrollView, StatusBar, Text, TouchableOpacity, View} from "react-native";
 import Input from "../component/input/Input";
 import {styles} from "../styles/loginStyles/LoginStyles";
 import PasswordInput from "../component/passwordInput/PasswordInput";
@@ -105,8 +105,11 @@ export default function Login(props) {
                                 disabled={false}
                                 value={isSelected}
                                 onValueChange={(newValue) => setIsSelected(newValue)}
-                                style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
+                                style={{transform: [{scaleX: Platform.OS === "ios"? 0.7 :0.9}, {scaleY: Platform.OS === "ios"? 0.7 :0.9}]}}
                                 tintColors={{true: '#F19100', false: '#9E724E'}}
+                                onTintColor='#F19100'
+                                onFillColor='#F19100'
+                                onCheckColor='white'
                             />
                             <Text style={styles.signupTextKeep}>Keep Me Logged In</Text>
                         </View>

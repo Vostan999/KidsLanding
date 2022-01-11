@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     animalName: {
         fontSize: 24,
         color: "#D56638",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         marginTop: 12
     },
 

@@ -11,12 +11,13 @@ export default function Input(props) {
                 borderWidth: 1,
                 borderColor: "#F19100",
                 borderRadius: 6,
-                marginVertical:props.marginVertical,
-                paddingLeft:15,
-                fontSize:12,
-                fontFamily:"PoppinsRegular",
-                marginTop:props.marginTop,
-                color:"black"
+                marginVertical: props.marginVertical,
+                paddingLeft: 15,
+                fontSize: 12,
+                fontFamily: "Poppins-Regular",
+                marginTop: props.marginTop,
+                color: "black",
+                height: 36,
             }}/>
     )
 }

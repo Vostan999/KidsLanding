@@ -20,16 +20,16 @@ export const styles = StyleSheet.create({
         color: "#C86933",
         fontSize: 12,
         marginVertical: 7,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
     },
     signupTextKeep: {
         color: "#9E724E",
         fontSize: 12,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
     },
     loginTextSign: {
         color: "#9E724E",
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
     },
     underView: {
         flexDirection: "row",
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
         color: "#D56638",
         marginBottom: 23,
         textAlign: "center",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
     },
     loginView: {
         marginVertical: 120,
@@ -55,7 +55,7 @@ export const styles = StyleSheet.create({
         color:"#BCB5AC" ,
         textAlign:"center",
         fontSize:12,
-        fontFamily:"PoppinsRegular"
+        fontFamily:"Poppins-Regular"
     },
     deleteViewAccount:{
         marginTop:24,

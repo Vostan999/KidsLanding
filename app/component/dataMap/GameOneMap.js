@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         textAlign: "center",
         borderRadius: 6,
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         color: "#D56638",
         fontSize: 18,
         position: "relative"

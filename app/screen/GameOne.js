@@ -84,7 +84,7 @@ export default function GameOne(props) {
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
-                        fontFamily: "ShortStack",
+                        fontFamily: "MochiyPopPOne-Regular",
                         width: 35,
                         height: 52,
                         backgroundColor: "#FFFFFF"

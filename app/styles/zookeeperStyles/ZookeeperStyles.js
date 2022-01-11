@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     createZookeeper:{
         color:"#9E724E",
-        fontFamily:"PoppinsRegular",
+        fontFamily:"Poppins-Regular",
         textAlign:"center",
         fontWeight:"bold",
         fontSize:18,

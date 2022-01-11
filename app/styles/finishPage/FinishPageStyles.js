@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     textHello: {
         fontWeight: "bold",
         fontSize: 18,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         color: "#9E724E",
         textAlign: "center",
         marginBottom: 30
@@ -20,7 +20,7 @@ export const styles = StyleSheet.create({
         fontSize: 18,
         color: "#9E724E",
         fontWeight: "500",
-        fontFamily: "PoppinsBold",
+        fontFamily: "Poppins-Bold",
         textAlign: "center",
         marginBottom: 10
     }

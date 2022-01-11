@@ -15,13 +15,13 @@ export const styles = StyleSheet.create({
         color: "#D56638",
         fontSize: 36,
         textAlign: "center",
-        fontFamily:"ShortStack",
+        fontFamily:"MochiyPopPOne-Regular",
     },
     descreptionText: {
         color: "#9E724E",
         marginTop: 16,
         marginBottom: 82,
-        fontFamily:"PoppinsRegular",
+        fontFamily:"Poppins-Regular",
         textAlign:"center"
     }
 })

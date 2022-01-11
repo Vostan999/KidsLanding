@@ -4,7 +4,7 @@ import {StyleSheet} from "react-native";
 export const styles = StyleSheet.create({
     header: {
         color: "#9E724E",
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 18,
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
         borderRadius: 20,
         borderBottomColor: "#E3E3E3",
         textAlign: "center",
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         fontSize: 12,
         marginHorizontal: 47,
         marginTop: 47,

@@ -64,6 +64,6 @@ const styles = StyleSheet.create({
     containerText: {
         color: "#5B5B5B",
         fontSize: 18,
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
     }
 })

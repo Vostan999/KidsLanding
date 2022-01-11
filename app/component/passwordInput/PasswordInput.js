@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Image, TextInput, View, Dimensions, TouchableOpacity} from "react-native";
+import {Image, TextInput, View, Dimensions, TouchableOpacity, Platform} from "react-native";
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -10,8 +10,8 @@ export default function PasswordInput(props) {
             borderWidth: 1,
             borderColor: "#F19100",
             flexDirection: "row",
-            marginVertical:props.marginVertical,
-            borderRadius:6
+            marginVertical: props.marginVertical,
+            borderRadius: 6
         }}>
             <TextInput
                 placeholder={props.placeholder}
@@ -23,14 +23,19 @@ export default function PasswordInput(props) {
                     fontWeight: props.fontWeight,
                     fontSize: 12,
                     width: windowWidth - 110,
-                    color:"black"
+                    color: "black",
+                    height: 35
                 }}
                 onChangeText={props.onChangeText}
             />
             {state ?
-
                 <TouchableOpacity
-                    style={{alignItems: "center", justifyContent: "center", height: 20, marginTop: 15}}
+                    style={{
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: 20,
+                        marginTop: Platform.OS === "ios" ? 8 : 15
+                    }}
                     onPress={() => {
                         setState(!state)
                     }}>
@@ -41,7 +46,12 @@ export default function PasswordInput(props) {
                 </TouchableOpacity>
                 :
                 <TouchableOpacity
-                    style={{alignItems: "center", justifyContent: "center", height: 20, marginTop: 15}}
+                    style={{
+                        alignItems: "center",
+                        justifyContent: "center",
+                        height: 20,
+                        marginTop: Platform.OS === "ios" ? 8 : 15
+                    }}
                     onPress={() => {
                         setState(!state)
                     }}>

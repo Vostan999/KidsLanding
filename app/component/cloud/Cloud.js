@@ -56,11 +56,11 @@ const styles = StyleSheet.create({
     },
     spell: {
         color: "#9E724E",
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         maxWidth:200,
     },
     generousText: {
         color: "#D56638",
-        fontFamily: "ShortStack"
+        fontFamily: "MochiyPopPOne-Regular"
     }
 })

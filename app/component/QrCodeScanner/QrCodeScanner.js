@@ -43,7 +43,8 @@ export default function QrCodeScanner(props) {
                     >
                         <Text style={styles.buttonText}>Back!</Text>
                     </TouchableOpacity>
-                }/>
+                }
+            />
         </View>
     )
 }

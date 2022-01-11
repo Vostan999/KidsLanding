@@ -10,13 +10,13 @@ export const styles = StyleSheet.create({
     hello: {
         fontSize: 18,
         color: "#D56638",
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         alignSelf: "center"
     },
     myZoopark: {
         color: "#D56638",
         alignSelf: "center",
-        fontFamily: "ShortStack",
+        fontFamily: "MochiyPopPOne-Regular",
         fontSize: 24,
         marginTop: 10
     }

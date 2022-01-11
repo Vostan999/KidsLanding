@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     helloText: {
         color: "#9E724E",
-        fontFamily: "Poppins",
+        fontFamily: "Poppins-regular",
         fontSize: 18,
         fontWeight: "bold",
         marginBottom: 33,
@@ -33,7 +33,7 @@ export const styles = StyleSheet.create({
     chooseText: {
         color: "#000000",
         fontSize: 18,
-        fontFamily: "PoppinsRegular",
+        fontFamily: "Poppins-Regular",
         marginVertical: 21
     }
 })

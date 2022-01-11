@@ -29,11 +29,10 @@ export default function GameTwoMap(props) {
                 if (props.item.true == 0) {
                     setColor("red")
                     setWidth(2)
-                }
-            }}>
+                }}}>
             <Text style={{
                 color: "#563C31",
-                fontFamily: "PoppinsRegular"
+                fontFamily: "Poppins-Regular"
             }}>{props.item.answer}</Text>
         </TouchableOpacity>
     )

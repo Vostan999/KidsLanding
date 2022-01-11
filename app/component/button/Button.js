@@ -20,7 +20,7 @@ export default function Button(props) {
             }}>
             <Text style={{
                 color: props.color,
-                fontFamily:"PoppinsRegular",
+                fontFamily:"Poppins-Regular",
                 fontWeight: "bold"
             }}>{props.title}</Text>
         </TouchableOpacity>

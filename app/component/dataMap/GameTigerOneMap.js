@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react"
-import {TouchableOpacity, Text} from "react-native"
+import {TouchableOpacity, Text, Platform} from "react-native"
 import CheckBox from "@react-native-community/checkbox";
 
 export default function GameTigerOneMap(props) {
@@ -44,8 +44,11 @@ export default function GameTigerOneMap(props) {
             <CheckBox
                 disabled={false}
                 value={checked}
-                style={{transform: [{scaleX: 0.9}, {scaleY: 0.9}]}}
-                tintColors={{true: '#F19100', false: '#F19100'}}
+                style={{transform: [{scaleX: Platform.OS === "ios"? 0.7 :0.9}, {scaleY: Platform.OS === "ios"? 0.7 :0.9}]}}
+                tintColors={{true: '#F19100', false: '#9E724E'}}
+                onTintColor='#F19100'
+                onFillColor='#F19100'
+                onCheckColor='white'
             />
             <Text style={{color:"black",maxWidth:350}}>{props.item.answer}</Text>
         </TouchableOpacity>

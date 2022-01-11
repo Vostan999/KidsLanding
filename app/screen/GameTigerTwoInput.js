@@ -57,7 +57,7 @@ export default function GameTigerTwoInput(props) {
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
-                        fontFamily: "ShortStack",
+                        fontFamily: "MochiyPopPOne-Regular",
                         width: 25,
                         height: 40,
                         backgroundColor: "#FFFFFF"
