@@ -39,13 +39,13 @@ export default function Splash(props) {
         if (token && keep) {
             try {
                 const response = await axiosInstance.get("/getUser")
-                dispatch({
-                    type: "SET_CUSTOMER",
-                    payload: response.data.user.email
-                })
-                setTimeout(() => {
-                    props.navigation.replace("addNewAnimal")
-                }, 1000)
+                 dispatch({
+                     type: "SET_CUSTOMER",
+                     payload: response.data.user.email
+                 })
+                 setTimeout(() => {
+                     props.navigation.replace("addNewAnimal")
+                 }, 1000)
             } catch (e) {
                 console.log(e)
             }

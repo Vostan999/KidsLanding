@@ -54,6 +54,7 @@ export default function GameOne(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
+
             <StatusBar
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
@@ -91,7 +92,6 @@ export default function GameOne(props) {
                     }}
                 />
             </View>
-
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}
                 leaf3={require("../assets/image/leaf.png")}

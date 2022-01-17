@@ -24,7 +24,7 @@ export default function PasswordInput(props) {
                     fontSize: 12,
                     width: windowWidth - 110,
                     color: "black",
-                    height: 35
+                    height: 50
                 }}
                 onChangeText={props.onChangeText}
             />
@@ -34,7 +34,7 @@ export default function PasswordInput(props) {
                         alignItems: "center",
                         justifyContent: "center",
                         height: 20,
-                        marginTop: Platform.OS === "ios" ? 8 : 15
+                        marginTop: 15
                     }}
                     onPress={() => {
                         setState(!state)

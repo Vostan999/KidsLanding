@@ -7,6 +7,7 @@ export default function Input(props) {
             placeholder={props.placeholder}
             onChangeText={props.onChangeText}
             placeholderTextColor={"#BCB5AC"}
+            keyboardType={"default"}
             style={{
                 borderWidth: 1,
                 borderColor: "#F19100",
@@ -17,7 +18,7 @@ export default function Input(props) {
                 fontFamily: "Poppins-Regular",
                 marginTop: props.marginTop,
                 color: "black",
-                height: 36,
+                height: 50,
             }}/>
     )
 }

@@ -68,7 +68,6 @@ export default function Login(props) {
         } catch (e) {
             setRegistration(e.response.data.error)
             setLoading(false)
-            console.log(e)
         }
     }
     return (

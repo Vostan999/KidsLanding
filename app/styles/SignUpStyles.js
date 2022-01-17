@@ -27,16 +27,6 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         marginRight: 5
     },
-    agree: {
-        color: "black",
-        fontSize: 12
-    },
-    terms: {
-        color: "#D56638",
-        fontSize: 12,
-        fontWeight: "bold",
-        fontFamily: "Poppins-Regular"
-    },
     zooziViewImg: {
         justifyContent: "center",
         alignItems: "center",
@@ -49,6 +39,27 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontFamily: "MochiyPopPOne-Regular",
         marginVertical: 5
-
+    },
+    agree: {
+        color: "black",
+        fontSize: 12
+    },
+    terms: {
+        marginBottom:20,
+        flexDirection:"row",
+        alignItems:"center"
+    },
+    agreeText:{
+        color: "black",
+        fontSize: 14,
+        fontFamily: "Poppins-Regular",
+    },
+    termsText:{
+        color: "#D56638",
+        fontSize: 17,
+        textDecorationLine:"underline",
+        fontWeight: "bold",
+        fontFamily: "Poppins-Regular",
+        marginBottom:5
     }
 })

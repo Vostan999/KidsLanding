@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {View, Text, StatusBar, ScrollView, Image, TouchableOpacity} from "react-native"
+import {View, Text, StatusBar, ScrollView, Image, TouchableOpacity,Platform} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import Input from "../component/input/Input";
@@ -24,7 +24,7 @@ export default function Signup(props) {
     const [repPasswordText, setRepPasswordText] = useState("")
     const [visibleLoading, setVisibleLoading] = useState(false)
     const [registration, setRegistration] = useState("")
-
+    const [isSelected,setIsSelected] = useState(false)
     const handle = async () => {
         setVisibleLoading(true)
         try {
@@ -44,7 +44,7 @@ export default function Signup(props) {
     }
 
     const ValidateFunction = () => {
-        if (validateEmail(email) && nameValidation.test(lastName) && nameValidation.test(firstName) && password === repPassword && passwordValidate.test(password) && passwordValidate.test(repPassword)) {
+        if (validateEmail(email) && nameValidation.test(lastName) && nameValidation.test(firstName)&& isSelected && password === repPassword && passwordValidate.test(password) && passwordValidate.test(repPassword)) {
             handle()
         } else {
             setVisibleLoading(false)
@@ -132,15 +132,35 @@ export default function Signup(props) {
                     }}/>
                 <Text style={GContent.validateTextStyles}>{repPasswordText}</Text>
                 <Text style={[GContent.validateTextStyles, {marginBottom: 20}]}>{registration}</Text>
+                <View style={styles.terms}>
+                    <CheckBox
+                        disabled={false}
+                        value={isSelected}
+                        onValueChange={(newValue) => setIsSelected(newValue)}
+                        style={{transform: [{scaleX: Platform.OS === "ios"? 0.7 :0.9}, {scaleY: Platform.OS === "ios"? 0.7 :0.9}]}}
+                        tintColors={{true: '#F19100', false: '#9E724E'}}
+                        onTintColor='#F19100'
+                        onFillColor='#F19100'
+                        onCheckColor='white'
+                    />
+                    <Text style={styles.agreeText}>I agree to the  </Text>
+                    <TouchableOpacity onPress={() =>{
+                        props.navigation.navigate("terms")
+                    }}>
+                        <Text style={styles.termsText}>Terms and Conditions</Text>
+                    </TouchableOpacity>
+                </View>
                 <View>
                     <Button
                         title={"Sign Up"}
                         backgroundColor={"#D56638"}
+                        marginBottom={11}
                         color={"#FDFDFD"}
                         onPress={() => {
                             ValidateFunction()
                         }}/>
                 </View>
+
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}

@@ -26,6 +26,7 @@ import GameTigerOne from "../screen/GameTigerOne";
 import GameTigerTwo from "../screen/GameTigerTwo";
 import GameTigerThree from "../screen/GameTigerThree";
 import GameTigerFor from "../screen/gameTigerFor";
+import Terms from "../screen/Terms";
 
 export default function StackNavigation() {
     const Stack = createStackNavigator()
@@ -60,6 +61,7 @@ export default function StackNavigation() {
             <Stack.Screen name={"signUp"} component={Signup}/>
             <Stack.Screen name={"zookeeperName"} component={ZookeeperName}/>
             <Stack.Screen name={"qrCodeScanner"} component={QrCodeScanner}/>
+                <Stack.Screen name={"terms"} component={Terms}/>
         </Stack.Navigator>
     )
 }

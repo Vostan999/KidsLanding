@@ -37,7 +37,7 @@ export default function AddNewAnimal(props) {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
     }
-
+    console.log(store);
     let babyData = async () => {
         try {
             let data = await AsyncStorage.getItem(`${store}`);
@@ -49,21 +49,22 @@ export default function AddNewAnimal(props) {
 
     const zookeper = async () => {
         const data = await babyData()
+        console.log(data, 'data');
         if (data) {
-            props.navigation.navigate("finishPage", {
-                baby: data.baby,
-                hairColor: data.hairColor,
-                skinColor: data.skinColor,
-                name: data.name,
-                accessories: data.accessories,
-                trouserShoes: data.trouserShoes,
-                accessoriesName: data.accessoriesName,
-                botas: data.botas,
-                shirtShoes: data.shirtShoes,
-                mini: data.mini
-            })
+            // props.navigation.navigate("finishPage", {
+            //     baby: data.baby,
+            //     hairColor: data.hairColor,
+            //     skinColor: data.skinColor,
+            //     name: data.name,
+            //     accessories: data.accessories,
+            //     trouserShoes: data.trouserShoes,
+            //     accessoriesName: data.accessoriesName,
+            //     botas: data.botas,
+            //     shirtShoes: data.shirtShoes,
+            //     mini: data.mini
+            // })
         } else if (!data) {
-            props.navigation.navigate("zookeeper")
+           // props.navigation.navigate("zookeeper")
         }
     }
 
