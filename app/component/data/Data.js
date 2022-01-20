@@ -730,6 +730,7 @@ const BotasBoyData = [
 const AccessoriesData = [
     {
         name: "earring",
+        state:false,
         img: require("../../assets/image/accessories1.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="7" height="7" viewBox="0 0 7 7" fill="none">
 <path d="M6.41265 3.83843C6.67847 2.238 5.56619 0.730039 3.92829 0.4703C2.2904 0.210561 0.74713 1.2974 0.48131 2.89783C0.21549 4.49825 1.32778 6.00621 2.96567 6.26595C4.60357 6.52569 6.14683 5.43885 6.41265 3.83843Z" fill="#F9D7C0"/>
@@ -747,6 +748,7 @@ const AccessoriesData = [
     },
     {
         name: "scarf",
+        state:false,
         img: require("../../assets/image/accessories2.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="34" height="31" viewBox="0 0 34 31" fill="none">
 <path d="M28.4863 1.98966C28.1363 1.0045 27.3163 0.498365 27.3163 0.498365C26.7663 0.154915 25.8363 -0.170459 25.0863 0.100686C24.0663 0.471251 24.0363 1.70948 23.4563 3.29116C23.0863 4.2944 21.8563 7.62044 19.2863 8.45196C17.3163 9.09367 14.8463 8.16273 13.5263 6.97873C12.6363 6.18337 11.4463 4.52035 10.7463 2.73079C10.5563 2.24273 10.3063 1.5016 9.55626 0.896045C9.39626 0.760472 8.35626 -0.0800776 7.31626 0.191068C6.37626 0.435098 5.89626 1.46545 5.76626 2.06197C5.28626 4.41189 8.95626 7.25892 11.9463 8.57849C12.5163 8.83156 19.3563 11.7599 24.5663 8.49715C27.1463 6.88835 29.1563 3.84249 28.4863 1.98966Z" fill="#928E86"/>
@@ -1097,6 +1099,7 @@ const AccessoriesData = [
     },
     {
         name: "glove",
+        state:false,
         img: require("../../assets/image/accessories4.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="109" height="37" viewBox="0 0 109 37" fill="none">
 <path d="M24.8282 12.4309C24.8282 12.4309 23.1765 13.9725 23.3062 16.2721C23.4359 18.5717 27.3269 24.6575 22.7488 26.4693C18.1708 28.2812 17.5846 21.3781 17.5846 21.3781C17.5846 21.3781 16.334 28.7749 11.3336 28.4199C6.33317 28.065 -1.37973 21.0996 4.66615 15.0447C10.7161 8.9888 14.9324 7.94996 15.987 6.39307C15.9899 6.39449 23.5643 10.7807 24.8282 12.4309Z" fill="#0E99AE"/>
@@ -1150,6 +1153,7 @@ const AccessoriesData = [
     },
     {
         name: "necklace",
+        state:false,
         img: require("../../assets/image/accessories5.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16" fill="none">
 <g clip-path="url(#clip0_571_3559)">
@@ -1234,6 +1238,7 @@ const AccessoriesData = [
     },
     {
         name: "hat",
+        state:false,
         img: require("../../assets/image/accessoriesBoy2.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="89" height="50" viewBox="0 0 89 50" fill="none">
 <path d="M52.0621 12.7308C52.0621 12.7308 47.5785 3.99741 57.0356 0.80997C67.1014 -2.58763 82.0219 5.12994 71.2732 15.9999C71.2732 16.0116 54.7493 14.5288 52.0621 12.7308Z" fill="#E7390B"/>
@@ -1281,6 +1286,7 @@ const AccessoriesData = [
 const AccessoriesDataBoy = [
     {
         name: "glove",
+        state:false,
         img: require("../../assets/image/accessoriesBoy1.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="109" height="37" viewBox="0 0 109 37" fill="none">
 <path d="M24.8282 12.4309C24.8282 12.4309 23.1765 13.9725 23.3062 16.2721C23.4359 18.5717 27.3269 24.6575 22.7488 26.4693C18.1708 28.2812 17.5846 21.3781 17.5846 21.3781C17.5846 21.3781 16.334 28.7749 11.3336 28.4199C6.33317 28.065 -1.37973 21.0996 4.66615 15.0447C10.7161 8.9888 14.9324 7.94996 15.987 6.39307C15.9899 6.39449 23.5643 10.7807 24.8282 12.4309Z" fill="#0E99AE"/>
@@ -1333,6 +1339,7 @@ const AccessoriesDataBoy = [
     },
     {
         name: "hat",
+        state:false,
         img: require("../../assets/image/accessoriesBoy2.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="89" height="50" viewBox="0 0 89 50" fill="none">
 <path d="M52.0621 12.7308C52.0621 12.7308 47.5785 3.99741 57.0356 0.80997C67.1014 -2.58763 82.0219 5.12994 71.2732 15.9999C71.2732 16.0116 54.7493 14.5288 52.0621 12.7308Z" fill="#E7390B"/>
@@ -1376,6 +1383,7 @@ const AccessoriesDataBoy = [
     },
     {
         name: "scarf",
+        state:false,
         img: require("../../assets/image/accessories2.png"),
         accessories: `<svg xmlns="http://www.w3.org/2000/svg" width="34" height="31" viewBox="0 0 34 31" fill="none">
 <path d="M28.4863 1.98966C28.1363 1.0045 27.3163 0.498365 27.3163 0.498365C26.7663 0.154915 25.8363 -0.170459 25.0863 0.100686C24.0663 0.471251 24.0363 1.70948 23.4563 3.29116C23.0863 4.2944 21.8563 7.62044 19.2863 8.45196C17.3163 9.09367 14.8463 8.16273 13.5263 6.97873C12.6363 6.18337 11.4463 4.52035 10.7463 2.73079C10.5563 2.24273 10.3063 1.5016 9.55626 0.896045C9.39626 0.760472 8.35626 -0.0800776 7.31626 0.191068C6.37626 0.435098 5.89626 1.46545 5.76626 2.06197C5.28626 4.41189 8.95626 7.25892 11.9463 8.57849C12.5163 8.83156 19.3563 11.7599 24.5663 8.49715C27.1463 6.88835 29.1563 3.84249 28.4863 1.98966Z" fill="#928E86"/>
@@ -1772,10 +1780,7 @@ export const AddAnimalDataFunc = (props) => {
 }
 
 export const AccessoriesDataFunc = (props) => {
-    const [activeIndex, setActiveIndex] = useState(0)
-    const widthBorder = (item) => {
-        setActiveIndex(item)
-    }
+
     return (
         AccessoriesData.map((item, index) => {
             return (
@@ -1783,10 +1788,8 @@ export const AccessoriesDataFunc = (props) => {
                     item={item}
                     index={index}
                     key={index}
-                    activeIndex={activeIndex}
-                    widthBorder={widthBorder}
                     accessoriesFunc={props.accessoriesFunc}
-                    accessoriesNameFunc={props.accessoriesNameFunc}
+                    accessories={props.accessories}
                 />
             )
         })
@@ -1794,11 +1797,6 @@ export const AccessoriesDataFunc = (props) => {
 }
 
 export const AccessoriesDataBoyFunc = (props) => {
-    const [activeIndex, setActiveIndex] = useState(0)
-    const widthBorder = (item) => {
-        setActiveIndex(item)
-    }
-
     return (
         AccessoriesDataBoy.map((item, index) => {
             return (
@@ -1806,9 +1804,8 @@ export const AccessoriesDataBoyFunc = (props) => {
                     item={item}
                     index={index}
                     key={index}
-                    activeIndex={activeIndex}
-                    widthBorder={widthBorder}
-
+                    accessoriesFunc={props.accessoriesFunc}
+                    accessories={props.accessories}
                 />
             )
         })

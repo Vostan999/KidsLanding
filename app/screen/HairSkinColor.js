@@ -17,7 +17,6 @@ export default function HairSkinColor(props) {
     const trouserShoes = props.route.params.trouserShoes
     const botas = props.route.params.botas
     const accessories = props.route.params.accessories
-    const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
     const mini = props.route.params.mini
     const [skinColor, setSkinColor] = useState(props.route.params.skinColor ? props.route.params.skinColor : "#FFC8AC")
@@ -42,7 +41,6 @@ export default function HairSkinColor(props) {
             />
                 <Text style={styles.helloText}>Hello, {name}</Text>
             <PuzzleBaby
-                accessoriesName={accessoriesName}
                 accessories={accessories}
                 shirtShoes={shirtShoes}
                 trouserShoes={trouserShoes}
@@ -88,7 +86,6 @@ export default function HairSkinColor(props) {
                 name={name}
                 baby={baby}
                 shirtShoes={shirtShoes}
-                accessoriesName={accessoriesName}
                 accessories={accessories}
                 trouserShoes={trouserShoes}
                 botas={botas}

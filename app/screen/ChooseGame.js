@@ -66,7 +66,6 @@ export default function ChooseGame(props) {
                 name: data.name,
                 accessories: data.accessories,
                 trouserShoes: data.trouserShoes,
-                accessoriesName: data.accessoriesName,
                 botas: data.botas,
                 shirtShoes: data.shirtShoes,
                 mini: data.mini
@@ -132,8 +131,7 @@ export default function ChooseGame(props) {
                         marginHorizontal={40}
                         onPress={() => {
                             zookeper()
-                        }}
-                    />
+                        }}/>
                     <TouchableOpacity onPress={() => {
                         props.navigation.navigate("editPassword")
                     }}>

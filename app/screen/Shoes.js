@@ -18,7 +18,6 @@ export default function (props) {
     const hairColor = props.route.params.hairColor
     const botas = props.route.params.botas
     const accessories = props.route.params.accessories
-    const accessoriesName = props.route.params.accessoriesName
 
     let shirtShoesMap = (item) => {
         setShirtShoes(item)
@@ -48,7 +47,6 @@ export default function (props) {
                 baby={baby}
                 hairColor={hairColor}
                 botas={botas}
-                accessoriesName={accessoriesName}
                 accessories={accessories}
                 mini={mini}
             />
@@ -93,8 +91,8 @@ export default function (props) {
                 shirtShoes={shirtShoes}
                 trouserShoes={trouserShoes}
                 accessories={accessories}
-                accessoriesName={accessoriesName}
                 mini={mini}
+                botas={botas}
             />
             <Leaf/>
         </ScrollView>

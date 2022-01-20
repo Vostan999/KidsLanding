@@ -17,7 +17,6 @@ export default function FinishPage(props) {
     const trouserShoes = props.route.params.trouserShoes
     const botas = props.route.params.botas
     const accessories = props.route.params.accessories
-    const accessoriesName = props.route.params.accessoriesName
     const name = props.route.params.name
     const mini = props.route.params.mini
     const store = useSelector((state) => {
@@ -31,7 +30,6 @@ export default function FinishPage(props) {
         trouserShoes: trouserShoes,
         botas: botas,
         accessories: accessories,
-        accessoriesName: accessoriesName,
         name: name,
         baby: baby,
         mini: mini,
@@ -68,7 +66,6 @@ export default function FinishPage(props) {
                     hairColor={hairColor}
                     botas={botas}
                     accessories={accessories}
-                    accessoriesName={accessoriesName}
                     mini={mini}
                 />
             </View>
@@ -87,7 +84,6 @@ export default function FinishPage(props) {
                         shirtShoes: shirtShoes,
                         botas: botas,
                         accessories: accessories,
-                        accessoriesName: accessoriesName,
                         hairColor: hairColor,
                         skinColor: skinColor,
                         mini: mini

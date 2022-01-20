@@ -13,7 +13,6 @@ export default function Footer(props) {
                 trouserShoes: props.trouserShoes,
                 botas: props.botas,
                 accessories: props.accessories,
-                accessoriesName: props.accessoriesName,
                 mini: props.mini
             })
     }

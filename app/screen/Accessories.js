@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { ScrollView, StatusBar, Text, View} from "react-native";
+import {ScrollView, StatusBar, Text, View} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Footer from "../component/footer/Footer";
@@ -10,9 +10,8 @@ import PuzzleBaby from "../component/puzzlebaby/PuzzleBaby";
 
 
 export default function Accessories(props) {
-    const [botas, setBotas] = useState()
-    const [accessories,setAccessoriesFunc] = useState(props.route.params.accessories ? props.route.params.accessories : null)
-    const [accessoriesName,setAccessoriesName] = useState(props.route.params.accessoriesName ? props.route.params.accessoriesName : "" )
+    const [botas, setBotas] = useState(props.route.params.botas ? props.route.params.botas : null)
+    const [accessories, setAccessories] = useState([])
     const name = props.route.params.name
     const baby = props.route.params.baby
     const hairColor = props.route.params.hairColor
@@ -20,19 +19,15 @@ export default function Accessories(props) {
     const shirtShoes = props.route.params.shirtShoes
     const trouserShoes = props.route.params.trouserShoes
     const mini = props.route.params.mini
-
-
-    let accessoriesNameFunc = (item) => {
-        setAccessoriesName(item)
+    console.log(accessories)
+    let accessoriesFunc = (item) => {
+        setAccessories([...item])
     }
 
     let botasFunc = (item) => {
         setBotas(item)
     }
 
-    let accessoriesFunc = (item) => {
-        setAccessoriesFunc(item)
-    }
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
@@ -45,7 +40,6 @@ export default function Accessories(props) {
             />
             <Text style={styles.textHello}>Hello, {name}</Text>
             <PuzzleBaby
-                accessoriesName={accessoriesName}
                 accessories={accessories}
                 shirtShoes={shirtShoes}
                 trouserShoes={trouserShoes}
@@ -59,9 +53,9 @@ export default function Accessories(props) {
                 <Text style={styles.scrolText}>Choose Clothing</Text>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
                     {baby === "boy" ?
-                    <BotasDataBoyFunc
-                        botasFunc={botasFunc}
-                    />
+                        <BotasDataBoyFunc
+                            botasFunc={botasFunc}
+                        />
                         :
                         <BotasDataFunc
                             botasFunc={botasFunc}
@@ -73,17 +67,16 @@ export default function Accessories(props) {
                 <Text style={styles.scrolText}>Choose Accessories</Text>
                 <ScrollView horizontal contentContainerStyle={styles.shoesView}>
                     {baby === "boy" ?
-                    <AccessoriesDataBoyFunc
-                        accessoriesFunc={accessoriesFunc}
-                        accessoriesNameFunc={accessoriesNameFunc}
-                    />
+                        <AccessoriesDataBoyFunc
+                            accessories={accessories}
+                            accessoriesFunc={accessoriesFunc}
+                        />
                         :
                         <AccessoriesDataFunc
+                            accessories={accessories}
                             accessoriesFunc={accessoriesFunc}
-                            accessoriesNameFunc={accessoriesNameFunc}
                         />
                     }
-
                 </ScrollView>
             </View>
             <Footer
@@ -97,7 +90,6 @@ export default function Accessories(props) {
                 trouserShoes={trouserShoes}
                 botas={botas}
                 accessories={accessories}
-                accessoriesName={accessoriesName}
                 mini={mini}
             />
             <Leaf/>

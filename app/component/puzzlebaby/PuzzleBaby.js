@@ -3,7 +3,6 @@ import {View, TouchableOpacity, Text} from "react-native";
 import {SvgXml} from "react-native-svg";
 
 export default function PuzzleBaby(props) {
-
     const headerBoy = `<svg xmlns="http://www.w3.org/2000/svg" width="86" height="93" viewBox="0 0 71 64" fill="none">
         <g clip-path="url(#clip0_259_49)">
         <path d="M17.6643 22.0628C18.341 23.6731 19.4166 25.8809 21.1083 28.2609C22.6788 30.4687 24.8199 33.4816 28.2386 35.4109C33.6267 38.4543 39.4844 37.2795 41.666 36.7225C41.7215 35.578 41.7316 34.3425 41.666 33.031C41.5498 30.656 41.2266 28.5394 40.8327 26.7164C41.6811 29.0356 42.893 30.6054 43.6859 31.4814C44.5948 32.4891 47.3369 35.2438 51.7655 36.0085C53.7198 36.3477 55.366 36.1857 56.4012 36.0085C55.9467 35.2337 55.5074 34.3982 55.0933 33.507C53.0987 29.2129 52.4169 25.1011 52.2402 21.8299C52.8563 23.5212 53.7299 25.4808 54.9721 27.5469C56.9618 30.8535 59.214 33.274 61.0319 34.9349C61.2743 36.7883 61.4763 38.7379 61.6278 40.7735C61.7439 42.3331 61.8196 43.8422 61.8651 45.3005C62.5771 45.0777 63.1629 44.779 63.6477 44.465C67.7279 41.8116 67.7026 35.7857 67.6875 34.8134C68.1723 34.7932 68.7833 34.8084 69.4701 34.9349C69.9751 35.0261 70.4144 35.1578 70.778 35.2945C71.1567 32.7119 70.9901 30.6054 70.778 29.2179C70.4598 27.1063 69.7226 22.24 65.7888 19.0903C64.4859 18.0472 63.2033 17.4902 62.3448 17.1864C62.4054 16.0875 62.365 14.4519 61.7489 12.6593C59.5775 6.31945 52.2654 3.83313 47.7307 2.29374C44.7261 1.27592 36.0152 -1.54968 25.3905 1.45821C23.8049 1.90889 16.6544 4.05087 9.9432 10.3958C7.31731 12.8619 3.08054 16.8673 1.03032 23.6123C0.737436 24.5694 -0.898694 30.18 0.671789 36.7174C1.68175 40.9203 3.26233 42.3483 3.9996 42.9155C5.78217 44.2827 7.77179 44.5359 8.87264 44.5815C8.93324 41.8268 9.27662 39.5835 9.58466 38.0289C10.1553 35.1426 11.2864 29.7598 15.2859 24.6858C16.2251 23.4958 17.0937 22.6097 17.6643 22.0628Z"   fill=${props.hairColor}/>
@@ -33,7 +32,6 @@ export default function PuzzleBaby(props) {
             </svg>`
 
     const baby = `<svg xmlns="http://www.w3.org/2000/svg/rtg" width="96" height="163" viewBox="0 0 96 163" fill="none">
-
                 <path
                     d="M66.0827 91.478C62.1186 79.6051 57.2604 76.721 56.9027 72.7633C56.5649 69.0695 56.4755 64.9299 56.4755 64.9299H38.4929C38.4929 64.9299 38.3936 69.0695 38.0657 72.7633C37.708 76.721 32.8398 79.6051 28.8857 91.478C24.3155 105.171 22.9941 121.089 22.9941 121.089C22.9941 121.089 32.5517 122.93 47.4941 122.93C62.4366 122.93 71.9941 120.628 71.9941 120.628C71.9941 120.628 70.6529 105.171 66.0827 91.478Z"
                     fill=${props.skinColor}/>
@@ -103,20 +101,58 @@ export default function PuzzleBaby(props) {
             </svg>`
 
     return (
-        <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
-            <View style={{justifyContent: "center", alignItems: "center", position: "relative",borderWidth:1,borderColor:"transparent",}}>
+        <View style={{
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+            borderWidth: 1,
+            borderColor: "transparent",
+        }}>
+            <View style={{
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                borderWidth: 1,
+                borderColor: "transparent",
+            }}>
                 {props.baby === "boy" ?
-                    <View style={{position:"absolute",borderWidth:1,borderColor:"transparent",top:-28.3,zIndex:1,left:1.5,right:9,alignItems:"center",justifyContent:"center"}}>
+                    <View style={{
+                        position: "absolute",
+                        borderWidth: 1,
+                        borderColor: "transparent",
+                        top: -28.3,
+                        zIndex: 1,
+                        left: 1.5,
+                        right: 9,
+                        alignItems: "center",
+                        justifyContent: "center"
+                    }}>
                         <SvgXml xml={headerBoy}/>
                     </View>
                     :
-                    <View style={{position:"absolute",borderWidth:1,top:-12.5,zIndex:1,left:-.5,right:2.5,alignItems:"center",justifyContent:"center",borderColor:"transparent",}}>
+                    <View style={{
+                        position: "absolute",
+                        borderWidth: 1,
+                        top: -12.5,
+                        zIndex: 1,
+                        left: -.5,
+                        right: 2.5,
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderColor: "transparent",
+                    }}>
                         <SvgXml xml={headerGirl}/>
                     </View>
                 }
                 <SvgXml xml={baby}/>
             </View>
-            <View style={{position: "absolute", top: 70, justifyContent: 'center', alignItems: 'center',borderColor:"transparent",}}>
+            <View style={{
+                position: "absolute",
+                top: 70,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderColor: "transparent",
+            }}>
                 <View style={{justifyContent: "flex-start", alignItems: "center", height: '100%', flex: 1}}>
                     <View style={{alignItems: 'center', borderColor: 'green', height: 90, zIndex: 2}}>
                         <View style={{
@@ -125,7 +161,7 @@ export default function PuzzleBaby(props) {
                             zIndex: 2,
                             marginLeft: -0,
                             marginTop: -1.5,
-                            bottom:-5
+                            bottom: -5
                         }}>
                             <SvgXml xml={props.shirtShoes ? props.shirtShoes : null}/>
                         </View>
@@ -169,99 +205,173 @@ export default function PuzzleBaby(props) {
                     </View>
                 </View>
                 <View style={{position: "absolute", width: 103, height: 180, top: -83, zIndex: 1000}}>
+                    {/*{*/}
+                    {/*    props.accessoriesName === "hat" && props.baby === "boy" ?*/}
+                    {/*        <View style={{*/}
+                    {/*            alignItems: "center",*/}
+                    {/*            justifyContent: "center",*/}
+                    {/*            position: "absolute",*/}
+                    {/*            top: -27,*/}
+                    {/*            left: -8,*/}
+                    {/*            right: 0,*/}
+                    {/*            zIndex: 1000,*/}
+                    {/*        }}>*/}
+                    {/*            <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*        </View>*/}
+                    {/*        :*/}
+                    {/*        null*/}
+                    {/*}*/}
+                    {/*{*/}
+                    {/*    props.accessoriesName === "earring" && props.baby === "girl" ?*/}
+                    {/*    <View style={{*/}
+                    {/*        alignItems: "center",*/}
+                    {/*        justifyContent: "center",*/}
+                    {/*        position: "absolute",*/}
+                    {/*        top: 52,*/}
+                    {/*        right: 9,*/}
+                    {/*        zIndex: 1000,*/}
+                    {/*    }}>*/}
+                    {/*        <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*    </View>*/}
+                    {/*    :*/}
+                    {/*    null*/}
+                    {/*}*/}
+                    {/*{*/}
+                    {/*    props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl" ?*/}
+                    {/*    <View style={{*/}
+                    {/*        alignItems: "center",*/}
+                    {/*        justifyContent: "center",*/}
+                    {/*        position: "absolute",*/}
+                    {/*        top: 78,*/}
+                    {/*        left: 0,*/}
+                    {/*        right: 0,*/}
+                    {/*        zIndex: 1000*/}
+                    {/*    }}>*/}
+                    {/*        <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*    </View>*/}
+                    {/*    :*/}
+                    {/*    null*/}
+                    {/*}*/}
+                    {/*{*/}
+                    {/*    props.accessoriesName === "scarf" && props.baby === "boy" ?*/}
+                    {/*    <View style={{*/}
+                    {/*        alignItems: "center",*/}
+                    {/*        justifyContent: "center",*/}
+                    {/*        position: "absolute",*/}
+                    {/*        top: 79,*/}
+                    {/*        left: -4,*/}
+                    {/*        right: 0,*/}
+                    {/*        zIndex: 1000*/}
+                    {/*    }}>*/}
+                    {/*        <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*    </View>*/}
+                    {/*    :*/}
+                    {/*    null*/}
+                    {/*}*/}
+                    {/*{*/}
+                    {/*    props.accessoriesName === "glove" ?*/}
+                    {/*    <View style={{*/}
+                    {/*        alignItems: "center",*/}
+                    {/*        justifyContent: "center",*/}
+                    {/*        position: "absolute",*/}
+                    {/*        top: 109,*/}
+                    {/*        zIndex: 1000,*/}
+                    {/*        left:1,*/}
+                    {/*        width: "100%", height: 29*/}
+                    {/*    }}>*/}
+                    {/*        <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*    </View>*/}
+                    {/*    :*/}
+                    {/*    null*/}
+                    {/*}{*/}
+                    {/*    props.accessoriesName === "hat" && props.baby === "girl" ?*/}
+                    {/*    <View style={{*/}
+                    {/*        alignItems: "center",*/}
+                    {/*        justifyContent: "center",*/}
+                    {/*        position: "absolute",*/}
+                    {/*        top: -27,*/}
+                    {/*        left: -2,*/}
+                    {/*        right: 0,*/}
+                    {/*        zIndex: 1000,*/}
+                    {/*    }}>*/}
+                    {/*        <SvgXml xml={props.accessories ? props.accessories : null}/>*/}
+                    {/*    </View>*/}
+                    {/*    :*/}
+                    {/*    null*/}
+                    {/*}*/}
+
                     {
-                        props.accessoriesName === "hat" && props.baby === "boy" ?
-                            <View style={{
-                                alignItems: "center",
-                                justifyContent: "center",
-                                position: "absolute",
-                                top: -27,
-                                left: -8,
-                                right: 0,
-                                zIndex: 1000,
-                            }}>
-                                <SvgXml xml={props.accessories ? props.accessories : null}/>
-                            </View>
+                        props.accessories ?
+                            props.accessories.map((item, i) => {
+
+                                if (item.name === "earring") {
+                                    return (<View
+                                            key={i}
+                                            style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            position: "absolute",
+                                            top: 52,
+                                            right: 9,
+                                            zIndex: 1000,
+                                        }}>
+                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                        </View>
+                                    )
+                                }
+                                if (item.name === "hat") {
+                                    return (<View
+                                            key={i}
+                                            style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            position: "absolute",
+                                            top: -27,
+                                            left: -2,
+                                            right: 0,
+                                            zIndex: 1000,
+                                        }}>
+                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                        </View>
+                                    )
+                                }
+                                if (item.name === "scarf") {
+                                    return (
+                                        <View
+                                            key={i}
+                                            style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            position: "absolute",
+                                            top: 79,
+                                            left: -4,
+                                            right: 0,
+                                            zIndex: 1000
+                                        }}>
+                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                        </View>
+                                    )
+                                }
+                                if (item.name === "glove") {
+                                    return (
+                                        <View
+                                            key={i}
+                                            style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            position: "absolute",
+                                            top: 109,
+                                            zIndex: 1000,
+                                            left: 1,
+                                            width: "100%", height: 29
+                                        }}>
+                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                        </View>
+                                    )
+                                }
+                            })
                             :
                             null
-                    }
-                    {
-                        props.accessoriesName === "earring" && props.baby === "girl" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: 52,
-                            right: 9,
-                            zIndex: 1000,
-                        }}>
-                            <SvgXml xml={props.accessories ? props.accessories : null}/>
-                        </View>
-                        :
-                        null
-                    }
-                    {
-                        props.accessoriesName === "scarf" && props.baby === "girl" || props.accessoriesName === "necklace" && props.baby === "girl" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: 78,
-                            left: 0,
-                            right: 0,
-                            zIndex: 1000
-                        }}>
-                            <SvgXml xml={props.accessories ? props.accessories : null}/>
-                        </View>
-                        :
-                        null
-                    }
-                    {
-                        props.accessoriesName === "scarf" && props.baby === "boy" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: 79,
-                            left: -4,
-                            right: 0,
-                            zIndex: 1000
-                        }}>
-                            <SvgXml xml={props.accessories ? props.accessories : null}/>
-                        </View>
-                        :
-                        null
-                    }
-                    {
-                        props.accessoriesName === "glove" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: 109,
-                            zIndex: 1000,
-                            left:1,
-                            width: "100%", height: 29
-                        }}>
-                            <SvgXml xml={props.accessories ? props.accessories : null}/>
-                        </View>
-                        :
-                        null
-                    }{
-                        props.accessoriesName === "hat" && props.baby === "girl" ?
-                        <View style={{
-                            alignItems: "center",
-                            justifyContent: "center",
-                            position: "absolute",
-                            top: -27,
-                            left: -2,
-                            right: 0,
-                            zIndex: 1000,
-                        }}>
-                            <SvgXml xml={props.accessories ? props.accessories : null}/>
-                        </View>
-                        :
-                        null
                     }
                 </View>
             </View>

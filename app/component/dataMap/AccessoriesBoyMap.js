@@ -7,7 +7,15 @@ export default function AccessoriesBoyMap(props) {
     const widthBorder = (item) => {
         setActiveIndex(item)
     }
-
+    const handle = (item) => {
+        if (!item.state) {
+            item.state = true
+            const arr = props.accessories
+            arr.push(item)
+            props.accessoriesFunc(arr)
+            widthBorder(props.index)
+        }
+    }
     return (
         <TouchableOpacity
             style={[
@@ -23,9 +31,7 @@ export default function AccessoriesBoyMap(props) {
                 }
             ]}
             onPress={() => {
-                     widthBorder(props.index)
-                    props.accessoriesNameFunc(props.item.name)
-                    props.accessoriesFunc(props.item.accessories)
+                handle(props.item)
             }}
         >
             <Image source={props.item.img}/>
