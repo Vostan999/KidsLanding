@@ -61,7 +61,7 @@ export default function StackNavigation() {
             <Stack.Screen name={"signUp"} component={Signup}/>
             <Stack.Screen name={"zookeeperName"} component={ZookeeperName}/>
             <Stack.Screen name={"qrCodeScanner"} component={QrCodeScanner}/>
-                <Stack.Screen name={"terms"} component={Terms}/>
+            <Stack.Screen name={"terms"} component={Terms}/>
         </Stack.Navigator>
     )
 }

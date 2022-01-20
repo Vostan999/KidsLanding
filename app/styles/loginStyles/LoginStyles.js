@@ -46,11 +46,10 @@ export const styles = StyleSheet.create({
         fontFamily: "MochiyPopPOne-Regular",
     },
     loginView: {
-        marginVertical: 120,
+        marginVertical: 20,
         marginHorizontal: 40
     },
     headerView: {
         marginHorizontal: 40
     },
-
 })

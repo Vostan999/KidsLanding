@@ -36,7 +36,7 @@ export default function FinishPage(props) {
         baby: baby,
         mini: mini,
     }
-    console.log(store);
+
     const _StoreData = async () => {
         try {
            return  await AsyncStorage.setItem(`${store}`, JSON.stringify(data))

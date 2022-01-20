@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 
 export default function AccessoriesDataMap(props) {
 
+    const [activeIndex, setActiveIndex] = useState(0)
+    const widthBorder = (item) => {
+        setActiveIndex(item)
+    }
+
     return (
         <TouchableOpacity
             style={[
                 {
-                    borderWidth: props.activeIndex === props.index ? 2 : 1,
-                    borderColor: props.activeIndex === props.index ? "#FFE3BA" : "#DADADA",
+                    borderWidth: activeIndex === props.index ? 2 : 1,
+                    borderColor: activeIndex === props.index ? "#FFE3BA" : "#DADADA",
                     height: 86,
                     width: 59,
                     alignItems: "center",
@@ -19,13 +24,11 @@ export default function AccessoriesDataMap(props) {
                 }
             ]}
             onPress={() => {
-                props.widthBorder(props.index)
+                widthBorder(props.index)
                 props.accessoriesNameFunc(props.item.name)
                 props.accessoriesFunc(props.item.accessories)
-            }}
-        >
+            }}>
             <Image source={props.item.img}/>
-
         </TouchableOpacity>
     )
 }

@@ -8,6 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
 import {useSelector} from "react-redux";
+import Button from "../component/button/Button";
 
 export const ContextValue1 = createContext()
 export default function AddNewAnimal(props) {
@@ -37,7 +38,7 @@ export default function AddNewAnimal(props) {
         await AsyncStorage.removeItem("token")
         props.navigation.replace("login")
     }
-    console.log(store);
+
     let babyData = async () => {
         try {
             let data = await AsyncStorage.getItem(`${store}`);
@@ -49,22 +50,21 @@ export default function AddNewAnimal(props) {
 
     const zookeper = async () => {
         const data = await babyData()
-        console.log(data, 'data');
         if (data) {
-            // props.navigation.navigate("finishPage", {
-            //     baby: data.baby,
-            //     hairColor: data.hairColor,
-            //     skinColor: data.skinColor,
-            //     name: data.name,
-            //     accessories: data.accessories,
-            //     trouserShoes: data.trouserShoes,
-            //     accessoriesName: data.accessoriesName,
-            //     botas: data.botas,
-            //     shirtShoes: data.shirtShoes,
-            //     mini: data.mini
-            // })
+            props.navigation.navigate("finishPage", {
+                baby: data.baby,
+                hairColor: data.hairColor,
+                skinColor: data.skinColor,
+                name: data.name,
+                accessories: data.accessories,
+                trouserShoes: data.trouserShoes,
+                accessoriesName: data.accessoriesName,
+                botas: data.botas,
+                shirtShoes: data.shirtShoes,
+                mini: data.mini
+            })
         } else if (!data) {
-           // props.navigation.navigate("zookeeper")
+           props.navigation.navigate("zookeeper")
         }
     }
 
@@ -77,7 +77,9 @@ export default function AddNewAnimal(props) {
                 <View style={styles.welcomeTextView}>
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>
-                    <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
+                    <View style={styles.zooziezImage}>
+                        <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
+                    </View>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <View style={styles.animalViewTillyGeorge}>
                         <AddAnimalDataFunc
@@ -94,11 +96,16 @@ export default function AddNewAnimal(props) {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity onPress={() => {
-                        zookeper()
-                    }}>
-                        <Text style={styles.title1}>MY ZOOKEEPER</Text>
-                    </TouchableOpacity>
+                    <Button
+                        title={"MY ZOOKEEPER"}
+                        borderWidth={1}
+                        borderColor={"#D56638"}
+                        color={"#D56638"}
+                        marginHorizontal={40}
+                        marginVertical={10}
+                        onPress={() => {
+                            zookeper()
+                        }}/>
                     <TouchableOpacity onPress={() => {
                         props.navigation.navigate("editPassword")
                     }}>

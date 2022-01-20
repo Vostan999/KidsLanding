@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {ScrollView, StatusBar, View,} from "react-native";
+import {ScrollView, StatusBar, View,KeyboardAvoidingView} from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
@@ -56,6 +56,7 @@ export default function GameTigerOneInput(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
+            <KeyboardAvoidingView>
             <StatusBar
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
@@ -99,6 +100,7 @@ export default function GameTigerOneInput(props) {
                 leaf3={require("../assets/image/leaf.png")}
             />
             <Loading loading={loading}/>
+            </KeyboardAvoidingView>
         </ScrollView>
     )
 }

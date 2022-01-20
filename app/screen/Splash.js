@@ -41,7 +41,7 @@ export default function Splash(props) {
                 const response = await axiosInstance.get("/getUser")
                  dispatch({
                      type: "SET_CUSTOMER",
-                     payload: response.data.user.email
+                     payload: response.data.user.email.toLowerCase()
                  })
                  setTimeout(() => {
                      props.navigation.replace("addNewAnimal")

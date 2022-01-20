@@ -29,7 +29,7 @@ export default function AddAnimalDataMap(props) {
             style={styles.animalView}
             onPress={() => {
                 animalId(props.item.id)
-                context.navigate("chooseGame")
+                context.navigate("chooseGame",{name:props.item.title})
             }}>
             <View style={styles.container}>
                 <Image

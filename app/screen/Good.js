@@ -22,7 +22,7 @@ export default function Good(props) {
                         propsNavigation={props.navigation}
                     />
                     <Text style={styles.welcomeText}>CONGRATULATIONS</Text>
-                    <Text style={styles.characterText}>Pick Your Character</Text>
+                    <Text style={styles.characterText}> you’ve mastered the value of being trustworthy!</Text>
                     <Button
                         title={"GOOD"}
                         borderWidth={1}

@@ -1798,6 +1798,7 @@ export const AccessoriesDataBoyFunc = (props) => {
     const widthBorder = (item) => {
         setActiveIndex(item)
     }
+
     return (
         AccessoriesDataBoy.map((item, index) => {
             return (
@@ -1807,8 +1808,7 @@ export const AccessoriesDataBoyFunc = (props) => {
                     key={index}
                     activeIndex={activeIndex}
                     widthBorder={widthBorder}
-                    accessoriesFunc={props.accessoriesFunc}
-                    accessoriesNameFunc={props.accessoriesNameFunc}
+
                 />
             )
         })

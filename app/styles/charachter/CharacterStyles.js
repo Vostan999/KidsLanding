@@ -4,27 +4,31 @@ import {GContent} from "../gContent/gContent";
 
 export const styles = StyleSheet.create({
     ScroolView:GContent.ScroolViewALl,
+    zooziezImage:{
+        alignItems:"center"
+    },
     welcomeText:{
         fontSize:24,
         color:"#D56638",
         fontFamily:"MochiyPopPOne-Regular",
+        textAlign: "center"
     },
     characterText:{
         color:"#9E724E",
-
+        textAlign:"center",
         marginTop:55,
        fontFamily:"Poppins-Regular",
         fontWeight:"bold",
     },
     welcomeTextView:{
-        alignItems:"center",
-        marginVertical:20
+        marginVertical:20,
     },
     to:{
         fontSize:16,
         color:"#D56638",
         marginVertical:10,
         fontFamily:"MochiyPopPOne-Regular",
+        textAlign: "center"
     },
 
     zooziez:{
@@ -74,6 +78,7 @@ export const styles = StyleSheet.create({
         color:"#A79A90",
         fontSize:18,
         textTransform:"capitalize",
+        textAlign:"center"
     },
     title3:{
         fontFamily:"Poppins-Regular",

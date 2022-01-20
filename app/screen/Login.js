@@ -59,7 +59,7 @@ export default function Login(props) {
             const response = await axiosInstance.post("/login", data)
             dispatch({
                 type: "SET_CUSTOMER",
-                payload: email
+                payload: email.toLowerCase()
             })
             await storeKeep()
             await storeData(response.data.token)
@@ -71,7 +71,7 @@ export default function Login(props) {
         }
     }
     return (
-        <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
+        <ScrollView contentContainerStyle={[GContent.ScroolViewALl,{justifyContent:"space-between"}]}>
             <View>
                 <StatusBar
                     backgroundColor={"white"}
@@ -115,23 +115,24 @@ export default function Login(props) {
                     </View>
                     <Text style={GContent.validateTextStyles}>{registration}</Text>
                 </View>
-                <View style={styles.loginView}>
-                    <Button
-                        title={"LOG IN"}
-                        backgroundColor={"#D56638"}
-                        color={"#FDFDFD"}
-                        onPress={() => {
-                            validateFunction()
-                        }}
-                    />
-                    <View style={styles.underView}>
-                        <Text style={styles.loginTextSign}>New account? </Text>
-                        <TouchableOpacity onPress={() => {
-                            props.navigation.navigate("signUp")
-                        }}>
-                            <Text style={[styles.loginTextSign, {fontWeight: "bold"}]}>Sign up</Text>
-                        </TouchableOpacity>
-                    </View>
+
+            </View>
+            <View style={styles.loginView}>
+                <Button
+                    title={"LOG IN"}
+                    backgroundColor={"#D56638"}
+                    color={"#FDFDFD"}
+                    onPress={() => {
+                        validateFunction()
+                    }}
+                />
+                <View style={styles.underView}>
+                    <Text style={styles.loginTextSign}>New account? </Text>
+                    <TouchableOpacity onPress={() => {
+                        props.navigation.navigate("signUp")
+                    }}>
+                        <Text style={[styles.loginTextSign, {fontWeight: "bold"}]}>Sign up</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
             <Leaf

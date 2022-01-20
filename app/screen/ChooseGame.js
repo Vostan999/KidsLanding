@@ -15,9 +15,11 @@ export const ContextValue = createContext()
 export default function ChooseGame(props) {
     const [name, setName] = useState("")
     const [loading, setLoading] = useState(false)
+    const nameCharacter = props.route.params.name
     const store = useSelector((state) => {
         return state.customer
     })
+
     let babyData = async () => {
         try {
             let data = await AsyncStorage.getItem(`${store}`);
@@ -86,9 +88,9 @@ export default function ChooseGame(props) {
                         propsNavigation={props.navigation}
                     />
                     <Text style={styles.characterText}>Pick Your Character</Text>
-                    <Text style={styles.welcomeText}>George`s Games</Text>
+                    <Text style={styles.welcomeText}>{nameCharacter}`s Games</Text>
                     <Button
-                        title={"GAME 1"}
+                        title={"spell the value!"}
                         borderWidth={1}
                         marginVertical={20}
                         borderColor={"#D56638"}
@@ -102,7 +104,7 @@ export default function ChooseGame(props) {
                         }}
                     />
                     <Button
-                        title={"GAME 2"}
+                        title={"master the value!"}
                         borderWidth={1}
                         borderColor={"#D56638"}
                         color={"#D56638"}
@@ -122,11 +124,16 @@ export default function ChooseGame(props) {
                     </TouchableOpacity>
                 </View>
                 <View>
-                    <TouchableOpacity onPress={() => {
-                        zookeper()
-                    }}>
-                        <Text style={styles.contText}>MY ZOOKEEPER</Text>
-                    </TouchableOpacity>
+                    <Button
+                        title={"MY ZOOKEEPER"}
+                        borderWidth={1}
+                        borderColor={"#D56638"}
+                        color={"#D56638"}
+                        marginHorizontal={40}
+                        onPress={() => {
+                            zookeper()
+                        }}
+                    />
                     <TouchableOpacity onPress={() => {
                         props.navigation.navigate("editPassword")
                     }}>
