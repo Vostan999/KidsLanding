@@ -12,15 +12,13 @@ export default function AccessoriesDataMap(props) {
     }
 
     const handle = (item) => {
-        if (!item.state) {
             item.state = true
             const arr = props.accessories
             arr.push(item)
             props.accessoriesFunc(arr)
             widthBorder(props.index)
-        }
     }
-
+    console.log(props.item)
     return (
         <TouchableOpacity
             style={{

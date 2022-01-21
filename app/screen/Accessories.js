@@ -19,7 +19,7 @@ export default function Accessories(props) {
     const shirtShoes = props.route.params.shirtShoes
     const trouserShoes = props.route.params.trouserShoes
     const mini = props.route.params.mini
-    console.log(accessories)
+
     let accessoriesFunc = (item) => {
         setAccessories([...item])
     }
@@ -27,7 +27,6 @@ export default function Accessories(props) {
     let botasFunc = (item) => {
         setBotas(item)
     }
-
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>

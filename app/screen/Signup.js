@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {View, Text, StatusBar, ScrollView, Image, TouchableOpacity,Platform} from "react-native"
+import {View, Text, StatusBar, ScrollView, Image, TouchableOpacity, Platform} from "react-native"
 import {GContent} from "../styles/gContent/gContent";
 import Leaf from "../component/leaf/Leaf";
 import Input from "../component/input/Input";
@@ -24,7 +24,7 @@ export default function Signup(props) {
     const [repPasswordText, setRepPasswordText] = useState("")
     const [visibleLoading, setVisibleLoading] = useState(false)
     const [registration, setRegistration] = useState("")
-    const [isSelected,setIsSelected] = useState(false)
+    const [isSelected, setIsSelected] = useState(false)
     const handle = async () => {
         setVisibleLoading(true)
         try {
@@ -44,7 +44,7 @@ export default function Signup(props) {
     }
 
     const ValidateFunction = () => {
-        if (validateEmail(email) && nameValidation.test(lastName) && nameValidation.test(firstName)&& isSelected && password === repPassword && passwordValidate.test(password) && passwordValidate.test(repPassword)) {
+        if (validateEmail(email) && nameValidation.test(lastName) && nameValidation.test(firstName) && isSelected && password === repPassword && passwordValidate.test(password) && passwordValidate.test(repPassword)) {
             handle()
         } else {
             setVisibleLoading(false)
@@ -91,8 +91,7 @@ export default function Signup(props) {
                         setFirstName(evt)
                         setFirstNameText("")
                         setRegistration("")
-                    }}
-                />
+                    }}/>
                 <Text style={GContent.validateTextStyles}>{firstNameText}</Text>
                 <PasswordInput
                     placeholder={"Last name"}
@@ -100,28 +99,23 @@ export default function Signup(props) {
                         setLastName(evt)
                         setLastNameText("")
                         setRegistration("")
-                    }}
-                />
+                    }}/>
                 <Text style={GContent.validateTextStyles}>{lastNameText}</Text>
                 <Input
                     placeholder={"Email"}
-
                     onChangeText={(evt) => {
                         setEmail(evt)
                         setEmailText("")
                         setRegistration("")
-                    }}
-                />
+                    }}/>
                 <Text style={GContent.validateTextStyles}>{emailText}</Text>
                 <PasswordInput
                     placeholder={"Password"}
-
                     onChangeText={(evt) => {
                         setPassword(evt)
                         setPasswordText("")
                         setRegistration("")
-                    }}
-                />
+                    }}/>
                 <Text style={GContent.validateTextStyles}>{passwordText}</Text>
                 <PasswordInput
                     placeholder={"Repeat password"}
@@ -137,14 +131,15 @@ export default function Signup(props) {
                         disabled={false}
                         value={isSelected}
                         onValueChange={(newValue) => setIsSelected(newValue)}
-                        style={{transform: [{scaleX: Platform.OS === "ios"? 0.7 :0.9}, {scaleY: Platform.OS === "ios"? 0.7 :0.9}]}}
+                        style={{transform: [{scaleX: Platform.OS === "ios" ? 0.7 : 0.9}, {scaleY: Platform.OS === "ios" ? 0.7 : 0.9}
+                        ]}}
                         tintColors={{true: '#F19100', false: '#9E724E'}}
                         onTintColor='#F19100'
                         onFillColor='#F19100'
                         onCheckColor='white'
                     />
-                    <Text style={styles.agreeText}>I agree to the  </Text>
-                    <TouchableOpacity onPress={() =>{
+                    <Text style={styles.agreeText}>I agree to the </Text>
+                    <TouchableOpacity onPress={() => {
                         props.navigation.navigate("terms")
                     }}>
                         <Text style={styles.termsText}>Terms and Conditions</Text>

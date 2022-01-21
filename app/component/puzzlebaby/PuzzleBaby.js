@@ -335,6 +335,23 @@ export default function PuzzleBaby(props) {
                                         </View>
                                     )
                                 }
+                                if(item.name === "necklace"){
+                                    return (
+                                        <View
+                                            key={i}
+                                            style={{
+                                            alignItems: "center",
+                                            justifyContent: "center",
+                                            position: "absolute",
+                                            top: 78,
+                                            left: 0,
+                                            right: 0,
+                                            zIndex: 1000
+                                        }}>
+                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                        </View>
+                                    )
+                                }
                                 if (item.name === "scarf") {
                                     return (
                                         <View
@@ -363,7 +380,7 @@ export default function PuzzleBaby(props) {
                                             top: 109,
                                             zIndex: 1000,
                                             left: 1,
-                                            width: "100%", height: 29
+                                            width: "100%", height: 29,
                                         }}>
                                             <SvgXml xml={item.accessories ? item.accessories : null}/>
                                         </View>
