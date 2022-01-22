@@ -303,7 +303,6 @@ export default function PuzzleBaby(props) {
                     {
                         props.accessories ?
                             props.accessories.map((item, i) => {
-
                                 if (item.name === "earring") {
                                     return (<View
                                             key={i}
@@ -315,7 +314,7 @@ export default function PuzzleBaby(props) {
                                             right: 9,
                                             zIndex: 1000,
                                         }}>
-                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                            <SvgXml xml={item.accessories ? item.accessories : []}/>
                                         </View>
                                     )
                                 }
@@ -331,7 +330,7 @@ export default function PuzzleBaby(props) {
                                             right: 0,
                                             zIndex: 1000,
                                         }}>
-                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                            <SvgXml xml={item.accessories ? item.accessories : []}/>
                                         </View>
                                     )
                                 }
@@ -348,7 +347,7 @@ export default function PuzzleBaby(props) {
                                             right: 0,
                                             zIndex: 1000
                                         }}>
-                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                            <SvgXml xml={item.accessories ? item.accessories : []}/>
                                         </View>
                                     )
                                 }
@@ -365,7 +364,7 @@ export default function PuzzleBaby(props) {
                                             right: 0,
                                             zIndex: 1000
                                         }}>
-                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                            <SvgXml xml={item.accessories ? item.accessories : []}/>
                                         </View>
                                     )
                                 }
@@ -382,13 +381,13 @@ export default function PuzzleBaby(props) {
                                             left: 1,
                                             width: "100%", height: 29,
                                         }}>
-                                            <SvgXml xml={item.accessories ? item.accessories : null}/>
+                                            <SvgXml xml={item.accessories ? item.accessories : []}/>
                                         </View>
                                     )
                                 }
                             })
                             :
-                            null
+                            []
                     }
                 </View>
             </View>

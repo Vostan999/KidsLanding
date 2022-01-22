@@ -18,7 +18,7 @@ export default function AccessoriesDataMap(props) {
             props.accessoriesFunc(arr)
             widthBorder(props.index)
     }
-    console.log(props.item)
+
     return (
         <TouchableOpacity
             style={{

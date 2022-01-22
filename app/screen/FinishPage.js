@@ -19,6 +19,7 @@ export default function FinishPage(props) {
     const accessories = props.route.params.accessories
     const name = props.route.params.name
     const mini = props.route.params.mini
+
     const store = useSelector((state) => {
         return state.customer
     })

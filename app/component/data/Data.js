@@ -1732,21 +1732,6 @@ const AccessoriesDataBoy = [
     },
 ]
 
-const GameTigerTwodata = [
-    {
-        img: require("../../assets/image/icon1.png")
-    },
-    {
-        img: require("../../assets/image/icon2.png")
-    },
-    {
-        img: require("../../assets/image/icon3.png")
-    },
-    {
-        img: require("../../assets/image/icon4.png")
-    }
-]
-
 export const AnimalDataFunc = (props) => {
     return (
         props.data.map((item, index) => {
@@ -1774,7 +1759,6 @@ export const AddAnimalDataFunc = (props) => {
             )
         })
     )
-
 }
 
 export const AccessoriesDataFunc = (props) => {
