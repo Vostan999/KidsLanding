@@ -3,7 +3,6 @@ import {TouchableOpacity, Image, StyleSheet} from "react-native"
 
 export default function ShirtDataBoyMap(props) {
 
-
     return (
         <TouchableOpacity
             onPress={()=>{

@@ -14,9 +14,7 @@ export const ContextValue1 = createContext()
 export default function AddNewAnimal(props) {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
-    const store = useSelector((state) => {
-        return state.customer
-    })
+    const store = useSelector((state) => state.customer)
 
     useEffect(() => {
         animal()
@@ -64,7 +62,7 @@ export default function AddNewAnimal(props) {
                 mini: data.mini
             })
         } else if (!data) {
-           props.navigation.navigate("zookeeper")
+            props.navigation.navigate("zookeeper")
         }
     }
 

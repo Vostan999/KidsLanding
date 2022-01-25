@@ -1,5 +1,5 @@
 import React from "react"
-import {TouchableOpacity, Image, StyleSheet} from "react-native"
+import {TouchableOpacity, Image} from "react-native"
 
 export default function ShirtMap(props) {
 

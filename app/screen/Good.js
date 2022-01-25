@@ -3,8 +3,6 @@ import {Image, ScrollView, StatusBar, Text, TouchableOpacity, View, Linking} fro
 import {styles} from "../styles/goodStyles/GoodStyles"
 import Leaf from "../component/leaf/Leaf";
 import {GContent} from "../styles/gContent/gContent";
-
-import axiosInstance from "../networking/axiosinstance";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Button from "../component/button/Button";
 

@@ -46,7 +46,9 @@ export default function Character(props) {
                 <View style={styles.welcomeTextView}>
                     <Text style={styles.welcomeText}>WELCOME</Text>
                     <Text style={styles.to}>To</Text>
-                    <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
+                    <View style={styles.zooziezImage}>
+                        <Image source={require("../assets/image/Zooziez.png")} style={GContent.zoozieImage}/>
+                    </View>
                     <Text style={styles.characterText}>Pick Your Character</Text>
                     <View style={styles.animalViewTillyGeorge}>
                         <AnimalDataFunc data={data}/>

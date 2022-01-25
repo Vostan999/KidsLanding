@@ -3,7 +3,6 @@ import {StyleSheet, Text, TextInput, View} from "react-native";
 
 export default function GameOneMap() {
     const [text, setText] = useState("")
-
     return (
         <View style={styles.container}>
             <TextInput
@@ -13,7 +12,6 @@ export default function GameOneMap() {
             />
             <View  style={styles.line}/>
         </View>
-
     )
 }
 

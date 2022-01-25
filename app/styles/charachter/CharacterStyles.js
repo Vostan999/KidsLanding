@@ -30,7 +30,6 @@ export const styles = StyleSheet.create({
         fontFamily:"MochiyPopPOne-Regular",
         textAlign: "center"
     },
-
     zooziez:{
         width: 110,
         height:41

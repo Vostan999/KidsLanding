@@ -4,21 +4,25 @@ import {Image, Text, TouchableOpacity, StyleSheet} from "react-native";
 
 export default function AccessoriesBoyMap(props) {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [state,setState] = useState(false)
+
     const widthBorder = (item) => {
         setActiveIndex(item)
     }
+
     const handle = (item) => {
-        if (!item.state) {
-            item.state = true
+        if (!state) {
+            setState(true)
             const arr = props.accessories
             arr.push(item)
             props.accessoriesFunc(arr)
             widthBorder(props.index)
         }
     }
+
     return (
         <TouchableOpacity
-            style={[
+            style={
                 {
                     borderWidth: activeIndex === props.index ? 2 : 1,
                     borderColor: activeIndex === props.index ? "#FFE3BA" : "#DADADA",
@@ -29,7 +33,7 @@ export default function AccessoriesBoyMap(props) {
                     marginLeft: 15,
                     marginVertical: 15
                 }
-            ]}
+            }
             onPress={() => {
                 handle(props.item)
             }}

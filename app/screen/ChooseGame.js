@@ -15,7 +15,6 @@ export const ContextValue = createContext()
 export default function ChooseGame(props) {
     const [name, setName] = useState("")
     const [loading, setLoading] = useState(false)
-    const nameCharacter = props.route.params.name
     const store = useSelector((state) => {
         return state.customer
     })
@@ -48,6 +47,7 @@ export default function ChooseGame(props) {
         try {
             const response = await axiosInstance.get(`/questionmulti/${id}`)
             setLoading(false)
+
             setName(response.data.character.title)
 
         } catch (e) {
@@ -87,7 +87,7 @@ export default function ChooseGame(props) {
                         propsNavigation={props.navigation}
                     />
                     <Text style={styles.characterText}>Pick Your Character</Text>
-                    <Text style={styles.welcomeText}>{nameCharacter}`s Games</Text>
+                    <Text style={styles.welcomeText}>{name}`s Games</Text>
                     <Button
                         title={"spell the value!"}
                         borderWidth={1}
