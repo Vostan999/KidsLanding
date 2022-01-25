@@ -16,11 +16,15 @@ export default function GameTigerTwoInput(props) {
     const [loading, setLoading] = useState(false)
     const data = props.route.params.data
     const dataquestion = props.route.params.data[1]
+    const [color, setColor] = useState('#F19100')
 
     useEffect(() => {
         if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1 === dataquestion.key) {
+            if (_onFinishCheckingCode1.toLowerCase() === dataquestion.key.toLowerCase()) {
+                setColor('green')
                 props.navigation.replace("gameTigerThreeInput", {data: data})
+            } else if (_onFinishCheckingCode1.toLowerCase() !== dataquestion.key.toLowerCase()){
+                setColor('red')
             }
         }
     }, [_onFinishCheckingCode1])
@@ -54,7 +58,7 @@ export default function GameTigerTwoInput(props) {
                     codeLength={dataquestion.key.length ? dataquestion.key.length : ""}
                     codeInputStyle={{
                         borderWidth: 1,
-                        borderColor: _onFinishCheckingCode1 === dataquestion.key && _onFinishCheckingCode1 ? "green" : _onFinishCheckingCode1 ? "red" : "#F19100",
+                        borderColor: color,
                         borderRadius: 6,
                         color: '#D56638',
                         fontSize: 18,
