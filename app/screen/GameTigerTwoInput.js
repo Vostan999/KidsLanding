@@ -8,6 +8,7 @@ import {styles} from "../styles/gameOne/GameOne";
 import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
 import Loading from "../component/loading/Loading";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 export default function GameTigerTwoInput(props) {
@@ -31,7 +32,7 @@ export default function GameTigerTwoInput(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <KeyboardAvoidingView>
+            <KeyboardAwareScrollView>
             <StatusBar
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
@@ -73,7 +74,7 @@ export default function GameTigerTwoInput(props) {
                 leaf3={require("../assets/image/leaf.png")}
             />
             <Loading loading={loading}/>
-            </KeyboardAvoidingView>
+                </KeyboardAwareScrollView>
         </ScrollView>
     )
 }

@@ -5,6 +5,7 @@ import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import {styles} from "../styles/zookeeperNameStyles/ZookeeperNameStyles";
 import Leaf from "../component/leaf/Leaf";
 import Footer from "../component/footer/Footer";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 export default function ZookeeperName(props) {
     const [name, setName] = useState("")
@@ -12,6 +13,7 @@ export default function ZookeeperName(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
+            <KeyboardAwareScrollView>
             <StatusBar backgroundColor={"white"} barStyle={"dark-content"}/>
             <HeaderZooziez propsNavigation={props.navigation}/>
             <Text style={styles.header}>Create your zookeeper</Text>
@@ -46,6 +48,7 @@ export default function ZookeeperName(props) {
                 leaf3={require("../assets/image/leaf.png")}
                 Leaf={require("../assets/image/leaf.png")}
             />
+            </KeyboardAwareScrollView>
         </ScrollView>
     )
 }

@@ -10,6 +10,7 @@ import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 
 
 export default function GameTigerOneInput(props) {
@@ -60,7 +61,7 @@ export default function GameTigerOneInput(props) {
 
     return (
         <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <KeyboardAvoidingView>
+            <KeyboardAwareScrollView>
                 <StatusBar
                     backgroundColor={"white"}
                     barStyle={"dark-content"}
@@ -104,7 +105,7 @@ export default function GameTigerOneInput(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
                 <Loading loading={loading}/>
-            </KeyboardAvoidingView>
+                </KeyboardAwareScrollView>
         </ScrollView>
     )
 }

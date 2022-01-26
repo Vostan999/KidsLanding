@@ -22,6 +22,7 @@ export const styles = StyleSheet.create({
     },
     welcomeTextView:{
         marginVertical:20,
+        marginTop:30
     },
     to:{
         fontSize:16,
