@@ -31,8 +31,8 @@ export default function GameTigerTwoInput(props) {
     }, [_onFinishCheckingCode1])
 
     return (
-        <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView  style={GContent.ViewInput}>
+      <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
@@ -46,7 +46,7 @@ export default function GameTigerTwoInput(props) {
             <Cloud
                 textOne={"SPELL"}
                 textTwo={dataquestion.key}
-                characterImage={dataquestion.img ? dataquestion.img : null}
+                characterImage={Object.keys(dataquestion).length ? dataquestion.img : null}
             />
             <View style={styles.codeInputView}>
                 <CodeInput
@@ -56,7 +56,7 @@ export default function GameTigerTwoInput(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={dataquestion.key.length ? dataquestion.key.length : ""}
+                    codeLength={Object.keys(dataquestion).length ? dataquestion.key.length : ""}
                     codeInputStyle={{
                         borderWidth: 1,
                         borderColor: color,
@@ -74,7 +74,7 @@ export default function GameTigerTwoInput(props) {
                 leaf3={require("../assets/image/leaf.png")}
             />
             <Loading loading={loading}/>
-                </KeyboardAwareScrollView>
         </ScrollView>
+      </KeyboardAwareScrollView>
     )
 }

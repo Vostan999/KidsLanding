@@ -57,8 +57,8 @@ export default function GameOne(props) {
     }
 
     return (
-        <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView  style={GContent.ViewInput}>
+      <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar
                     backgroundColor={"white"}
                     barStyle={"dark-content"}
@@ -101,7 +101,8 @@ export default function GameOne(props) {
                     leaf3={require("../assets/image/leaf.png")}
                 />
                 <Loading loading={loading}/>
-            </KeyboardAwareScrollView>
         </ScrollView>
+      </KeyboardAwareScrollView>
+
     )
 }

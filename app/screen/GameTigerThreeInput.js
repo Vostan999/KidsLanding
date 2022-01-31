@@ -29,8 +29,8 @@ export default function GameTigerThreeInput(props) {
     }, [_onFinishCheckingCode1])
 
     return (
-        <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
-            <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView  style={GContent.ViewInput}>
+      <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
@@ -43,8 +43,8 @@ export default function GameTigerThreeInput(props) {
             />
             <Cloud
                 textOne={"SPELL"}
-                textTwo={data.key ? data.key : ""}
-                characterImage={data.img ? data.img : null}
+                textTwo={Object.keys(data).length? data.key : ""}
+                characterImage={Object.keys(data).length ? data.img : null}
             />
             <View style={styles.codeInputView}>
                 <CodeInput
@@ -54,7 +54,7 @@ export default function GameTigerThreeInput(props) {
                     autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={data.key ? data.key.length : 0}
+                    codeLength={Object.keys(data).length ? data.key.length : 0}
                     codeInputStyle={{
                         borderWidth: 1,
                         borderColor: color,
@@ -71,7 +71,7 @@ export default function GameTigerThreeInput(props) {
                 leaf4={require("../assets/image/leaf.png")}
                 leaf3={require("../assets/image/leaf.png")}
             />
-                </KeyboardAwareScrollView>
         </ScrollView>
+      </KeyboardAwareScrollView>
     )
 }
