@@ -53,7 +53,6 @@ export default function GameTigerTwoInput(props) {
                     ref={ref}
                     keyboardType={"default"}
                     activeColor='#F19100'
-                    autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
                     codeLength={Object.keys(dataquestion).length ? dataquestion.key.length : ""}

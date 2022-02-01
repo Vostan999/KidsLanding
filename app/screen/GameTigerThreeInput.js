@@ -28,7 +28,7 @@ export default function GameTigerThreeInput(props) {
         }
     }, [_onFinishCheckingCode1])
 
-    return (
+  return (
       <KeyboardAwareScrollView  style={GContent.ViewInput}>
       <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
             <StatusBar
@@ -51,7 +51,6 @@ export default function GameTigerThreeInput(props) {
                     ref={ref}
                     keyboardType={"default"}
                     activeColor='#F19100'
-                    autoFocus={true}
                     inputPosition='center'
                     onFulfill={(code) => set_onFinishCheckingCode1(code)}
                     codeLength={Object.keys(data).length ? data.key.length : 0}

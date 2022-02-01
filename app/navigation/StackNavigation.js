@@ -3,7 +3,6 @@ import {createStackNavigator} from "@react-navigation/stack";
 import FirstPage from "../screen/FirstPage";
 import Login from "../screen/Login";
 import Character from "../screen/Character";
-import GameOne from "../screen/GameOne";
 import GameTwo from "../screen/GameTwo";
 import GameThree from "../screen/GameThree";
 import Signup from "../screen/Signup";
@@ -44,7 +43,6 @@ export default function StackNavigation() {
             <Stack.Screen name={"gameTigerTwo"} component={GameTigerTwo}/>
             <Stack.Screen name={"gameTigerThree"} component={GameTigerThree}/>
             <Stack.Screen name={"gameTigerFor"} component={GameTigerFor}/>
-            <Stack.Screen name={"gameOne"} component={GameOne}/>
             <Stack.Screen name={"gameTwo"} component={GameTwo}/>
             <Stack.Screen name={"gameThree"} component={GameThree}/>
             <Stack.Screen name={"finishPage"} component={FinishPage}/>

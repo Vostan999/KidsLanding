@@ -82,7 +82,6 @@ export default function GameTigerOneInput(props) {
                         ref={ref}
                         keyboardType={"default"}
                         activeColor='#F19100'
-                        autoFocus={true}
                         inputPosition='center'
                         onFulfill={(code) => set_onFinishCheckingCode1(code)}
                         codeLength={Object.keys(data).length ? data.key.length : 0}

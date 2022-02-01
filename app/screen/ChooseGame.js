@@ -41,15 +41,22 @@ export default function ChooseGame(props) {
         }
     }
 
+    const _NAME = async (data) => {
+        try {
+            return  await AsyncStorage.setItem(`name`,data)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     const handle = async () => {
         setLoading(true)
         const id = await idAnimal()
         try {
             const response = await axiosInstance.get(`/questionmulti/${id}`)
             setLoading(false)
-
             setName(response.data.character.title)
-
+            await _NAME(response.data.character.title)
         } catch (e) {
             console.log(e.message)
             setLoading(false)
@@ -96,12 +103,8 @@ export default function ChooseGame(props) {
                         color={"#D56638"}
                         marginHorizontal={40}
                         onPress={() => {
-                            name === "George" ?
-                                props.navigation.navigate("gameOne")
-                                :
                                 props.navigation.navigate("gameTigerOneInput")
-                        }}
-                    />
+                        }}/>
                     <Button
                         title={"master the value!"}
                         borderWidth={1}
