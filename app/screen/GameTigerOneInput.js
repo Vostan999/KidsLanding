@@ -5,7 +5,6 @@ import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameOne/GameOne";
-import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
 import axiosInstance from "../networking/axiosinstance";
 import Loading from "../component/loading/Loading";
@@ -97,10 +96,7 @@ export default function GameTigerOneInput(props) {
                     textContentType="oneTimeCode"
                     caretHidden={false}
                     renderCell={({index, symbol, isFocused}) => (
-                      <Text
-                        key={index}
-                        style={[styles.cell,{borderColor: color}]}
-                        >
+                      <Text key={index} style={[styles.cell,{borderColor: color}]}>
                         {symbol || (isFocused ? <Cursor /> : null)}
                       </Text>
                     )}

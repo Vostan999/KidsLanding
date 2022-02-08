@@ -5,7 +5,6 @@ import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
 import Leaf from "../component/leaf/Leaf";
 import {styles} from "../styles/gameOne/GameOne";
-import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { CodeField, Cursor, useBlurOnFulfill } from "react-native-confirmation-code-field";
@@ -36,12 +35,8 @@ export default function GameTigerThreeInput(props) {
                 backgroundColor={"white"}
                 barStyle={"dark-content"}
             />
-            <HeaderZooziez
-                propsNavigation={props.navigation}
-            />
-            <Back
-                navigationProps={props.navigation}
-            />
+            <HeaderZooziez propsNavigation={props.navigation}/>
+            <Back navigationProps={props.navigation}/>
             <Cloud
                 textOne={"SPELL"}
                 textTwo={Object.keys(data).length? data.key : ""}
@@ -67,10 +62,7 @@ export default function GameTigerThreeInput(props) {
                 )}
               />
             </View>
-            <Leaf
-                leaf4={require("../assets/image/leaf.png")}
-                leaf3={require("../assets/image/leaf.png")}
-            />
+            <Leaf leaf4={require("../assets/image/leaf.png")} leaf3={require("../assets/image/leaf.png")}/>
         </ScrollView>
       </KeyboardAwareScrollView>
     )

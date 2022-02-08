@@ -16,8 +16,7 @@ export default function FirstPage(props) {
                         barStyle={"dark-content"}
                     />
                     <Text style={styles.helloText}>Hello</Text>
-                    <Text style={styles.descreptionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
-                        ornare ipsum sed est.</Text>
+                    <Text style={styles.descreptionText}>Welcome To Zooziez! Home Of Character Building Characters</Text>
                     <Button
                         title={"Login"}
                         backgroundColor={"#D56638"}
