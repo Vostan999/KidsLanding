@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {ScrollView, StatusBar, View,KeyboardAvoidingView} from "react-native";
+import { ScrollView, StatusBar, View, KeyboardAvoidingView, Text } from "react-native";
 import {GContent} from "../styles/gContent/gContent";
 import Cloud from "../component/cloud/Cloud";
 import HeaderZooziez from "../component/headerZooziez/HeaderZooziez";
@@ -8,16 +8,17 @@ import {styles} from "../styles/gameOne/GameOne";
 import CodeInput from 'react-native-code-input';
 import Back from "../component/back/Back";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { CodeField, Cursor, useBlurOnFulfill } from "react-native-confirmation-code-field";
 
 
 
 export default function GameTigerThreeInput(props) {
     const [_onFinishCheckingCode1, set_onFinishCheckingCode1] = useState("")
-    const ref = useRef(_onFinishCheckingCode1)
     const [color, setColor] = useState('#F19100')
     const data = props.route.params.data[2]
+    const ref1 = useBlurOnFulfill({value:_onFinishCheckingCode1, cellCount: Object.keys(data).length ? data.key.length : 0});
 
-    useEffect(() => {
+  useEffect(() => {
         if (_onFinishCheckingCode1) {
             if (_onFinishCheckingCode1.toLowerCase() === data.key.toLowerCase()) {
                 setColor('green')
@@ -47,24 +48,24 @@ export default function GameTigerThreeInput(props) {
                 characterImage={Object.keys(data).length ? data.img : null}
             />
             <View style={styles.codeInputView}>
-                <CodeInput
-                    ref={ref}
-                    keyboardType={"default"}
-                    activeColor='#F19100'
-                    inputPosition='center'
-                    onFulfill={(code) => set_onFinishCheckingCode1(code)}
-                    codeLength={Object.keys(data).length ? data.key.length : 0}
-                    codeInputStyle={{
-                        borderWidth: 1,
-                        borderColor: color,
-                        borderRadius: 6,
-                        color: '#D56638',
-                        fontSize: 18,
-                        fontFamily: "MochiyPopPOne-Regular",
-                        width: 35,
-                        height: 52,
-                        backgroundColor: "#FFFFFF"
-                    }}/>
+              <CodeField
+                ref={ref1}
+                value={_onFinishCheckingCode1}
+                onChangeText={(code) => set_onFinishCheckingCode1(code)}
+                cellCount={Object.keys(data).length ? data.key.length : 0}
+                rootStyle={styles.codeFieldRoot}
+                keyboardType="default"
+                textContentType="oneTimeCode"
+                caretHidden={false}
+                renderCell={({index, symbol, isFocused}) => (
+                  <Text
+                    key={index}
+                    style={[styles.cell,{borderColor: color}]}
+                  >
+                    {symbol || (isFocused ? <Cursor /> : null)}
+                  </Text>
+                )}
+              />
             </View>
             <Leaf
                 leaf4={require("../assets/image/leaf.png")}
