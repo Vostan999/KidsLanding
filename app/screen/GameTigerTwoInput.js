@@ -22,13 +22,13 @@ export default function GameTigerTwoInput(props) {
     });
 
     useEffect(() => {
-        if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1.toLowerCase() === dataquestion.key.toLowerCase()) {
-                setColor('green')
-                props.navigation.replace("gameTigerThreeInput", {data: data})
-            } else if (_onFinishCheckingCode1.toLowerCase() !== dataquestion.key.toLowerCase()) {
-                setColor('red')
-            }
+            if (_onFinishCheckingCode1 && dataquestion.key.length === _onFinishCheckingCode1.length) {
+                if (_onFinishCheckingCode1.toLowerCase() === dataquestion.key.toLowerCase()) {
+                    setColor('green')
+                    props.navigation.replace("gameTigerThreeInput", {data: data})
+                } else if (_onFinishCheckingCode1.toLowerCase() !== dataquestion.key.toLowerCase()) {
+                    setColor('red')
+                }
         }
     }, [_onFinishCheckingCode1])
 

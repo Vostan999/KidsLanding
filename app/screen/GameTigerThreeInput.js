@@ -18,14 +18,16 @@ export default function GameTigerThreeInput(props) {
     const ref1 = useBlurOnFulfill({value:_onFinishCheckingCode1, cellCount: Object.keys(data).length ? data.key.length : 0});
 
   useEffect(() => {
-        if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1.toLowerCase() === data.key.toLowerCase()) {
-                setColor('green')
-                props.navigation.replace("good")
-            } else if (_onFinishCheckingCode1.toLowerCase() !== data.key.toLowerCase()){
-                setColor('red')
+
+            if (_onFinishCheckingCode1 && data.key.length === _onFinishCheckingCode1.length) {
+                if (_onFinishCheckingCode1.toLowerCase() === data.key.toLowerCase()) {
+                    setColor('green')
+                    props.navigation.replace("good")
+                } else if (_onFinishCheckingCode1.toLowerCase() !== data.key.toLowerCase()) {
+                    setColor('red')
+                }
             }
-        }
+
     }, [_onFinishCheckingCode1])
 
   return (

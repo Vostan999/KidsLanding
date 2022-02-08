@@ -33,12 +33,12 @@ export default function GameTigerOneInput(props) {
     }, [])
 
     useEffect(() => {
-        if (_onFinishCheckingCode1) {
-            if (_onFinishCheckingCode1.toLowerCase() === data.key.toLowerCase()) {
-                setColor('green')
-                props.navigation.replace("gameTigerTwoInput", {data: params})
-            } else if (_onFinishCheckingCode1.toLowerCase() !== data.key.toLowerCase()) {
-                setColor('red')
+            if (_onFinishCheckingCode1 && data.key.length === _onFinishCheckingCode1.length) {
+                if (_onFinishCheckingCode1.toLowerCase() === data.key.toLowerCase()) {
+                    setColor('green')
+                    props.navigation.replace("gameTigerTwoInput", {data: params})
+                } else if (_onFinishCheckingCode1.toLowerCase() !== data.key.toLowerCase()) {
+                    setColor('red')
             }
         }
     }, [_onFinishCheckingCode1])
