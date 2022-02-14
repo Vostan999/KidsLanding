@@ -17,6 +17,7 @@ export default function GameTigerFor(props) {
     const [question, setQuestion] = useState("")
     const [characterImage, setCharacterImage] = useState()
     const [loading, setLoading] = useState(false)
+
     useEffect(() => {
         handle()
     }, [])
@@ -60,7 +61,7 @@ export default function GameTigerFor(props) {
                 />
                 <Cloud
                     textOne={question}
-                    textTwo={"Generous"}
+                    textTwo={"TrustWorthy"}
                     characterImage={characterImage}
                 />
                 <GameTigerOneFunc
