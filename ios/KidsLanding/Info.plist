@@ -36,7 +36,7 @@
 		</dict>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Your message to user when the camera is accessed for the first time</string>
+	<string>would like to use your camera for Qr scanning</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location use</string>
 	<key>NSMicrophoneUsageDescription</key>

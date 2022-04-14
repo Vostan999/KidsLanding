@@ -66,7 +66,6 @@ export default function GameTigerOneInput(props) {
         }
     }
 
-
   return (
       <KeyboardAwareScrollView style={GContent.ViewInput}>
       <ScrollView contentContainerStyle={GContent.ScroolViewALl}>
