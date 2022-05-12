@@ -57,6 +57,7 @@ export default function Login(props) {
                 "password": password
             }
             const response = await axiosInstance.post("/login", data)
+            console.log(response);
             dispatch({
                 type: "SET_CUSTOMER",
                 payload: email.toLowerCase()
@@ -66,6 +67,7 @@ export default function Login(props) {
             setLoading(false)
             props.navigation.replace("addNewAnimal")
         } catch (e) {
+            console.log(e);
             setRegistration(e.response.data.error)
             setLoading(false)
         }
